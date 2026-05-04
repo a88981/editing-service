@@ -470,8 +470,8 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
     <h2 class="sec-ttl">YouTube 企劃作品集</h2>
     <span class="sec-sub">Planning Portfolio</span>
   </div>
-  <div class="player-iframe-wrap fu">
-    <iframe src="https://www.youtube.com/embed/videoseries?si=Z2Ehla8OLv8BUuRN&list=PLeKS9OJYXVwiDFHf_TnR3AY4y_7D1T3fr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <div id="yt-plan-gallery" class="fu">
+    <div class="yt-loading">載入中…</div>
   </div>
 </section>
 
@@ -564,6 +564,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
   </div>
 
   <!-- A: embed LEFT, info RIGHT -->
+  <!-- C -->
   <div class="plan-row fu">
     <div class="plan-embed">
       <div class="pembed-hd"><div class="pembed-hd-ttl">A 方案 · 作品範例</div></div>
@@ -576,34 +577,38 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
       </div>
       <div class="pvids" id="pv-a">
         <div class="pvid-item">
-          <div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/fUNjyt1Hzzg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+          <div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/ldDRs8G6DUA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         </div>
         <div class="pvid-item">
-          <div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/zInb09efez8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+          <div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/6UyF4TSv8tI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        </div>
+        <div class="pvid-item">
+          <div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/XajfPW1lhyA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         </div>
       </div>
     </div>
     <div class="plan-info">
       <div class="pinfo-hd">
         <span class="pbadge a">A 方案</span>
-        <div class="pname">字卡 ES 較少</div>
-        <div class="pdesc">白字幕為主，每分鐘 1–3 個 ES 效果（10分鐘影片約 10–30 個）<br>適合乾淨 vlog 風格</div>
+        <div class="pname">字卡 ES 豐富</div>
+        <div class="pdesc">每分鐘 5–9 個 ES 效果（10分鐘影片約 50–90 個）<br>節目類型或複雜企劃需額外報價</div>
       </div>
       <div class="pinfo-body">
-        <div class="price-row"><span class="price-lbl">一整支（毛片 1hr 內，成片 10m 內）</span><div><div class="price-val">$6,000 起</div><div class="price-sub">超時 $850/1m</div></div></div>
-        <div class="price-row"><span class="price-lbl">已初剪（僅後製，成片 10m 內）</span><div><div class="price-val">$5,000 起</div><div class="price-sub">超時 $850/1m</div></div></div>
+        <div class="price-row"><span class="price-lbl">一整支（毛片 1hr 內，成片 10m 內）</span><div><div class="price-val">$9,500 起</div><div class="price-sub">超時 $850/1m</div></div></div>
+        <div class="price-row"><span class="price-lbl">已初剪（僅後製，成片 10m 內）</span><div><div class="price-val">$8,000 起</div><div class="price-sub">超時 $850/1m</div></div></div>
         <div class="price-row"><span class="price-lbl">工商加收</span><div class="price-val">+ $2,000</div></div>
         <div class="price-row"><span class="price-lbl">獨立中插工商（1m）</span><div class="price-val">+ $3,500</div></div>
         <div class="calc-blk">
           <div class="calc-ttl">計費範例</div>
-          <div class="calc-row"><span>成片 10m</span><span>$6,000</span></div>
+          <div class="calc-row"><span>成片 10m</span><span>$9,500</span></div>
           <div class="calc-row"><span>含工商</span><span>+ $2,000</span></div>
-          <div class="calc-tot"><span>合計</span><strong>$8,000</strong></div>
+          <div class="calc-tot"><span>合計</span><strong>$11,500</strong></div>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- B -->
   <!-- B -->
   <div class="plan-row fu">
     <div class="plan-embed">
@@ -643,6 +648,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
   </div>
 
   <!-- C -->
+  <!-- A: embed LEFT, info RIGHT -->
   <div class="plan-row fu">
     <div class="plan-embed">
       <div class="pembed-hd"><div class="pembed-hd-ttl">C 方案 · 作品範例</div></div>
@@ -655,37 +661,35 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
       </div>
       <div class="pvids" id="pv-c">
         <div class="pvid-item">
-          <div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/ldDRs8G6DUA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+          <div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/fUNjyt1Hzzg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         </div>
         <div class="pvid-item">
-          <div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/6UyF4TSv8tI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-        </div>
-        <div class="pvid-item">
-          <div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/XajfPW1lhyA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+          <div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/zInb09efez8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         </div>
       </div>
     </div>
     <div class="plan-info">
       <div class="pinfo-hd">
         <span class="pbadge c">C 方案</span>
-        <div class="pname">字卡 ES 豐富</div>
-        <div class="pdesc">每分鐘 5–9 個 ES 效果（10分鐘影片約 50–90 個）<br>節目類型或複雜企劃需額外報價</div>
+        <div class="pname">字卡 ES 較少</div>
+        <div class="pdesc">白字幕為主，每分鐘 1–3 個 ES 效果（10分鐘影片約 10–30 個）<br>適合乾淨 vlog 風格</div>
       </div>
       <div class="pinfo-body">
-        <div class="price-row"><span class="price-lbl">一整支（毛片 1hr 內，成片 10m 內）</span><div><div class="price-val">$9,500 起</div><div class="price-sub">超時 $850/1m</div></div></div>
-        <div class="price-row"><span class="price-lbl">已初剪（僅後製，成片 10m 內）</span><div><div class="price-val">$8,000 起</div><div class="price-sub">超時 $850/1m</div></div></div>
+        <div class="price-row"><span class="price-lbl">一整支（毛片 1hr 內，成片 10m 內）</span><div><div class="price-val">$6,000 起</div><div class="price-sub">超時 $850/1m</div></div></div>
+        <div class="price-row"><span class="price-lbl">已初剪（僅後製，成片 10m 內）</span><div><div class="price-val">$5,000 起</div><div class="price-sub">超時 $850/1m</div></div></div>
         <div class="price-row"><span class="price-lbl">工商加收</span><div class="price-val">+ $2,000</div></div>
         <div class="price-row"><span class="price-lbl">獨立中插工商（1m）</span><div class="price-val">+ $3,500</div></div>
         <div class="calc-blk">
           <div class="calc-ttl">計費範例</div>
-          <div class="calc-row"><span>成片 10m</span><span>$9,500</span></div>
+          <div class="calc-row"><span>成片 10m</span><span>$6,000</span></div>
           <div class="calc-row"><span>含工商</span><span>+ $2,000</span></div>
-          <div class="calc-tot"><span>合計</span><strong>$11,500</strong></div>
+          <div class="calc-tot"><span>合計</span><strong>$8,000</strong></div>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- D -->
   <!-- D -->
   <div class="plan-row fu">
     <div class="plan-embed">
@@ -711,7 +715,6 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
       </div>
     </div>
   </div>
-
 </section>
 
 <!-- SCHEDULE + BILLING SIDE BY SIDE -->
@@ -893,7 +896,7 @@ function fmtViews(n) {
 }
 
 async function fetchPlaylist(listId) {
-  const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=6&playlistId=${listId}&key=${YT_API_KEY}`;
+  const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=8&playlistId=${listId}&key=${YT_API_KEY}`;
   const res = await fetch(url);
   const data = await res.json();
   return (data.items || []).map(i => ({
@@ -958,6 +961,64 @@ async function buildGallery() {
 }
 
 buildGallery();
+
+// ── YouTube Plan Gallery ──
+async function buildPlanGallery() {
+  const gallery = document.getElementById('yt-plan-gallery');
+  gallery.innerHTML = '';
+  const PLAN_LIST_ID = 'PLeKS9OJYXVwiDFHf_TnR3AY4y_7D1T3fr';
+  try {
+    const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=8&playlistId=${PLAN_LIST_ID}&key=${YT_API_KEY}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    const videos = (data.items || []).map(i => ({
+      videoId: i.snippet.resourceId.videoId,
+      title: i.snippet.title,
+      thumb: (i.snippet.thumbnails.medium || i.snippet.thumbnails.default || {}).url || '',
+    }));
+
+    if (!videos.length) {
+      gallery.innerHTML = '<div class="yt-loading">載入失敗，請確認 API Key 是否正確。</div>';
+      return;
+    }
+
+    const videoIds = videos.map(v => v.videoId);
+    const detailUrl = `https://www.googleapis.com/youtube/v3/videos?part=contentDetails,statistics&id=${videoIds.join(',')}&key=${YT_API_KEY}`;
+    const detailRes = await fetch(detailUrl);
+    const detailData = await detailRes.json();
+    const details = {};
+    (detailData.items || []).forEach(v => {
+      details[v.id] = { duration: fmtDuration(v.contentDetails.duration), views: fmtViews(v.statistics.viewCount) };
+    });
+
+    const block = document.createElement('div');
+    block.className = 'yt-creator-block';
+    block.innerHTML = `
+      <div class="yt-creator-header">
+        <span class="yt-creator-name">小玩企劃作品集</span>
+        <a class="yt-creator-link" href="https://www.youtube.com/playlist?list=${PLAN_LIST_ID}" target="_blank" rel="noopener">▶ 全部播放</a>
+      </div>
+      <div class="yt-grid">
+        ${videos.map(v => {
+          const d = details[v.videoId] || {};
+          return `<a class="yt-thumb-card" href="https://www.youtube.com/watch?v=${v.videoId}" target="_blank" rel="noopener">
+            <div class="yt-thumb-wrap">
+              <img class="yt-thumb-img" src="${v.thumb}" alt="${v.title}" loading="lazy" />
+              ${d.duration ? `<span class="yt-thumb-duration">${d.duration}</span>` : ''}
+            </div>
+            <div class="yt-thumb-title">${v.title}</div>
+            ${d.views ? `<div class="yt-thumb-views">${d.views}</div>` : ''}
+          </a>`;
+        }).join('')}
+      </div>`;
+    gallery.appendChild(block);
+  } catch(e) {
+    console.error('Plan gallery error:', e);
+    gallery.innerHTML = '<div class="yt-loading">載入失敗，請確認 API Key 是否正確。</div>';
+  }
+}
+buildPlanGallery();
+
 
 </script>
 </body>
