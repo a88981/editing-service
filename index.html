@@ -30,12 +30,12 @@ body {
   line-height: 1.85;
   font-size: 17px;
 }
-
-#site-wrap {
-  max-width: 900px;
+#page {
+  max-width: 960px;
   margin: 0 auto;
   background: var(--cream);
-  box-shadow: 0 0 60px rgba(44,40,37,0.10);
+  box-shadow: 0 0 80px rgba(44,40,37,0.12);
+  position: relative;
 }
 
 /* ── HEADER ── */
@@ -46,6 +46,8 @@ header {
   position: sticky; top: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
   height: 66px;
+  max-width: 960px;
+  box-sizing: border-box;
 }
 .logo { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:23px; letter-spacing:0.08em; color:var(--charcoal); }
 .logo em { font-style:italic; color:var(--blush); }
@@ -131,13 +133,16 @@ nav a:hover { color:var(--charcoal); }
 
 /* ── NOTICE ── */
 #notice { background:var(--cream); border-bottom:1px solid var(--divider); }
-.notice-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; }
-.ncard { padding:1.6rem; background:var(--warm-white); border:1px solid var(--divider); position:relative; }
-.ncard-num { font-family:'DM Serif Display',serif; font-size:34px; color:var(--divider); position:absolute; top:1.2rem; right:1.4rem; line-height:1; }
-.ncard-icon { font-size:20px; margin-bottom:.9rem; }
-.ncard-body { font-size:15px; color:var(--muted); line-height:1.95; }
-.ncard-body strong { color:var(--charcoal); font-weight:500; display:block; font-size:16px; margin-bottom:.25rem; }
-.nwarn { color:var(--blush); font-size:13px; margin-top:.4rem; font-style:italic; }
+
+.notice-list { display:flex; flex-direction:column; gap:.55rem; }
+.nrow { display:flex; align-items:stretch; border:1px solid var(--divider-strong); background:var(--cream); transition:border-color .18s; }
+.nrow:hover { border-color:var(--sage); }
+.nrow-num { font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:300; color:var(--light-muted); min-width:56px; display:flex; align-items:center; justify-content:center; border-right:1px solid var(--divider); flex-shrink:0; }
+.nrow-icon { font-size:18px; min-width:48px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.nrow-body { padding:.9rem 1.1rem; flex:1; }
+.nrow-title { font-size:15px; font-weight:500; color:var(--charcoal); margin-bottom:.25rem; font-family:'Noto Serif TC',serif; }
+.nrow-desc { font-size:14px; color:var(--muted); line-height:1.85; }
+.nrow-warn { font-size:13px; color:var(--blush); margin-top:.3rem; font-style:italic; }
 
 /* ── PRICING ── */
 #pricing { background:var(--warm-white); border-bottom:1px solid var(--divider); }
@@ -365,13 +370,30 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
   transition: background .2s;
 }
 .pl-open-btn:hover { background: var(--sage); }
+
+/* ── YT GALLERY ── */
+.yt-loading { text-align:center; padding:3rem; color:var(--light-muted); font-size:15px; }
+.yt-creator-block { margin-bottom:2.5rem; }
+.yt-creator-header { display:flex; align-items:center; gap:1rem; margin-bottom:1rem; padding-bottom:.75rem; border-bottom:1px solid var(--divider); }
+.yt-creator-name { font-family:'Noto Serif TC',serif; font-size:17px; font-weight:400; color:var(--charcoal); }
+.yt-creator-link { font-size:12px; color:var(--sage); text-decoration:none; letter-spacing:.08em; margin-left:auto; }
+.yt-creator-link:hover { color:var(--charcoal); }
+.yt-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:1rem; }
+.yt-thumb-card { cursor:pointer; text-decoration:none; color:inherit; display:block; }
+.yt-thumb-card:hover .yt-thumb-img { opacity:.85; }
+.yt-thumb-wrap { position:relative; width:100%; padding-bottom:56.25%; overflow:hidden; background:var(--divider); }
+.yt-thumb-img { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition:opacity .2s; }
+.yt-thumb-duration { position:absolute; bottom:5px; right:6px; background:rgba(0,0,0,.78); color:#fff; font-size:11px; padding:1px 5px; border-radius:2px; letter-spacing:.03em; }
+.yt-thumb-title { font-size:13px; color:var(--soft-black); line-height:1.5; margin-top:.5rem; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+.yt-thumb-views { font-size:11px; color:var(--light-muted); margin-top:.25rem; }
 </style>
 </head>
 <body>
+<div id="page">
 
 <!-- HEADER -->
 <header>
-  <div class="logo">小<em>玩</em> 剪輯服務</div>
+  <div class="logo"><em>小玩</em> 剪輯服務</div>
   <nav>
     <a href="#about">關於</a>
     <a href="#portfolio-plan">企劃作品</a>
@@ -390,18 +412,18 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
 <section class="hero">
   <div class="fu">
     <p class="hero-eyebrow">Freelance Video Editor · 2026</p>
-    <h1 class="hero-title">小<em>玩</em><br>剪輯服務</h1>
-    <p class="hero-desc">五年以上 YouTube 頻道後製經驗，精通影片剪輯、企劃與視覺設計，與多位百萬 YouTuber 深度合作。</p>
+    <h1 class="hero-title"><em>小玩</em><br>剪輯服務</h1>
+    <p class="hero-desc">五年以上 YouTube 頻道後製經驗，<br>精通影片剪輯、企劃與視覺設計，<br>與多位百萬 YouTuber 深度合作。</p>
     <a href="#pricing" class="hero-cta">查看報價方案 ↓</a>
   </div>
   <div class="hero-cards fu">
     <div class="hcard">
       <div class="hcard-lbl">目前檔期</div>
-      <div class="hcard-val"><span class="sdot"></span>2026年 4月 可詢問<br><span style="font-size:13px;color:var(--muted)">（3月之前無法承接）</span></div>
+      <div class="hcard-val"><span class="sdot"></span>2026年 6月 可詢問<br><span style="font-size:13px;color:var(--muted)">5月可詢問急案</span></div>
     </div>
     <div class="hcard">
-      <div class="hcard-lbl">合作創作者（部分）</div>
-      <div class="hcard-val" style="font-size:13px;line-height:1.9;letter-spacing:.02em">Joeman · 阿滴 · The DoDo Men · VW · 一隻阿圓 · 阿部瑪利亞 · 泱泱 · 貝莉莓 · LUCY · 米鹿 等</div>
+      <div class="hcard-lbl">合作創作者</div>
+      <div class="hcard-val" style="font-size:13px;line-height:1.9;letter-spacing:.02em">Joeman · 阿滴 · The DoDo Men · VW · 一隻阿圓 · 痣作人 · 阿部瑪利亞 · 泱泱 · 愛里 · 貝莉莓 · 蘋蘋澎澎 · LUCY · 米鹿 · 希露弟弟啃雞腿 等多位 YouTuber…</div>
     </div>
     <div class="hcard">
       <div class="hcard-lbl">專長技能</div>
@@ -460,175 +482,8 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
     <h2 class="sec-ttl">YouTube 剪輯作品集</h2>
     <span class="sec-sub">Editing Portfolio</span>
   </div>
-
-  <div class="creator-tabs fu" id="edit-tabs">
-    <button class="ctab active" data-edit="joeman" onclick="switchTab('edit','joeman')">Joeman</button>
-    <button class="ctab" data-edit="adou" onclick="switchTab('edit','adou')">阿滴</button>
-    <button class="ctab" data-edit="other" onclick="switchTab('edit','other')">其他</button>
-    <button class="ctab" data-edit="vw" onclick="switchTab('edit','vw')">VW</button>
-    <button class="ctab" data-edit="yuan" onclick="switchTab('edit','yuan')">阿圓</button>
-    <button class="ctab" data-edit="mari" onclick="switchTab('edit','mari')">阿部瑪利亞</button>
-    <button class="ctab" data-edit="yanyang" onclick="switchTab('edit','yanyang')">泱泱</button>
-    <button class="ctab" data-edit="mackabe" onclick="switchTab('edit','mackabe')">麥卡貝</button>
-    <button class="ctab" data-edit="aili" onclick="switchTab('edit','aili')">愛里</button>
-    <button class="ctab" data-edit="pingping" onclick="switchTab('edit','pingping')">蘋蘋澎澎</button>
-    <button class="ctab" data-edit="milu" onclick="switchTab('edit','milu')">米鹿</button>
-    <button class="ctab" data-edit="xilu" onclick="switchTab('edit','xilu')">希露弟弟啃雞腿</button>
-    <button class="ctab" data-edit="shorts" onclick="switchTab('edit','shorts')">短影片</button>
-  </div>
-
-  <div id="edit-players" class="fu">
-    <div class="port-player active" data-edit="joeman">
-      <div class="player-iframe-wrap">
-        <iframe src="https://www.youtube.com/embed/videoseries?si=tljzDKYwCbEiW-Oi&list=PLeKS9OJYXVwgAG6PXpWbt6kaIgP8cku7Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-    </div>
-    <div class="port-player" data-edit="adou">
-      <a class="pl-card" href="https://www.youtube.com/playlist?list=PLeKS9OJYXVwiUjGpOaw4kmjwqHsTSrmvy" target="_blank" rel="noopener">
-        <div class="pl-thumb">
-          <div class="pl-thumb-fallback">▶</div>
-          <div class="pl-play-icon"></div>
-        </div>
-        <div class="pl-info">
-          <div class="pl-name">阿滴 · 剪輯作品播放清單</div>
-          <div class="pl-meta">點擊前往 YouTube 觀看完整播放清單</div>
-        </div>
-        <span class="pl-arrow">→</span>
-      </a>
-    </div>
-    <div class="port-player" data-edit="other">
-      <a class="pl-card" href="https://www.youtube.com/playlist?list=PLeKS9OJYXVwiF_R14xE0jpgGZNl7uSMDJ" target="_blank" rel="noopener">
-        <div class="pl-thumb">
-          <div class="pl-thumb-fallback">▶</div>
-          <div class="pl-play-icon"></div>
-        </div>
-        <div class="pl-info">
-          <div class="pl-name">其他 · 剪輯作品播放清單</div>
-          <div class="pl-meta">點擊前往 YouTube 觀看完整播放清單</div>
-        </div>
-        <span class="pl-arrow">→</span>
-      </a>
-    </div>
-    <div class="port-player" data-edit="vw">
-      <a class="pl-card" href="https://www.youtube.com/playlist?list=PLeKS9OJYXVwiaKeEGCIQ-c3aah7Jt6k_l" target="_blank" rel="noopener">
-        <div class="pl-thumb">
-          <div class="pl-thumb-fallback">▶</div>
-          <div class="pl-play-icon"></div>
-        </div>
-        <div class="pl-info">
-          <div class="pl-name">VW · 剪輯作品播放清單</div>
-          <div class="pl-meta">點擊前往 YouTube 觀看完整播放清單</div>
-        </div>
-        <span class="pl-arrow">→</span>
-      </a>
-    </div>
-    <div class="port-player" data-edit="yuan">
-      <a class="pl-card" href="https://www.youtube.com/playlist?list=PLeKS9OJYXVwgH1GjzsmCvghpT6F54GzEo" target="_blank" rel="noopener">
-        <div class="pl-thumb">
-          <div class="pl-thumb-fallback">▶</div>
-          <div class="pl-play-icon"></div>
-        </div>
-        <div class="pl-info">
-          <div class="pl-name">一隻阿圓 · 剪輯作品播放清單</div>
-          <div class="pl-meta">點擊前往 YouTube 觀看完整播放清單</div>
-        </div>
-        <span class="pl-arrow">→</span>
-      </a>
-    </div>
-    <div class="port-player" data-edit="mari">
-      <a class="pl-card" href="https://www.youtube.com/playlist?list=PLeKS9OJYXVwjOX1NWsTbrh7oiyoys0O_X" target="_blank" rel="noopener">
-        <div class="pl-thumb">
-          <div class="pl-thumb-fallback">▶</div>
-          <div class="pl-play-icon"></div>
-        </div>
-        <div class="pl-info">
-          <div class="pl-name">阿部瑪利亞 · 剪輯作品播放清單</div>
-          <div class="pl-meta">點擊前往 YouTube 觀看完整播放清單</div>
-        </div>
-        <span class="pl-arrow">→</span>
-      </a>
-    </div>
-    <div class="port-player" data-edit="yanyang">
-      <div class="port-placeholder"><em>泱泱</em><br>剪輯作品播放清單</div>
-    </div>
-    <div class="port-player" data-edit="mackabe">
-      <a class="pl-card" href="https://www.youtube.com/playlist?list=PLeKS9OJYXVwhaZ-FrV2LqrkWnIPZPK6PX" target="_blank" rel="noopener">
-        <div class="pl-thumb">
-          <div class="pl-thumb-fallback">▶</div>
-          <div class="pl-play-icon"></div>
-        </div>
-        <div class="pl-info">
-          <div class="pl-name">麥卡貝 · 剪輯作品播放清單</div>
-          <div class="pl-meta">點擊前往 YouTube 觀看完整播放清單</div>
-        </div>
-        <span class="pl-arrow">→</span>
-      </a>
-    </div>
-    <div class="port-player" data-edit="aili">
-      <a class="pl-card" href="https://www.youtube.com/playlist?list=PLeKS9OJYXVwjSlNG1JDviuBiIk3BJ4xpu" target="_blank" rel="noopener">
-        <div class="pl-thumb">
-          <div class="pl-thumb-fallback">▶</div>
-          <div class="pl-play-icon"></div>
-        </div>
-        <div class="pl-info">
-          <div class="pl-name">愛里 · 剪輯作品播放清單</div>
-          <div class="pl-meta">點擊前往 YouTube 觀看完整播放清單</div>
-        </div>
-        <span class="pl-arrow">→</span>
-      </a>
-    </div>
-    <div class="port-player" data-edit="pingping">
-      <a class="pl-card" href="https://www.youtube.com/playlist?list=PLeKS9OJYXVwhtoV50z6Oe0GOnU7NsYjCD" target="_blank" rel="noopener">
-        <div class="pl-thumb">
-          <div class="pl-thumb-fallback">▶</div>
-          <div class="pl-play-icon"></div>
-        </div>
-        <div class="pl-info">
-          <div class="pl-name">蘋蘋澎澎 · 剪輯作品播放清單</div>
-          <div class="pl-meta">點擊前往 YouTube 觀看完整播放清單</div>
-        </div>
-        <span class="pl-arrow">→</span>
-      </a>
-    </div>
-    <div class="port-player" data-edit="milu">
-      <a class="pl-card" href="https://www.youtube.com/playlist?list=PLeKS9OJYXVwj0x-PYP7b6ncMsDwj6FveZ" target="_blank" rel="noopener">
-        <div class="pl-thumb">
-          <div class="pl-thumb-fallback">▶</div>
-          <div class="pl-play-icon"></div>
-        </div>
-        <div class="pl-info">
-          <div class="pl-name">米鹿 · 剪輯作品播放清單</div>
-          <div class="pl-meta">點擊前往 YouTube 觀看完整播放清單</div>
-        </div>
-        <span class="pl-arrow">→</span>
-      </a>
-    </div>
-    <div class="port-player" data-edit="xilu">
-      <a class="pl-card" href="https://www.youtube.com/playlist?list=PLeKS9OJYXVwiVzjRoGX4chl_CzE2zKI1q" target="_blank" rel="noopener">
-        <div class="pl-thumb">
-          <div class="pl-thumb-fallback">▶</div>
-          <div class="pl-play-icon"></div>
-        </div>
-        <div class="pl-info">
-          <div class="pl-name">希露弟弟啃雞腿 · 剪輯作品播放清單</div>
-          <div class="pl-meta">點擊前往 YouTube 觀看完整播放清單</div>
-        </div>
-        <span class="pl-arrow">→</span>
-      </a>
-    </div>
-    <div class="port-player" data-edit="shorts">
-      <a class="pl-card" href="https://www.youtube.com/playlist?list=PLeKS9OJYXVwivrO2k6gCkdkj6Ha0VlflI" target="_blank" rel="noopener">
-        <div class="pl-thumb">
-          <div class="pl-thumb-fallback">▶</div>
-          <div class="pl-play-icon"></div>
-        </div>
-        <div class="pl-info">
-          <div class="pl-name">短影片 · 剪輯作品播放清單</div>
-          <div class="pl-meta">點擊前往 YouTube 觀看完整播放清單</div>
-        </div>
-        <span class="pl-arrow">→</span>
-      </a>
-    </div>
+  <div id="yt-gallery" class="fu">
+    <div class="yt-loading">載入中…</div>
   </div>
 </section>
 
@@ -639,41 +494,62 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
     <h2 class="sec-ttl">詢價前須知</h2>
     <span class="sec-sub">Notice</span>
   </div>
-  <div class="notice-grid">
-    <div class="ncard fu">
-      <div class="ncard-num">01</div><div class="ncard-icon">📅</div>
-      <div class="ncard-body"><strong>長期合作已滿</strong>目前長期合作名額已滿，僅接視空檔委託。請直接提供交件日期，視檔期安排承接。</div>
+  <div class="notice-list">
+    <div class="nrow fu">
+      <div class="nrow-num">01</div>
+      <div class="nrow-icon">📅</div>
+      <div class="nrow-body">
+        <div class="nrow-title">長期合作已滿</div>
+        <div class="nrow-desc">目前長期合作名額已滿，僅接視空檔委託。請直接提供交件日期，視檔期安排承接。</div>
+      </div>
     </div>
-    <div class="ncard fu">
-      <div class="ncard-num">02</div><div class="ncard-icon">💡</div>
-      <div class="ncard-body"><strong>報價依複雜度而異</strong>報價依毛片數量、ES效果呈現、複雜度的多寡而不同，可參考A〜D方案，或提供頻道範例以供報價。</div>
+    <div class="nrow fu">
+      <div class="nrow-num">02</div>
+      <div class="nrow-icon">💡</div>
+      <div class="nrow-body">
+        <div class="nrow-title">報價依複雜度而異</div>
+        <div class="nrow-desc">報價依毛片數量、ES效果呈現、複雜度的多寡而不同，可參考A〜D方案，或提供頻道範例以供報價。</div>
+      </div>
     </div>
-    <div class="ncard fu">
-      <div class="ncard-num">03</div><div class="ncard-icon">🚫</div>
-      <div class="ncard-body"><strong>不提供專案檔</strong>影片完成後不提供專案檔（加價亦不提供）。結案上片後毛片及影片一律刪除。<p class="nwarn">加價也不提供，非常抱歉！</p></div>
+    <div class="nrow fu">
+      <div class="nrow-num">03</div>
+      <div class="nrow-icon">🚫</div>
+      <div class="nrow-body">
+        <div class="nrow-title">不提供專案檔</div>
+        <div class="nrow-desc">影片完成後不提供專案檔（加價亦不提供）。結案上片後毛片及影片一律刪除。</div>
+        <div class="nrow-warn">加價也不提供，非常抱歉！</div>
+      </div>
     </div>
-    <div class="ncard fu">
-      <div class="ncard-num">04</div><div class="ncard-icon">⏱</div>
-      <div class="ncard-body"><strong>不提供試剪、純順剪</strong>因檔期忙碌，目前不接受試剪與純順剪委託。</div>
+    <div class="nrow fu">
+      <div class="nrow-num">04</div>
+      <div class="nrow-icon">⏱</div>
+      <div class="nrow-body">
+        <div class="nrow-title">不提供試剪、純順剪</div>
+        <div class="nrow-desc">因檔期忙碌，目前不接受試剪與純順剪委託。</div>
+      </div>
     </div>
-    <div class="ncard fu">
-      <div class="ncard-num">05</div><div class="ncard-icon">📱</div>
-      <div class="ncard-body"><strong>短影片限商案</strong>短影片目前僅接受商案類型或特別企劃。目前不承接藏鏡人類型的短影片。</div>
+    <div class="nrow fu">
+      <div class="nrow-num">05</div>
+      <div class="nrow-icon">📱</div>
+      <div class="nrow-body">
+        <div class="nrow-title">短影片限商案</div>
+        <div class="nrow-desc">短影片目前僅接受商案類型或特別企劃。目前不承接藏鏡人類型的短影片。</div>
+      </div>
     </div>
-    <div class="ncard fu">
-      <div class="ncard-num">06</div><div class="ncard-icon">🎵</div>
-      <div class="ncard-body">
-        <strong>音樂 ／ 字體 ／ 素材版權</strong>
-        <div style="margin-top:.75rem;font-size:14px;line-height:2;color:var(--muted)">
-          <div style="margin-bottom:.85rem">
-            <strong style="color:var(--charcoal);display:block;margin-bottom:.2rem">🎵 音樂版權</strong>
-            以創作者頻道購買授權的音樂庫使用為主（Epidemic Sound / Artlist）。無授權音樂庫將使用 YT 無版權音樂庫。若有特殊音樂要求，使用商用素材庫（Envato）需額外 +$500–$3,000。
-          </div>
-          <div>
-            <strong style="color:var(--charcoal);display:block;margin-bottom:.2rem">🔤 字體版權</strong>
-            以免費商用字體及我有購買的商用字體使用為主。若您有購買商用字體版權，請告知字體名稱或提供字體（例如金萱體）。若不介意使用商用字體也可告知，畫面較豐富，但無版權請斟酌。
-          </div>
-        </div>
+    <div class="nrow fu">
+      <div class="nrow-num">06</div>
+      <div class="nrow-icon">🎵</div>
+      <div class="nrow-body">
+        <div class="nrow-title">音樂版權</div>
+        <div class="nrow-desc">以創作者頻道購買授權的音樂庫使用為主（Epidemic Sound / Artlist）。無授權音樂庫將使用 YT 無版權音樂庫。若有特殊音樂要求，使用商用素材庫（Envato）需額外 +$500–$3,000。</div>
+      </div>
+    </div>
+    <div class="nrow fu">
+      <div class="nrow-num">07</div>
+      <div class="nrow-icon">🔤</div>
+      <div class="nrow-body">
+        <div class="nrow-title">字體版權</div>
+        <div class="nrow-desc">以免費商用字體及我有購買的商用字體使用為主。若您有購買商用字體版權，請告知字體名稱或提供字體（例如金萱體）。若不介意使用商用字體也可告知，畫面較豐富，但無版權請斟酌。</div>
       </div>
     </div>
   </div>
@@ -696,9 +572,16 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
           <input class="pinput" type="text" id="in-a" placeholder="貼上 YouTube 網址…" />
           <button class="padd-btn" onclick="addPV('a')">加入</button>
         </div>
-        <div class="pembed-hint">支援單支影片或播放清單，按 Enter 快速加入</div>
+
       </div>
-      <div class="pvids" id="pv-a"><div class="pvid-empty" id="pe-a">尚未加入範例<br><span style="font-size:12px">貼上網址後點「加入」</span></div></div>
+      <div class="pvids" id="pv-a">
+        <div class="pvid-item">
+          <div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/fUNjyt1Hzzg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        </div>
+        <div class="pvid-item">
+          <div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/zInb09efez8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        </div>
+      </div>
     </div>
     <div class="plan-info">
       <div class="pinfo-hd">
@@ -730,9 +613,13 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
           <input class="pinput" type="text" id="in-b" placeholder="貼上 YouTube 網址…" />
           <button class="padd-btn" onclick="addPV('b')">加入</button>
         </div>
-        <div class="pembed-hint">支援單支影片或播放清單，按 Enter 快速加入</div>
+
       </div>
-      <div class="pvids" id="pv-b"><div class="pvid-empty" id="pe-b">尚未加入範例<br><span style="font-size:12px">貼上網址後點「加入」</span></div></div>
+      <div class="pvids" id="pv-b">
+        <div class="pvid-item">
+          <div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/j1NPTOn9kNE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        </div>
+      </div>
     </div>
     <div class="plan-info">
       <div class="pinfo-hd">
@@ -764,9 +651,19 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
           <input class="pinput" type="text" id="in-c" placeholder="貼上 YouTube 網址…" />
           <button class="padd-btn" onclick="addPV('c')">加入</button>
         </div>
-        <div class="pembed-hint">支援單支影片或播放清單，按 Enter 快速加入</div>
+
       </div>
-      <div class="pvids" id="pv-c"><div class="pvid-empty" id="pe-c">尚未加入範例<br><span style="font-size:12px">貼上網址後點「加入」</span></div></div>
+      <div class="pvids" id="pv-c">
+        <div class="pvid-item">
+          <div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/ldDRs8G6DUA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        </div>
+        <div class="pvid-item">
+          <div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/6UyF4TSv8tI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        </div>
+        <div class="pvid-item">
+          <div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/XajfPW1lhyA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        </div>
+      </div>
     </div>
     <div class="plan-info">
       <div class="pinfo-hd">
@@ -798,7 +695,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
           <input class="pinput" type="text" id="in-d" placeholder="貼上 YouTube 網址…" />
           <button class="padd-btn" onclick="addPV('d')">加入</button>
         </div>
-        <div class="pembed-hint">支援單支影片或播放清單，按 Enter 快速加入</div>
+
       </div>
       <div class="pvids" id="pv-d"><div class="pvid-empty" id="pe-d">尚未加入範例<br><span style="font-size:12px">貼上網址後點「加入」</span></div></div>
     </div>
@@ -899,13 +796,19 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
     <a href="https://a88981.wixsite.com/website-1/as-seen-on" target="_blank" class="clink sec">設計作品集 →</a>
   </div>
   <div class="lineid">LINE : <span>zhongxiaowan</span></div>
+  <div style="margin-top:1.2rem;display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;">
+    <a href="https://www.instagram.com/yufangzhong/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.5rem;font-size:14px;color:var(--light-muted);text-decoration:none;letter-spacing:.08em;transition:color .2s;" onmouseover="this.style.color='var(--blush)'" onmouseout="this.style.color='var(--light-muted)'">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
+      yufangzhong
+    </a>
+  </div>
 </section>
 
 <footer>
   <span>© 2026 小玩剪輯服務 · All rights reserved</span>
   <span style="font-style:italic">禁止剽竊此報價資訊與格式</span>
 </footer>
-</div>
+</div><!--/page-->
 
 <script>
 // Scroll animation
@@ -956,6 +859,106 @@ function rmPV(p,id) {
   const list=document.getElementById('pv-'+p);
   if(list && !list.children.length) list.innerHTML=`<div class="pvid-empty" id="pe-${p}">尚未加入範例<br><span style="font-size:12px">貼上網址後點「加入」</span></div>`;
 }
+
+// ── YouTube Gallery ──
+const YT_API_KEY = 'AIzaSyA8pDGs-m-w7WZh7HpQFVOqm30dsq4JEtg';
+const PLAYLISTS = [
+  { name: 'Joeman',        id: 'PLeKS9OJYXVwgAG6PXpWbt6kaIgP8cku7Y' },
+  { name: '阿滴',          id: 'PLeKS9OJYXVwiUjGpOaw4kmjwqHsTSrmvy' },
+  { name: '其他',          id: 'PLeKS9OJYXVwiF_R14xE0jpgGZNl7uSMDJ' },
+  { name: 'VW',            id: 'PLeKS9OJYXVwiaKeEGCIQ-c3aah7Jt6k_l' },
+  { name: '一隻阿圓',      id: 'PLeKS9OJYXVwgH1GjzsmCvghpT6F54GzEo' },
+  { name: '阿部瑪利亞',    id: 'PLeKS9OJYXVwjOX1NWsTbrh7oiyoys0O_X' },
+  { name: '麥卡貝',        id: 'PLeKS9OJYXVwhaZ-FrV2LqrkWnIPZPK6PX' },
+  { name: '愛里',          id: 'PLeKS9OJYXVwjSlNG1JDviuBiIk3BJ4xpu' },
+  { name: '蘋蘋澎澎',      id: 'PLeKS9OJYXVwhtoV50z6Oe0GOnU7NsYjCD' },
+  { name: '米鹿',          id: 'PLeKS9OJYXVwj0x-PYP7b6ncMsDwj6FveZ' },
+  { name: '希露弟弟啃雞腿', id: 'PLeKS9OJYXVwiVzjRoGX4chl_CzE2zKI1q' },
+  { name: '短影片',        id: 'PLeKS9OJYXVwivrO2k6gCkdkj6Ha0VlflI' },
+];
+
+function fmtDuration(iso) {
+  const m = iso.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
+  if (!m) return '';
+  const h = parseInt(m[1]||0), min = parseInt(m[2]||0), s = parseInt(m[3]||0);
+  if (h) return `${h}:${String(min).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  return `${min}:${String(s).padStart(2,'0')}`;
+}
+
+function fmtViews(n) {
+  n = parseInt(n);
+  if (n >= 10000) return Math.floor(n/10000) + '萬次觀看';
+  if (n >= 1000) return (n/1000).toFixed(1) + 'K 次觀看';
+  return n + ' 次觀看';
+}
+
+async function fetchPlaylist(listId) {
+  const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=6&playlistId=${listId}&key=${YT_API_KEY}`;
+  const res = await fetch(url);
+  const data = await res.json();
+  return (data.items || []).map(i => ({
+    videoId: i.snippet.resourceId.videoId,
+    title: i.snippet.title,
+    thumb: (i.snippet.thumbnails.medium || i.snippet.thumbnails.default || {}).url || '',
+  }));
+}
+
+async function fetchVideoDetails(videoIds) {
+  const url = `https://www.googleapis.com/youtube/v3/videos?part=contentDetails,statistics&id=${videoIds.join(',')}&key=${YT_API_KEY}`;
+  const res = await fetch(url);
+  const data = await res.json();
+  const map = {};
+  (data.items || []).forEach(v => {
+    map[v.id] = { duration: fmtDuration(v.contentDetails.duration), views: fmtViews(v.statistics.viewCount) };
+  });
+  return map;
+}
+
+async function buildGallery() {
+  const gallery = document.getElementById('yt-gallery');
+  gallery.innerHTML = '';
+
+  for (const pl of PLAYLISTS) {
+    try {
+      const videos = await fetchPlaylist(pl.id);
+      if (!videos.length) continue;
+
+      const videoIds = videos.map(v => v.videoId);
+      const details = await fetchVideoDetails(videoIds);
+
+      const block = document.createElement('div');
+      block.className = 'yt-creator-block';
+      block.innerHTML = `
+        <div class="yt-creator-header">
+          <span class="yt-creator-name">【${pl.name}】小玩剪輯作品</span>
+          <a class="yt-creator-link" href="https://www.youtube.com/playlist?list=${pl.id}" target="_blank" rel="noopener">▶ 全部播放</a>
+        </div>
+        <div class="yt-grid">
+          ${videos.map(v => {
+            const d = details[v.videoId] || {};
+            return `<a class="yt-thumb-card" href="https://www.youtube.com/watch?v=${v.videoId}" target="_blank" rel="noopener">
+              <div class="yt-thumb-wrap">
+                <img class="yt-thumb-img" src="${v.thumb}" alt="${v.title}" loading="lazy" />
+                ${d.duration ? `<span class="yt-thumb-duration">${d.duration}</span>` : ''}
+              </div>
+              <div class="yt-thumb-title">${v.title}</div>
+              ${d.views ? `<div class="yt-thumb-views">${d.views}</div>` : ''}
+            </a>`;
+          }).join('')}
+        </div>`;
+      gallery.appendChild(block);
+    } catch(e) {
+      console.error('Error loading', pl.name, e);
+    }
+  }
+
+  if (!gallery.children.length) {
+    gallery.innerHTML = '<div class="yt-loading">載入失敗，請確認 API Key 是否正確。</div>';
+  }
+}
+
+buildGallery();
+
 </script>
 </body>
 </html>
