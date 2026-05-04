@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小玩剪輯服務 · 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&family=Noto+Sans+TC:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --cream: #F7F4EF;
+  --warm-white: #FDFBF8;
+  --charcoal: #1C1C1A;
+  --soft-black: #2A2825;
+  --muted: #7A7670;
+  --light-muted: #B8B4AE;
+  --sage: #8A9E8B;
+  --blush: #C4978A;
+  --divider: rgba(44,40,37,0.12);
+  --divider-strong: rgba(44,40,37,0.22);
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  background: var(--cream);
+  color: var(--soft-black);
+  font-weight: 300;
+  line-height: 1.85;
+  font-size: 17px;
+}
+
+/* ── HEADER ── */
+header {
+  background: var(--warm-white);
+  border-bottom: 1px solid var(--divider);
+  padding: 0 clamp(1.5rem,5vw,4rem);
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 66px;
+}
+.logo { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:23px; letter-spacing:0.08em; color:var(--charcoal); }
+.logo em { font-style:italic; color:var(--blush); }
+nav { display:flex; gap:1.8rem; font-size:13px; letter-spacing:0.07em; color:var(--muted); }
+nav a { text-decoration:none; color:inherit; transition:color .2s; }
+nav a:hover { color:var(--charcoal); }
+
+/* ── HERO ── */
+.hero {
+  background: var(--warm-white);
+  padding: clamp(4rem,9vw,7rem) clamp(1.5rem,5vw,4rem);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  border-bottom: 1px solid var(--divider);
+}
+.hero-eyebrow { font-size:12px; letter-spacing:.2em; color:var(--sage); text-transform:uppercase; margin-bottom:1rem; }
+.hero-title { font-family:'DM Serif Display',serif; font-size:clamp(3rem,4.5vw,5rem); line-height:1.05; color:var(--charcoal); margin-bottom:1.4rem; }
+.hero-title em { font-style:italic; color:var(--blush); }
+.hero-desc { font-size:16px; color:var(--muted); line-height:2; max-width:400px; margin-bottom:2rem; }
+.hero-cta { display:inline-flex; align-items:center; gap:.6rem; background:var(--charcoal); color:var(--cream); padding:.85rem 2rem; font-size:13px; letter-spacing:.12em; text-decoration:none; transition:background .2s; }
+.hero-cta:hover { background:var(--soft-black); }
+.hero-cards { display:flex; flex-direction:column; gap:1.4rem; }
+.hcard { background:var(--cream); border:1px solid var(--divider-strong); padding:1.4rem 1.7rem; }
+.hcard-lbl { font-size:11px; letter-spacing:.18em; color:var(--light-muted); text-transform:uppercase; margin-bottom:.6rem; }
+.hcard-val { font-family:'Noto Serif TC',serif; font-size:15px; color:var(--charcoal); line-height:1.9; }
+.sdot { display:inline-block; width:7px; height:7px; background:var(--sage); border-radius:50%; margin-right:.5rem; vertical-align:middle; animation:pulse 2s ease-in-out infinite; }
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.tags { display:flex; flex-wrap:wrap; gap:.45rem; margin-top:.5rem; }
+.tag { font-size:12px; padding:.3rem .85rem; background:rgba(138,158,139,.12); color:var(--sage); border:1px solid rgba(138,158,139,.25); letter-spacing:.06em; }
+
+/* ── SECTION BASE ── */
+.sec { padding: clamp(2.8rem,7vw,5rem) clamp(1.5rem,5vw,4rem); }
+.sec-hd { display:flex; align-items:baseline; gap:1.4rem; margin-bottom:2.5rem; padding-bottom:1.4rem; border-bottom:1px solid var(--divider); }
+.sec-num { font-family:'Cormorant Garamond',serif; font-size:44px; font-weight:300; color:var(--divider-strong); line-height:1; min-width:50px; }
+.sec-ttl { font-family:'Noto Serif TC',serif; font-size:22px; font-weight:400; color:var(--charcoal); letter-spacing:.05em; }
+.sec-sub { font-size:13px; letter-spacing:.1em; color:var(--muted); margin-left:auto; }
+
+/* ── ABOUT ── */
+#about { background:var(--warm-white); border-bottom:1px solid var(--divider); }
+.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; }
+.about-bio { font-family:'Noto Serif TC',serif; font-size:16px; line-height:2.2; color:var(--soft-black); }
+.about-bio strong { font-weight:500; color:var(--charcoal); }
+.tline { display:flex; flex-direction:column; }
+.titem { display:grid; grid-template-columns:88px 1fr; gap:1rem; padding:.9rem 0; border-bottom:1px solid var(--divider); }
+.titem:last-child { border-bottom:none; }
+.tyr { font-family:'Cormorant Garamond',serif; font-size:13px; color:var(--light-muted); padding-top:2px; }
+.tdesc { font-size:14px; color:var(--soft-black); line-height:1.8; }
+.tdesc strong { font-weight:500; color:var(--charcoal); display:block; font-size:13px; letter-spacing:.07em; margin-bottom:.15rem; }
+
+/* ── PORTFOLIO TABS ── */
+.port-sec { border-bottom:1px solid var(--divider); }
+.port-sec.alt { background:var(--warm-white); }
+.port-sec.def { background:var(--cream); }
+
+.creator-tabs { display:flex; flex-wrap:wrap; gap:.5rem; margin-bottom:1.75rem; }
+.ctab {
+  padding:.45rem 1.1rem;
+  font-size:13px; letter-spacing:.06em;
+  background:var(--warm-white); color:var(--muted);
+  border:1px solid var(--divider-strong);
+  cursor:pointer; transition:all .18s;
+  font-family:'Noto Sans TC',sans-serif;
+}
+.ctab:hover { color:var(--charcoal); border-color:var(--charcoal); }
+.ctab.active { background:var(--charcoal); color:var(--cream); border-color:var(--charcoal); }
+
+.port-player { display:none; }
+.port-player.active { display:block; }
+
+.player-iframe-wrap { position:relative; width:100%; padding-bottom:56.25%; height:0; overflow:hidden; }
+.player-iframe-wrap iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:none; }
+
+.port-placeholder {
+  background:var(--warm-white);
+  border:1px solid var(--divider);
+  padding:3rem 2rem; text-align:center;
+  color:var(--light-muted); font-size:15px; line-height:2.2;
+}
+.port-placeholder em { font-style:italic; font-family:'Cormorant Garamond',serif; font-size:18px; color:var(--blush); }
+
+/* Portfolio URL input (for editing) */
+.port-url-hint { margin-top:1rem; font-size:12px; color:var(--light-muted); line-height:1.8; padding:1rem 1.25rem; background:rgba(138,158,139,.07); border-left:2px solid var(--sage); }
+.port-url-hint code { font-size:11px; color:var(--sage); }
+
+/* ── NOTICE ── */
+#notice { background:var(--cream); border-bottom:1px solid var(--divider); }
+.notice-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; }
+.ncard { padding:1.6rem; background:var(--warm-white); border:1px solid var(--divider); position:relative; }
+.ncard-num { font-family:'DM Serif Display',serif; font-size:34px; color:var(--divider); position:absolute; top:1.2rem; right:1.4rem; line-height:1; }
+.ncard-icon { font-size:20px; margin-bottom:.9rem; }
+.ncard-body { font-size:15px; color:var(--muted); line-height:1.95; }
+.ncard-body strong { color:var(--charcoal); font-weight:500; display:block; font-size:16px; margin-bottom:.25rem; }
+.nwarn { color:var(--blush); font-size:13px; margin-top:.4rem; font-style:italic; }
+
+/* ── PRICING ── */
+#pricing { background:var(--warm-white); border-bottom:1px solid var(--divider); }
+
+.plan-row {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  border:1px solid var(--divider-strong);
+  background:var(--warm-white);
+  margin-bottom:1.75rem;
+  transition:box-shadow .3s;
+}
+.plan-row:last-child { margin-bottom:0; }
+.plan-row:hover { box-shadow:0 6px 28px rgba(44,40,37,.07); }
+
+/* embed left, info right */
+.plan-embed { border-right:1px solid var(--divider); background:var(--cream); display:flex; flex-direction:column; }
+.plan-info  { display:flex; flex-direction:column; }
+
+.pembed-hd { padding:1rem 1.4rem; border-bottom:1px solid var(--divider); }
+.pembed-hd-ttl { font-size:12px; letter-spacing:.12em; color:var(--light-muted); text-transform:uppercase; }
+.pembed-input-area { padding:.9rem 1.4rem; border-bottom:1px solid var(--divider); display:flex; flex-direction:column; gap:.55rem; }
+.pembed-row { display:flex; gap:.45rem; }
+.pinput { flex:1; padding:.55rem .85rem; font-family:'Noto Sans TC',sans-serif; font-size:13px; border:1px solid var(--divider-strong); background:var(--warm-white); color:var(--soft-black); outline:none; transition:border-color .2s; min-width:0; }
+.pinput:focus { border-color:var(--sage); }
+.pinput::placeholder { color:var(--light-muted); font-size:12px; }
+.padd-btn { padding:.55rem .9rem; background:var(--charcoal); color:var(--cream); border:none; font-size:12px; cursor:pointer; white-space:nowrap; transition:background .2s; font-family:'Noto Sans TC',sans-serif; }
+.padd-btn:hover { background:var(--sage); }
+.pembed-hint { font-size:11px; color:var(--light-muted); }
+.pvids { flex:1; overflow-y:auto; padding:.9rem 1.4rem; display:flex; flex-direction:column; gap:.9rem; max-height:460px; }
+.pvid-item { position:relative; }
+.pvid-rm { position:absolute; top:5px; right:5px; z-index:2; background:rgba(28,28,26,.72); color:#fff; border:none; width:22px; height:22px; border-radius:50%; font-size:12px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .2s; }
+.pvid-rm:hover { background:var(--blush); }
+.pvid-wrap { position:relative; width:100%; padding-bottom:56.25%; height:0; overflow:hidden; }
+.pvid-wrap iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:none; }
+.pvid-empty { padding:2rem 1rem; color:var(--light-muted); font-size:13px; line-height:2; text-align:center; }
+
+.pinfo-hd { padding:1.6rem 1.9rem; border-bottom:1px solid var(--divider); }
+.pbadge { font-size:11px; letter-spacing:.14em; padding:.28rem .7rem; display:inline-block; margin-bottom:.7rem; }
+.pbadge.a { background:var(--cream); color:var(--muted); border:1px solid var(--divider-strong); }
+.pbadge.b { background:#EDE8E0; color:var(--soft-black); }
+.pbadge.c { background:var(--charcoal); color:var(--cream); }
+.pbadge.d { background:var(--sage); color:#fff; }
+.pname { font-family:'Noto Serif TC',serif; font-size:20px; font-weight:400; color:var(--charcoal); }
+.pdesc { font-size:14px; color:var(--muted); line-height:1.9; margin-top:.35rem; }
+.pinfo-body { padding:1.6rem 1.9rem; flex:1; }
+
+.price-row { display:flex; justify-content:space-between; align-items:baseline; padding:.65rem 0; border-bottom:1px solid var(--divider); font-size:15px; gap:1rem; }
+.price-row:last-of-type { border-bottom:none; }
+.price-lbl { color:var(--muted); flex:1; }
+.price-val { font-family:'Cormorant Garamond',serif; font-size:19px; color:var(--charcoal); white-space:nowrap; }
+.price-sub { font-size:12px; color:var(--light-muted); text-align:right; margin-top:.15rem; }
+
+.calc-blk { background:var(--cream); border:1px solid var(--divider); padding:1.1rem 1.6rem; margin-top:1.2rem; }
+.calc-ttl { font-size:11px; letter-spacing:.13em; color:var(--light-muted); text-transform:uppercase; margin-bottom:.65rem; }
+.calc-row { display:flex; justify-content:space-between; font-size:14px; padding:.28rem 0; color:var(--muted); }
+.calc-tot { display:flex; justify-content:space-between; font-size:16px; padding-top:.65rem; margin-top:.45rem; border-top:1px solid var(--divider-strong); color:var(--charcoal); }
+.calc-tot strong { font-family:'Cormorant Garamond',serif; font-size:22px; color:var(--blush); }
+
+/* ── SCHEDULE + BILLING (same row) ── */
+#schedule-billing { background:var(--cream); border-bottom:1px solid var(--divider); }
+.sched-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+
+.sched-block-title { font-size:14px; letter-spacing:.08em; color:var(--charcoal); font-weight:400; margin-bottom:1.1rem; padding-bottom:.65rem; border-bottom:1px solid var(--divider); font-family:'Noto Serif TC',serif; }
+.stage-tbl { width:100%; border-collapse:collapse; }
+.stage-tbl th { font-size:11px; letter-spacing:.12em; color:var(--light-muted); text-align:left; padding:0 0 .65rem; border-bottom:1px solid var(--divider-strong); font-weight:400; text-transform:uppercase; }
+.stage-tbl td { padding:.75rem 0; border-bottom:1px solid var(--divider); font-size:14px; vertical-align:top; }
+.stage-tbl td:first-child { color:var(--muted); width:100px; font-size:13px; }
+.sbadge { display:inline-block; font-size:10px; padding:.18rem .5rem; background:rgba(196,151,138,.14); color:var(--blush); border:1px solid rgba(196,151,138,.28); margin-top:.25rem; }
+.snote { background:var(--warm-white); border-left:2px solid var(--sage); padding:.95rem 1.2rem; margin-top:1.3rem; font-size:13px; color:var(--muted); line-height:2; }
+
+.billing-blk { font-size:14px; color:var(--muted); line-height:2.1; }
+.billing-blk strong { color:var(--charcoal); font-weight:500; }
+.billing-ex { margin-top:1rem; background:var(--warm-white); border:1px solid var(--divider); padding:1rem 1.25rem; font-size:13px; color:var(--muted); line-height:2.1; }
+.billing-ex strong { color:var(--charcoal); }
+
+/* ── EXTRAS ── */
+#extras { background:var(--warm-white); border-bottom:1px solid var(--divider); }
+.extras-tbl { width:100%; border-collapse:collapse; }
+.extras-tbl th { font-size:11px; letter-spacing:.12em; color:var(--light-muted); text-align:left; padding:0 0 .65rem; border-bottom:1px solid var(--divider-strong); font-weight:400; text-transform:uppercase; }
+.extras-tbl td { padding:1rem 0; border-bottom:1px solid var(--divider); font-size:15px; color:var(--soft-black); }
+.extras-tbl td:last-child { text-align:right; font-family:'Cormorant Garamond',serif; font-size:18px; color:var(--charcoal); }
+
+/* ── RIGHTS ── */
+#rights { background:var(--cream); border-bottom:1px solid var(--divider); }
+.rights-grid { display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
+.rcard { padding:1.9rem; background:var(--warm-white); border:1px solid var(--divider); }
+.rcard-icon { font-size:20px; margin-bottom:.9rem; }
+.rcard-title { font-family:'Noto Serif TC',serif; font-size:17px; color:var(--charcoal); margin-bottom:.65rem; }
+.rcard-desc { font-size:15px; color:var(--muted); line-height:2.05; }
+
+/* ── CONTACT ── */
+#contact { background:var(--charcoal); padding:clamp(4rem,9vw,7rem) clamp(1.5rem,5vw,4rem); text-align:center; }
+.ceyebrow { font-size:12px; letter-spacing:.2em; color:var(--light-muted); text-transform:uppercase; margin-bottom:1.4rem; }
+.ctitle { font-family:'DM Serif Display',serif; font-size:clamp(2.6rem,4.5vw,4rem); color:var(--cream); line-height:1.1; margin-bottom:.5rem; }
+.ctitle em { font-style:italic; color:var(--blush); }
+.csub { font-size:15px; color:var(--light-muted); margin-bottom:2.4rem; }
+.clinks { display:flex; align-items:center; justify-content:center; gap:1.4rem; flex-wrap:wrap; }
+.clink { display:inline-flex; align-items:center; gap:.5rem; padding:.85rem 2rem; font-size:13px; letter-spacing:.11em; text-decoration:none; transition:all .22s; }
+.clink.pri { background:var(--blush); color:var(--cream); }
+.clink.pri:hover { background:#B8897C; }
+.clink.sec { border:1px solid rgba(247,244,239,.2); color:var(--light-muted); }
+.clink.sec:hover { border-color:rgba(247,244,239,.5); color:var(--cream); }
+.lineid { display:inline-block; margin-top:1.9rem; font-family:'Cormorant Garamond',serif; font-size:24px; font-weight:300; font-style:italic; color:var(--light-muted); }
+.lineid span { color:var(--cream); }
+
+/* ── FOOTER ── */
+footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex; justify-content:space-between; align-items:center; font-size:12px; color:#555550; }
+
+/* ── ANIMATION ── */
+.fu { opacity:0; transform:translateY(22px); transition:opacity .65s ease, transform .65s ease; }
+.fu.vis { opacity:1; transform:none; }
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  .plan-row { grid-template-columns:1fr; }
+  .plan-embed { border-right:none; border-bottom:1px solid var(--divider); }
+  .pvids { max-height:280px; }
+  .sched-grid { grid-template-columns:1fr 1fr; }
+}
+@media(max-width:768px){
+  .hero, .about-grid, .rights-grid { grid-template-columns:1fr; gap:2.2rem; }
+  .notice-grid { grid-template-columns:1fr; }
+  .sched-grid { grid-template-columns:1fr; }
+  nav { display:none; }
+  .sec-sub { display:none; }
+}
+
+/* ── PLAYLIST CARDS ── */
+.pl-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--warm-white);
+  border: 1px solid var(--divider-strong);
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow .2s, border-color .2s;
+  margin-bottom: .75rem;
+}
+.pl-card:hover {
+  box-shadow: 0 4px 20px rgba(44,40,37,.09);
+  border-color: var(--sage);
+}
+.pl-thumb {
+  width: 140px;
+  min-width: 140px;
+  height: 79px;
+  object-fit: cover;
+  background: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+.pl-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.pl-thumb-fallback {
+  width: 100%; height: 100%;
+  background: var(--cream);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px;
+}
+.pl-play-icon {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 36px; height: 36px;
+  background: rgba(28,28,26,.72);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.pl-play-icon::after {
+  content: '';
+  width: 0; height: 0;
+  border-style: solid;
+  border-width: 7px 0 7px 13px;
+  border-color: transparent transparent transparent #fff;
+  margin-left: 3px;
+}
+.pl-info { flex: 1; min-width: 0; }
+.pl-name {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 16px; font-weight: 400;
+  color: var(--charcoal);
+  margin-bottom: .3rem;
+}
+.pl-meta { font-size: 13px; color: var(--light-muted); }
+.pl-arrow {
+  font-size: 18px;
+  color: var(--light-muted);
+  transition: color .2s, transform .2s;
+}
+.pl-card:hover .pl-arrow { color: var(--sage); transform: translateX(3px); }
+.pl-single-wrap {
+  background: var(--warm-white);
+  border: 1px solid var(--divider-strong);
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.pl-single-thumb {
+  width: 200px; min-width: 200px; height: 113px;
+  background: var(--cream);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 40px;
+  flex-shrink: 0;
+}
+.pl-single-info .pl-name { font-size: 18px; margin-bottom: .5rem; }
+.pl-single-info .pl-meta { font-size: 14px; }
+.pl-open-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  margin-top: 1rem;
+  padding: .65rem 1.5rem;
+  background: var(--charcoal);
+  color: var(--cream);
+  font-size: 13px;
+  letter-spacing: .08em;
+  text-decoration: none;
+  transition: background .2s;
+}
+.pl-open-btn:hover { background: var(--sage); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">小<em>玩</em> 剪輯服務</div>
+  <nav>
+    <a href="#about">關於</a>
+    <a href="#portfolio-plan">企劃作品</a>
+    <a href="#portfolio-edit">剪輯作品</a>
+    <a href="#notice">須知</a>
+    <a href="#schedule-billing">時程</a>
+    <a href="#pricing">報價</a>
+    <a href="#extras">加購</a>
+    <a href="#contact">聯絡</a>
+  </nav>
+    <a href="#contact">聯絡</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="fu">
+    <p class="hero-eyebrow">Freelance Video Editor · 2026</p>
+    <h1 class="hero-title">讓畫面<br>說<em>故事</em></h1>
+    <p class="hero-desc">五年以上 YouTube 頻道後製經驗，精通影片剪輯、企劃與視覺設計，與多位百萬 YouTuber 深度合作。</p>
+    <a href="#pricing" class="hero-cta">查看報價方案 ↓</a>
+  </div>
+  <div class="hero-cards fu">
+    <div class="hcard">
+      <div class="hcard-lbl">目前檔期</div>
+      <div class="hcard-val"><span class="sdot"></span>2026年 4月 可詢問<br><span style="font-size:13px;color:var(--muted)">（3月之前無法承接）</span></div>
+    </div>
+    <div class="hcard">
+      <div class="hcard-lbl">合作創作者（部分）</div>
+      <div class="hcard-val" style="font-size:14px;line-height:2">Joeman · 阿滴 · The DoDo Men · VW<br>一隻阿圓 · 阿部瑪利亞 · 泱泱<br>貝莉莓 · LUCY · 米鹿 等</div>
+    </div>
+    <div class="hcard">
+      <div class="hcard-lbl">專長技能</div>
+      <div class="tags">
+        <span class="tag">影片企劃</span><span class="tag">後製剪輯</span><span class="tag">平面設計</span>
+        <span class="tag">視覺設計</span><span class="tag">Premiere</span><span class="tag">Photoshop</span><span class="tag">Illustrator</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="sec" style="background:var(--warm-white);border-bottom:1px solid var(--divider)">
+  <div class="sec-hd fu">
+    <span class="sec-num">01</span>
+    <h2 class="sec-ttl">自我介紹</h2>
+    <span class="sec-sub">About</span>
+  </div>
+  <div class="about-grid">
+    <div class="fu">
+      <p class="about-bio">我是<strong>小玩</strong>，一名 Freelancer，專注於 YouTube 頻道的後製剪輯與視覺呈現。<br><br>從廣告公司的副理，到百萬頻道的剪輯師，累積了橫跨品牌廣告、娛樂內容與創作者經濟的完整視野。<br><br>深信每一段素材都有值得被講述的故事，細膩的剪輯節奏與視覺語言，是讓頻道脫穎而出的關鍵。</p>
+    </div>
+    <div class="tline fu">
+      <div class="titem">
+        <div class="tyr">2021–2025</div>
+        <div class="tdesc"><strong>Joeman 頻道</strong>Joe是要對決外包剪輯師</div>
+      </div>
+      <div class="titem">
+        <div class="tyr">2020–2021</div>
+        <div class="tdesc"><strong>麥卡貝</strong>阿部瑪利亞頻道製作人 &amp; 剪輯師 ／ 泱泱頻道初期剪輯師</div>
+      </div>
+      <div class="titem">
+        <div class="tyr">2016–2020</div>
+        <div class="tdesc"><strong>聚暘媒體</strong>廣告副理（主管）</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO: PLAN -->
+<section id="portfolio-plan" class="sec port-sec alt">
+  <div class="sec-hd fu">
+    <span class="sec-num">02</span>
+    <h2 class="sec-ttl">YouTube 企劃作品集</h2>
+    <span class="sec-sub">Planning Portfolio</span>
+  </div>
+  <a class="pl-single-wrap fu" href="https://www.youtube.com/playlist?list=PLeKS9OJYXVwiDFHf_TnR3AY4y_7D1T3fr" target="_blank" rel="noopener">
+    <div class="pl-single-thumb">🎬</div>
+    <div class="pl-single-info">
+      <div class="pl-name">YouTube 企劃作品集播放清單</div>
+      <div class="pl-meta">點擊前往 YouTube 觀看完整播放清單</div>
+      <span class="pl-open-btn">前往觀看 →</span>
+    </div>
+  </a>
+</section>
+
+<!-- PORTFOLIO: EDIT -->
+<section id="portfolio-edit" class="sec port-sec def">
+  <div class="sec-hd fu">
+    <span class="sec-num">03</span>
+    <h2 class="sec-ttl">YouTube 剪輯作品集</h2>
+    <span class="sec-sub">Editing Portfolio</span>
+  </div>
+
+  <div class="creator-tabs fu" id="edit-tabs">
+    <button class="ctab active" data-edit="joeman" onclick="switchTab('edit','joeman')">Joeman</button>
+    <button class="ctab" data-edit="adou" onclick="switchTab('edit','adou')">阿滴</button>
+    <button class="ctab" data-edit="other" onclick="switchTab('edit','other')">其他</button>
+    <button class="ctab" data-edit="vw" onclick="switchTab('edit','vw')">VW</button>
+    <button class="ctab" data-edit="yuan" onclick="switchTab('edit','yuan')">阿圓</button>
+    <button class="ctab" data-edit="mari" onclick="switchTab('edit','mari')">阿部瑪利亞</button>
+    <button class="ctab" data-edit="yanyang" onclick="switchTab('edit','yanyang')">泱泱</button>
+    <button class="ctab" data-edit="mackabe" onclick="switchTab('edit','mackabe')">麥卡貝</button>
+    <button class="ctab" data-edit="aili" onclick="switchTab('edit','aili')">愛里</button>
+    <button class="ctab" data-edit="pingping" onclick="switchTab('edit','pingping')">蘋蘋澎澎</button>
+    <button class="ctab" data-edit="milu" onclick="switchTab('edit','milu')">米鹿</button>
+    <button class="ctab" data-edit="xilu" onclick="switchTab('edit','xilu')">希露弟弟啃雞腿</button>
+    <button class="ctab" data-edit="shorts" onclick="switchTab('edit','shorts')">短影片</button>
+  </div>
+
+  <div id="edit-players" class="fu">
+    <div class="port-player active" data-edit="joeman">
+      <div class="player-iframe-wrap">
+        <iframe src="https://www.youtube.com/embed/videoseries?si=tljzDKYwCbEiW-Oi&list=PLeKS9OJYXVwgAG6PXpWbt6kaIgP8cku7Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="port-player" data-edit="adou">
+      <a class="pl-card" href="https://www.youtube.com/playlist?list=PLeKS9OJYXVwiUjGpOaw4kmjwqHsTSrmvy" target="_blank" rel="noopener">
+        <div class="pl-thumb">
+          <div class="pl-thumb-fallback">▶</div>
+          <div class="pl-play-icon"></div>
+        </div>
+        <div class="pl-info">
+          <div class="pl-name">阿滴 · 剪輯作品播放清單</div>
+          <div class="pl-meta">點擊前往 YouTube 觀看完整播放清單</div>
+        </div>
+        <span class="pl-arrow">→</span>
+      </a>
+    </div>
+    <div class="port-player" data-edit="other">
+      <a class="pl-card" href="https://www.youtube.com/playlist?list=PLeKS9OJYXVwiF_R14xE0jpgGZNl7uSMDJ" target="_blank" rel="noopener">
+        <div class="pl-thumb">
+          <div class="pl-thumb-fallback">▶</div>
+          <div class="pl-play-icon"></div>
+        </div>
+        <div class="pl-info">
+          <div class="pl-name">其他 · 剪輯作品播放清單</div>
+          <div class="pl-meta">點擊前往 YouTube 觀看完整播放清單</div>
+        </div>
+        <span class="pl-arrow">→</span>
+      </a>
+    </div>
+    <div class="port-player" data-edit="vw">
+      <a class="pl-card" href="https://www.youtube.com/playlist?list=PLeKS9OJYXVwiaKeEGCIQ-c3aah7Jt6k_l" target="_blank" rel="noopener">
+        <div class="pl-thumb">
+          <div class="pl-thumb-fallback">▶</div>
+          <div class="pl-play-icon"></div>
+        </div>
+        <div class="pl-info">
+          <div class="pl-name">VW · 剪輯作品播放清單</div>
+          <div class="pl-meta">點擊前往 YouTube 觀看完整播放清單</div>
+        </div>
+        <span class="pl-arrow">→</span>
+      </a>
+    </div>
+    <div class="port-player" data-edit="yuan">
+      <a class="pl-card" href="https://www.youtube.com/playlist?list=PLeKS9OJYXVwgH1GjzsmCvghpT6F54GzEo" target="_blank" rel="noopener">
+        <div class="pl-thumb">
+          <div class="pl-thumb-fallback">▶</div>
+          <div class="pl-play-icon"></div>
+        </div>
+        <div class="pl-info">
+          <div class="pl-name">一隻阿圓 · 剪輯作品播放清單</div>
+          <div class="pl-meta">點擊前往 YouTube 觀看完整播放清單</div>
+        </div>
+        <span class="pl-arrow">→</span>
+      </a>
+    </div>
+    <div class="port-player" data-edit="mari">
+      <a class="pl-card" href="https://www.youtube.com/playlist?list=PLeKS9OJYXVwjOX1NWsTbrh7oiyoys0O_X" target="_blank" rel="noopener">
+        <div class="pl-thumb">
+          <div class="pl-thumb-fallback">▶</div>
+          <div class="pl-play-icon"></div>
+        </div>
+        <div class="pl-info">
+          <div class="pl-name">阿部瑪利亞 · 剪輯作品播放清單</div>
+          <div class="pl-meta">點擊前往 YouTube 觀看完整播放清單</div>
+        </div>
+        <span class="pl-arrow">→</span>
+      </a>
+    </div>
+    <div class="port-player" data-edit="yanyang">
+      <div class="port-placeholder"><em>泱泱</em><br>剪輯作品播放清單</div>
+    </div>
+    <div class="port-player" data-edit="mackabe">
+      <a class="pl-card" href="https://www.youtube.com/playlist?list=PLeKS9OJYXVwhaZ-FrV2LqrkWnIPZPK6PX" target="_blank" rel="noopener">
+        <div class="pl-thumb">
+          <div class="pl-thumb-fallback">▶</div>
+          <div class="pl-play-icon"></div>
+        </div>
+        <div class="pl-info">
+          <div class="pl-name">麥卡貝 · 剪輯作品播放清單</div>
+          <div class="pl-meta">點擊前往 YouTube 觀看完整播放清單</div>
+        </div>
+        <span class="pl-arrow">→</span>
+      </a>
+    </div>
+    <div class="port-player" data-edit="aili">
+      <a class="pl-card" href="https://www.youtube.com/playlist?list=PLeKS9OJYXVwjSlNG1JDviuBiIk3BJ4xpu" target="_blank" rel="noopener">
+        <div class="pl-thumb">
+          <div class="pl-thumb-fallback">▶</div>
+          <div class="pl-play-icon"></div>
+        </div>
+        <div class="pl-info">
+          <div class="pl-name">愛里 · 剪輯作品播放清單</div>
+          <div class="pl-meta">點擊前往 YouTube 觀看完整播放清單</div>
+        </div>
+        <span class="pl-arrow">→</span>
+      </a>
+    </div>
+    <div class="port-player" data-edit="pingping">
+      <a class="pl-card" href="https://www.youtube.com/playlist?list=PLeKS9OJYXVwhtoV50z6Oe0GOnU7NsYjCD" target="_blank" rel="noopener">
+        <div class="pl-thumb">
+          <div class="pl-thumb-fallback">▶</div>
+          <div class="pl-play-icon"></div>
+        </div>
+        <div class="pl-info">
+          <div class="pl-name">蘋蘋澎澎 · 剪輯作品播放清單</div>
+          <div class="pl-meta">點擊前往 YouTube 觀看完整播放清單</div>
+        </div>
+        <span class="pl-arrow">→</span>
+      </a>
+    </div>
+    <div class="port-player" data-edit="milu">
+      <a class="pl-card" href="https://www.youtube.com/playlist?list=PLeKS9OJYXVwj0x-PYP7b6ncMsDwj6FveZ" target="_blank" rel="noopener">
+        <div class="pl-thumb">
+          <div class="pl-thumb-fallback">▶</div>
+          <div class="pl-play-icon"></div>
+        </div>
+        <div class="pl-info">
+          <div class="pl-name">米鹿 · 剪輯作品播放清單</div>
+          <div class="pl-meta">點擊前往 YouTube 觀看完整播放清單</div>
+        </div>
+        <span class="pl-arrow">→</span>
+      </a>
+    </div>
+    <div class="port-player" data-edit="xilu">
+      <a class="pl-card" href="https://www.youtube.com/playlist?list=PLeKS9OJYXVwiVzjRoGX4chl_CzE2zKI1q" target="_blank" rel="noopener">
+        <div class="pl-thumb">
+          <div class="pl-thumb-fallback">▶</div>
+          <div class="pl-play-icon"></div>
+        </div>
+        <div class="pl-info">
+          <div class="pl-name">希露弟弟啃雞腿 · 剪輯作品播放清單</div>
+          <div class="pl-meta">點擊前往 YouTube 觀看完整播放清單</div>
+        </div>
+        <span class="pl-arrow">→</span>
+      </a>
+    </div>
+    <div class="port-player" data-edit="shorts">
+      <a class="pl-card" href="https://www.youtube.com/playlist?list=PLeKS9OJYXVwivrO2k6gCkdkj6Ha0VlflI" target="_blank" rel="noopener">
+        <div class="pl-thumb">
+          <div class="pl-thumb-fallback">▶</div>
+          <div class="pl-play-icon"></div>
+        </div>
+        <div class="pl-info">
+          <div class="pl-name">短影片 · 剪輯作品播放清單</div>
+          <div class="pl-meta">點擊前往 YouTube 觀看完整播放清單</div>
+        </div>
+        <span class="pl-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- NOTICE -->
+<section id="notice" class="sec" style="background:var(--warm-white);border-bottom:1px solid var(--divider)">
+  <div class="sec-hd fu">
+    <span class="sec-num">04</span>
+    <h2 class="sec-ttl">詢價前須知</h2>
+    <span class="sec-sub">Notice</span>
+  </div>
+  <div class="notice-grid">
+    <div class="ncard fu">
+      <div class="ncard-num">01</div><div class="ncard-icon">💡</div>
+      <div class="ncard-body"><strong>報價依複雜度而異</strong>報價依毛片數量、ES效果呈現、複雜度的多寡而不同，可參考A〜D方案，或提供頻道範例以供報價。</div>
+    </div>
+    <div class="ncard fu">
+      <div class="ncard-num">02</div><div class="ncard-icon">🚫</div>
+      <div class="ncard-body"><strong>不提供專案檔</strong>影片完成後不提供專案檔（加價亦不提供）。結案上片後毛片及影片一律刪除。<p class="nwarn">加價也不提供，非常抱歉！</p></div>
+    </div>
+    <div class="ncard fu">
+      <div class="ncard-num">03</div><div class="ncard-icon">⏱</div>
+      <div class="ncard-body"><strong>不提供試剪、純順剪</strong>因檔期忙碌，目前不接受試剪與純順剪委託。</div>
+    </div>
+    <div class="ncard fu">
+      <div class="ncard-num">04</div><div class="ncard-icon">📅</div>
+      <div class="ncard-body"><strong>長期合作已滿</strong>目前長期合作名額已滿，僅接視空檔委託。請直接提供交件日期，視檔期安排承接。</div>
+    </div>
+    <div class="ncard fu">
+      <div class="ncard-num">05</div><div class="ncard-icon">📱</div>
+      <div class="ncard-body"><strong>短影片限商案</strong>短影片目前僅接受商案類型或特別企劃。</div>
+    </div>
+    <div class="ncard fu">
+      <div class="ncard-num">06</div><div class="ncard-icon">🎵</div>
+      <div class="ncard-body">
+        <strong>音樂 ／ 字體 ／ 素材版權</strong>
+        <div style="margin-top:.75rem;font-size:14px;line-height:2;color:var(--muted)">
+          <div style="margin-bottom:.6rem"><strong style="color:var(--charcoal)">音樂</strong>｜無授權音樂庫使用 YT 無版權音樂庫。有購買授權庫（Epidemic Sound / Artlist 等）請告知。特殊需求另計 +$500–$3,000。</div>
+          <div><strong style="color:var(--charcoal)">字體</strong>｜無商用字體版權使用免費商用字體。有購買（華康、文鼎等）請提供字體名稱。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="sec" style="background:var(--cream);border-bottom:1px solid var(--divider)">
+  <div class="sec-hd fu">
+    <span class="sec-num">06</span>
+    <h2 class="sec-ttl">剪輯方案報價</h2>
+    <span class="sec-sub">Pricing Plans</span>
+  </div>
+
+  <!-- A: embed LEFT, info RIGHT -->
+  <div class="plan-row fu">
+    <div class="plan-embed">
+      <div class="pembed-hd"><div class="pembed-hd-ttl">A 方案 · 作品範例</div></div>
+      <div class="pembed-input-area">
+        <div class="pembed-row">
+          <input class="pinput" type="text" id="in-a" placeholder="貼上 YouTube 網址…" />
+          <button class="padd-btn" onclick="addPV('a')">加入</button>
+        </div>
+        <div class="pembed-hint">支援單支影片或播放清單，按 Enter 快速加入</div>
+      </div>
+      <div class="pvids" id="pv-a"><div class="pvid-empty" id="pe-a">尚未加入範例<br><span style="font-size:12px">貼上網址後點「加入」</span></div></div>
+    </div>
+    <div class="plan-info">
+      <div class="pinfo-hd">
+        <span class="pbadge a">A 方案</span>
+        <div class="pname">字卡 ES 較少</div>
+        <div class="pdesc">白字幕為主，每分鐘 1–3 個 ES 效果（10分鐘影片約 10–30 個）<br>適合乾淨 vlog 風格</div>
+      </div>
+      <div class="pinfo-body">
+        <div class="price-row"><span class="price-lbl">一整支（毛片 1hr 內，成片 10m 內）</span><div><div class="price-val">$6,000 起</div><div class="price-sub">超時 $850/1m</div></div></div>
+        <div class="price-row"><span class="price-lbl">已初剪（僅後製，成片 10m 內）</span><div><div class="price-val">$5,000 起</div><div class="price-sub">超時 $850/1m</div></div></div>
+        <div class="price-row"><span class="price-lbl">工商加收</span><div class="price-val">+ $2,000</div></div>
+        <div class="price-row"><span class="price-lbl">獨立中插工商（1m）</span><div class="price-val">+ $3,500</div></div>
+        <div class="calc-blk">
+          <div class="calc-ttl">計費範例</div>
+          <div class="calc-row"><span>成片 10m</span><span>$6,000</span></div>
+          <div class="calc-row"><span>含工商</span><span>+ $2,000</span></div>
+          <div class="calc-tot"><span>合計</span><strong>$8,000</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B -->
+  <div class="plan-row fu">
+    <div class="plan-embed">
+      <div class="pembed-hd"><div class="pembed-hd-ttl">B 方案 · 作品範例</div></div>
+      <div class="pembed-input-area">
+        <div class="pembed-row">
+          <input class="pinput" type="text" id="in-b" placeholder="貼上 YouTube 網址…" />
+          <button class="padd-btn" onclick="addPV('b')">加入</button>
+        </div>
+        <div class="pembed-hint">支援單支影片或播放清單，按 Enter 快速加入</div>
+      </div>
+      <div class="pvids" id="pv-b"><div class="pvid-empty" id="pe-b">尚未加入範例<br><span style="font-size:12px">貼上網址後點「加入」</span></div></div>
+    </div>
+    <div class="plan-info">
+      <div class="pinfo-hd">
+        <span class="pbadge b">B 方案</span>
+        <div class="pname">字卡 ES 中等</div>
+        <div class="pdesc">每分鐘 3–6 個 ES 效果（10分鐘影片約 30–60 個）</div>
+      </div>
+      <div class="pinfo-body">
+        <div class="price-row"><span class="price-lbl">一整支（毛片 1hr 內，成片 10m 內）</span><div><div class="price-val">$7,500 起</div><div class="price-sub">超時 $850/1m</div></div></div>
+        <div class="price-row"><span class="price-lbl">已初剪（僅後製，成片 10m 內）</span><div><div class="price-val">$6,000 起</div><div class="price-sub">超時 $850/1m</div></div></div>
+        <div class="price-row"><span class="price-lbl">工商加收</span><div class="price-val">+ $2,000</div></div>
+        <div class="price-row"><span class="price-lbl">獨立中插工商（1m）</span><div class="price-val">+ $3,500</div></div>
+        <div class="calc-blk">
+          <div class="calc-ttl">計費範例</div>
+          <div class="calc-row"><span>成片 10m</span><span>$7,500</span></div>
+          <div class="calc-row"><span>含工商</span><span>+ $2,000</span></div>
+          <div class="calc-tot"><span>合計</span><strong>$9,500</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C -->
+  <div class="plan-row fu">
+    <div class="plan-embed">
+      <div class="pembed-hd"><div class="pembed-hd-ttl">C 方案 · 作品範例</div></div>
+      <div class="pembed-input-area">
+        <div class="pembed-row">
+          <input class="pinput" type="text" id="in-c" placeholder="貼上 YouTube 網址…" />
+          <button class="padd-btn" onclick="addPV('c')">加入</button>
+        </div>
+        <div class="pembed-hint">支援單支影片或播放清單，按 Enter 快速加入</div>
+      </div>
+      <div class="pvids" id="pv-c"><div class="pvid-empty" id="pe-c">尚未加入範例<br><span style="font-size:12px">貼上網址後點「加入」</span></div></div>
+    </div>
+    <div class="plan-info">
+      <div class="pinfo-hd">
+        <span class="pbadge c">C 方案</span>
+        <div class="pname">字卡 ES 豐富</div>
+        <div class="pdesc">每分鐘 5–9 個 ES 效果（10分鐘影片約 50–90 個）<br>節目類型或複雜企劃需額外報價</div>
+      </div>
+      <div class="pinfo-body">
+        <div class="price-row"><span class="price-lbl">一整支（毛片 1hr 內，成片 10m 內）</span><div><div class="price-val">$9,500 起</div><div class="price-sub">超時 $850/1m</div></div></div>
+        <div class="price-row"><span class="price-lbl">已初剪（僅後製，成片 10m 內）</span><div><div class="price-val">$8,000 起</div><div class="price-sub">超時 $850/1m</div></div></div>
+        <div class="price-row"><span class="price-lbl">工商加收</span><div class="price-val">+ $2,000</div></div>
+        <div class="price-row"><span class="price-lbl">獨立中插工商（1m）</span><div class="price-val">+ $3,500</div></div>
+        <div class="calc-blk">
+          <div class="calc-ttl">計費範例</div>
+          <div class="calc-row"><span>成片 10m</span><span>$9,500</span></div>
+          <div class="calc-row"><span>含工商</span><span>+ $2,000</span></div>
+          <div class="calc-tot"><span>合計</span><strong>$11,500</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- D -->
+  <div class="plan-row fu">
+    <div class="plan-embed">
+      <div class="pembed-hd"><div class="pembed-hd-ttl">D 方案 · 作品範例</div></div>
+      <div class="pembed-input-area">
+        <div class="pembed-row">
+          <input class="pinput" type="text" id="in-d" placeholder="貼上 YouTube 網址…" />
+          <button class="padd-btn" onclick="addPV('d')">加入</button>
+        </div>
+        <div class="pembed-hint">支援單支影片或播放清單，按 Enter 快速加入</div>
+      </div>
+      <div class="pvids" id="pv-d"><div class="pvid-empty" id="pe-d">尚未加入範例<br><span style="font-size:12px">貼上網址後點「加入」</span></div></div>
+    </div>
+    <div class="plan-info">
+      <div class="pinfo-hd">
+        <span class="pbadge d">D 方案</span>
+        <div class="pname">工商短影片 ／ 直式短影片</div>
+        <div class="pdesc">Reels 目前僅接商案類型</div>
+      </div>
+      <div class="pinfo-body">
+        <div class="price-row"><span class="price-lbl">橫式中插（1m – 3m）</span><div><div class="price-val">$3,500 – $5,000</div><div class="price-sub">需額外確認報價</div></div></div>
+        <div class="price-row"><span class="price-lbl">直式 Reels 商業（1m）</span><div><div class="price-val">$2,500 – $3,500</div><div class="price-sub">0.5m 以 1m 計算</div></div></div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- SCHEDULE + BILLING SIDE BY SIDE -->
+<section id="schedule-billing" class="sec" style="background:var(--warm-white);border-bottom:1px solid var(--divider)">
+  <div class="sec-hd fu">
+    <span class="sec-num">05</span>
+    <h2 class="sec-ttl">剪輯階段 · 時程 · 計費說明</h2>
+    <span class="sec-sub">Timeline &amp; Billing</span>
+  </div>
+  <div class="sched-grid">
+    <!-- col 1: stages -->
+    <div class="fu">
+      <div class="sched-block-title">剪輯階段</div>
+      <table class="stage-tbl">
+        <thead><tr><th>階段</th><th>說明</th></tr></thead>
+        <tbody>
+          <tr><td>初剪 / 順剪</td><td>確認段落是否 OK</td></tr>
+          <tr><td>V1（後製）</td><td>小白字、效果字、ES、音效、音樂</td></tr>
+          <tr><td>V2 – V3</td><td>修改版本（共 3 次修改）</td></tr>
+          <tr><td>FINAL</td><td>完成可上片</td></tr>
+        </tbody>
+      </table>
+      <div class="snote">總修改次數：<strong>3 次</strong><br>超過 3 次將視幅度斟酌收費，修改點過多收費 $500 起</div>
+    </div>
+    <!-- col 2: timeline -->
+    <div class="fu">
+      <div class="sched-block-title">工作時程</div>
+      <table class="stage-tbl">
+        <thead><tr><th>類型</th><th>工作天</th></tr></thead>
+        <tbody>
+          <tr><td>一整支（10m）</td><td>10–14 天<br><span class="sbadge">少於 10 天算加急</span></td></tr>
+          <tr><td>已初剪（10m）</td><td>7–12 天<br><span class="sbadge">少於 7 天算加急</span></td></tr>
+          <tr><td>加急費用</td><td style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--blush)">$1,500 / 天</td></tr>
+        </tbody>
+      </table>
+      <div class="snote">標準為 <strong>2 週</strong>的工作天。<br>會先與您確認 final 日期，確認有檔期後提供排程。</div>
+    </div>
+    <!-- col 3: billing rule -->
+    <div class="fu">
+      <div class="sched-block-title">計費規則</div>
+      <div class="billing-blk">
+        V1 版交付後，進入修改階段，<strong>無論影片長度變短或變長，最終費用均以最長版本時長計費。</strong>
+        <div class="billing-ex">
+          📌 V1 = 20分 → V2 = 15分<br>
+          <strong>→ 以 20 分鐘計費</strong><br><br>
+          📌 V1 = 20分 → V2 = 25分<br>
+          <strong>→ 以 25 分鐘計費</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- EXTRAS -->
+<section id="extras" class="sec" style="background:var(--cream);border-bottom:1px solid var(--divider)">
+  <div class="sec-hd fu">
+    <span class="sec-num">07</span>
+    <h2 class="sec-ttl">特殊需求 ／ 其他服務</h2>
+    <span class="sec-sub">Add-ons</span>
+  </div>
+  <table class="extras-tbl fu">
+    <thead><tr><th>項目</th><th>價格</th></tr></thead>
+    <tbody>
+      <tr><td>毛片超過 0.5hr</td><td>$500 / 0.5hr</td></tr>
+      <tr><td>多機位</td><td>$500 / 機</td></tr>
+      <tr><td>美術視覺（ES / 特殊包框 / 底圖 / 視覺圖）</td><td>$1,500 – $3,000</td></tr>
+      <tr><td>聲音降噪處理</td><td>$1,000</td></tr>
+      <tr><td>商用影片、音樂素材（Envato 含商用授權）</td><td>$1,000 – $3,000</td></tr>
+      <tr><td>封面圖製作（不含文案，可修改 3 次）</td><td>$500 – $800 / 張</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="ceyebrow">Contact</p>
+  <h2 class="ctitle">準備好了嗎？<br>讓我們<em>合作</em>吧</h2>
+  <p class="csub">歡迎提供影片交件日期，確認檔期後安排委託</p>
+  <div class="clinks">
+    <a href="https://www.youtube.com/@yufang149" target="_blank" class="clink pri">YouTube 作品集 →</a>
+    <a href="https://a88981.wixsite.com/website-1/as-seen-on" target="_blank" class="clink sec">設計作品集 →</a>
+  </div>
+  <div class="lineid">LINE : <span>zhongxiaowan</span></div>
+</section>
+
+<footer>
+  <span>© 2026 小玩剪輯服務 · All rights reserved</span>
+  <span style="font-style:italic">禁止剽竊此報價資訊與格式</span>
+</footer>
+
+<script>
+// Scroll animation
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e,i) => {
+    if (e.isIntersecting) { setTimeout(() => e.target.classList.add('vis'), i*70); obs.unobserve(e.target); }
+  });
+}, { threshold: 0.06 });
+document.querySelectorAll('.fu').forEach(el => obs.observe(el));
+
+// Tab switcher (shared for plan + edit sections)
+function switchTab(section, key) {
+  const tabsEl = document.getElementById(section + '-tabs');
+  const playersEl = document.getElementById(section + '-players');
+  tabsEl.querySelectorAll('.ctab').forEach(b => b.classList.remove('active'));
+  playersEl.querySelectorAll('.port-player').forEach(p => p.classList.remove('active'));
+  tabsEl.querySelector('[data-' + section + '="' + key + '"]').classList.add('active');
+  playersEl.querySelector('[data-' + section + '="' + key + '"]').classList.add('active');
+}
+
+// YouTube URL parser
+function parseYT(url) {
+  url = url.trim();
+  const pl = url.match(/[?&]list=([A-Za-z0-9_-]+)/);
+  const vid = url.match(/(?:youtu\.be\/|[?&]v=|\/embed\/)([A-Za-z0-9_-]{11})/);
+  if (pl) return { src: `https://www.youtube-nocookie.com/embed/videoseries?list=${pl[1]}${vid?'&v='+vid[1]:''}`, label:'播放清單' };
+  if (vid) return { src: `https://www.youtube.com/embed/${vid[1]}`, label:'影片' };
+  return null;
+}
+
+// Per-plan video add
+['a','b','c','d'].forEach(p => {
+  document.getElementById('in-'+p).addEventListener('keydown', e => { if(e.key==='Enter') addPV(p); });
+});
+function addPV(p) {
+  const inp = document.getElementById('in-'+p);
+  const r = parseYT(inp.value);
+  if (!r) { inp.style.borderColor='var(--blush)'; setTimeout(()=>inp.style.borderColor='',1200); return; }
+  inp.value=''; inp.style.borderColor='';
+  const emp = document.getElementById('pe-'+p); if(emp) emp.remove();
+  const id='pv'+p+Date.now();
+  const el=document.createElement('div'); el.className='pvid-item'; el.id=id;
+  el.innerHTML=`<button class="pvid-rm" onclick="rmPV('${p}','${id}')">✕</button><div class="pvid-wrap"><iframe src="${r.src}" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture"></iframe></div>`;
+  document.getElementById('pv-'+p).appendChild(el);
+}
+function rmPV(p,id) {
+  const el=document.getElementById(id); if(el) el.remove();
+  const list=document.getElementById('pv-'+p);
+  if(list && !list.children.length) list.innerHTML=`<div class="pvid-empty" id="pe-${p}">尚未加入範例<br><span style="font-size:12px">貼上網址後點「加入」</span></div>`;
+}
+</script>
+</body>
+</html>
