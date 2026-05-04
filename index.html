@@ -24,11 +24,18 @@
 html { scroll-behavior: smooth; }
 body {
   font-family: 'Noto Sans TC', sans-serif;
-  background: var(--cream);
+  background: #EDEBE6;
   color: var(--soft-black);
   font-weight: 300;
   line-height: 1.85;
   font-size: 17px;
+}
+
+#site-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--cream);
+  box-shadow: 0 0 60px rgba(44,40,37,0.10);
 }
 
 /* ── HEADER ── */
@@ -383,7 +390,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
 <section class="hero">
   <div class="fu">
     <p class="hero-eyebrow">Freelance Video Editor · 2026</p>
-    <h1 class="hero-title">讓畫面<br>說<em>故事</em></h1>
+    <h1 class="hero-title">小<em>玩</em><br>剪輯服務</h1>
     <p class="hero-desc">五年以上 YouTube 頻道後製經驗，精通影片剪輯、企劃與視覺設計，與多位百萬 YouTuber 深度合作。</p>
     <a href="#pricing" class="hero-cta">查看報價方案 ↓</a>
   </div>
@@ -394,7 +401,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
     </div>
     <div class="hcard">
       <div class="hcard-lbl">合作創作者（部分）</div>
-      <div class="hcard-val" style="font-size:14px;line-height:2">Joeman · 阿滴 · The DoDo Men · VW<br>一隻阿圓 · 阿部瑪利亞 · 泱泱<br>貝莉莓 · LUCY · 米鹿 等</div>
+      <div class="hcard-val" style="font-size:13px;line-height:1.9;letter-spacing:.02em">Joeman · 阿滴 · The DoDo Men · VW · 一隻阿圓 · 阿部瑪利亞 · 泱泱 · 貝莉莓 · LUCY · 米鹿 等</div>
     </div>
     <div class="hcard">
       <div class="hcard-lbl">專長技能</div>
@@ -415,7 +422,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
   </div>
   <div class="about-grid">
     <div class="fu">
-      <p class="about-bio">我是<strong>小玩</strong>，一名 Freelancer，專注於 YouTube 頻道的後製剪輯與視覺呈現。<br><br>從廣告公司的副理，到百萬頻道的剪輯師，累積了橫跨品牌廣告、娛樂內容與創作者經濟的完整視野。<br><br>深信每一段素材都有值得被講述的故事，細膩的剪輯節奏與視覺語言，是讓頻道脫穎而出的關鍵。</p>
+      <p class="about-bio">我是<strong>小玩</strong>，一名 Freelancer，專注於 YouTube 頻道的後製剪輯與視覺呈現。<br><br>曾任 YouTube 頻道阿部瑪利亞製作人，有豐富的 YouTube 企劃／剪輯經驗。</p>
     </div>
     <div class="tline fu">
       <div class="titem">
@@ -441,14 +448,9 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
     <h2 class="sec-ttl">YouTube 企劃作品集</h2>
     <span class="sec-sub">Planning Portfolio</span>
   </div>
-  <a class="pl-single-wrap fu" href="https://www.youtube.com/playlist?list=PLeKS9OJYXVwiDFHf_TnR3AY4y_7D1T3fr" target="_blank" rel="noopener">
-    <div class="pl-single-thumb">🎬</div>
-    <div class="pl-single-info">
-      <div class="pl-name">YouTube 企劃作品集播放清單</div>
-      <div class="pl-meta">點擊前往 YouTube 觀看完整播放清單</div>
-      <span class="pl-open-btn">前往觀看 →</span>
-    </div>
-  </a>
+  <div class="player-iframe-wrap fu">
+    <iframe src="https://www.youtube.com/embed/videoseries?si=Z2Ehla8OLv8BUuRN&list=PLeKS9OJYXVwiDFHf_TnR3AY4y_7D1T3fr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
 </section>
 
 <!-- PORTFOLIO: EDIT -->
@@ -639,32 +641,38 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
   </div>
   <div class="notice-grid">
     <div class="ncard fu">
-      <div class="ncard-num">01</div><div class="ncard-icon">💡</div>
-      <div class="ncard-body"><strong>報價依複雜度而異</strong>報價依毛片數量、ES效果呈現、複雜度的多寡而不同，可參考A〜D方案，或提供頻道範例以供報價。</div>
-    </div>
-    <div class="ncard fu">
-      <div class="ncard-num">02</div><div class="ncard-icon">🚫</div>
-      <div class="ncard-body"><strong>不提供專案檔</strong>影片完成後不提供專案檔（加價亦不提供）。結案上片後毛片及影片一律刪除。<p class="nwarn">加價也不提供，非常抱歉！</p></div>
-    </div>
-    <div class="ncard fu">
-      <div class="ncard-num">03</div><div class="ncard-icon">⏱</div>
-      <div class="ncard-body"><strong>不提供試剪、純順剪</strong>因檔期忙碌，目前不接受試剪與純順剪委託。</div>
-    </div>
-    <div class="ncard fu">
-      <div class="ncard-num">04</div><div class="ncard-icon">📅</div>
+      <div class="ncard-num">01</div><div class="ncard-icon">📅</div>
       <div class="ncard-body"><strong>長期合作已滿</strong>目前長期合作名額已滿，僅接視空檔委託。請直接提供交件日期，視檔期安排承接。</div>
     </div>
     <div class="ncard fu">
+      <div class="ncard-num">02</div><div class="ncard-icon">💡</div>
+      <div class="ncard-body"><strong>報價依複雜度而異</strong>報價依毛片數量、ES效果呈現、複雜度的多寡而不同，可參考A〜D方案，或提供頻道範例以供報價。</div>
+    </div>
+    <div class="ncard fu">
+      <div class="ncard-num">03</div><div class="ncard-icon">🚫</div>
+      <div class="ncard-body"><strong>不提供專案檔</strong>影片完成後不提供專案檔（加價亦不提供）。結案上片後毛片及影片一律刪除。<p class="nwarn">加價也不提供，非常抱歉！</p></div>
+    </div>
+    <div class="ncard fu">
+      <div class="ncard-num">04</div><div class="ncard-icon">⏱</div>
+      <div class="ncard-body"><strong>不提供試剪、純順剪</strong>因檔期忙碌，目前不接受試剪與純順剪委託。</div>
+    </div>
+    <div class="ncard fu">
       <div class="ncard-num">05</div><div class="ncard-icon">📱</div>
-      <div class="ncard-body"><strong>短影片限商案</strong>短影片目前僅接受商案類型或特別企劃。</div>
+      <div class="ncard-body"><strong>短影片限商案</strong>短影片目前僅接受商案類型或特別企劃。目前不承接藏鏡人類型的短影片。</div>
     </div>
     <div class="ncard fu">
       <div class="ncard-num">06</div><div class="ncard-icon">🎵</div>
       <div class="ncard-body">
         <strong>音樂 ／ 字體 ／ 素材版權</strong>
         <div style="margin-top:.75rem;font-size:14px;line-height:2;color:var(--muted)">
-          <div style="margin-bottom:.6rem"><strong style="color:var(--charcoal)">音樂</strong>｜無授權音樂庫使用 YT 無版權音樂庫。有購買授權庫（Epidemic Sound / Artlist 等）請告知。特殊需求另計 +$500–$3,000。</div>
-          <div><strong style="color:var(--charcoal)">字體</strong>｜無商用字體版權使用免費商用字體。有購買（華康、文鼎等）請提供字體名稱。</div>
+          <div style="margin-bottom:.85rem">
+            <strong style="color:var(--charcoal);display:block;margin-bottom:.2rem">🎵 音樂版權</strong>
+            以創作者頻道購買授權的音樂庫使用為主（Epidemic Sound / Artlist）。無授權音樂庫將使用 YT 無版權音樂庫。若有特殊音樂要求，使用商用素材庫（Envato）需額外 +$500–$3,000。
+          </div>
+          <div>
+            <strong style="color:var(--charcoal);display:block;margin-bottom:.2rem">🔤 字體版權</strong>
+            以免費商用字體及我有購買的商用字體使用為主。若您有購買商用字體版權，請告知字體名稱或提供字體（例如金萱體）。若不介意使用商用字體也可告知，畫面較豐富，但無版權請斟酌。
+          </div>
         </div>
       </div>
     </div>
@@ -897,6 +905,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
   <span>© 2026 小玩剪輯服務 · All rights reserved</span>
   <span style="font-style:italic">禁止剽竊此報價資訊與格式</span>
 </footer>
+</div>
 
 <script>
 // Scroll animation
