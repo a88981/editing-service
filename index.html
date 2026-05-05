@@ -262,6 +262,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
   .notice-grid { grid-template-columns:1fr; }
   .sched-grid { grid-template-columns:1fr; }
   nav { display:none; }
+  .hamburger { display:flex; }
   .sec-sub { display:none; }
 }
 
@@ -380,6 +381,23 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
 .yt-thumb-duration { position:absolute; bottom:5px; right:6px; background:rgba(0,0,0,.78); color:#fff; font-size:11px; padding:1px 5px; border-radius:2px; letter-spacing:.03em; }
 .yt-thumb-title { font-size:13px; color:var(--soft-black); line-height:1.5; margin-top:.5rem; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
 .yt-thumb-views { font-size:11px; color:var(--light-muted); margin-top:.25rem; }
+
+.hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; background:none; border:none; }
+.hamburger span { display:block; width:22px; height:2px; background:var(--charcoal); border-radius:1px; transition:all .25s; }
+.mobile-menu {
+  display:none;
+  position:fixed; top:66px; left:0; right:0;
+  background:var(--warm-white);
+  border-bottom:1px solid var(--divider);
+  padding:1rem clamp(1.5rem,5vw,4rem);
+  flex-direction:column;
+  gap:.75rem;
+  z-index:99;
+}
+.mobile-menu.open { display:flex; }
+.mobile-menu a { font-size:15px; color:var(--muted); text-decoration:none; letter-spacing:.07em; padding:.4rem 0; border-bottom:1px solid var(--divider); }
+.mobile-menu a:last-child { border-bottom:none; }
+.mobile-menu a:hover { color:var(--charcoal); }
 </style>
 </head>
 <body>
@@ -399,7 +417,20 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
     <a href="#contact">聯絡</a>
   </nav>
   </nav>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="選單">
+    <span></span><span></span><span></span>
+  </button>
 </header>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#page" onclick="closeMenu()">首頁</a>
+  <a href="#about" onclick="closeMenu()">關於</a>
+  <a href="#portfolio-plan" onclick="closeMenu()">作品</a>
+  <a href="#notice" onclick="closeMenu()">須知</a>
+  <a href="#schedule-billing" onclick="closeMenu()">時程</a>
+  <a href="#pricing" onclick="closeMenu()">報價</a>
+  <a href="#extras" onclick="closeMenu()">加購</a>
+  <a href="#contact" onclick="closeMenu()">聯絡</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -984,6 +1015,14 @@ async function buildPlanGallery() {
 buildPlanGallery();
 
 
+
+function toggleMenu() {
+  const menu = document.getElementById('mobile-menu');
+  menu.classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('mobile-menu').classList.remove('open');
+}
 </script>
 </body>
 </html>
