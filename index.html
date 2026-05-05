@@ -258,15 +258,30 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
   .sched-grid { grid-template-columns:1fr 1fr; }
 }
 @media(max-width:768px){
-  .hero, .about-grid, .rights-grid { grid-template-columns:1fr; gap:2.2rem; }
+  .hero, .about-grid, .rights-grid { grid-template-columns:1fr; gap:2rem; }
   .notice-grid { grid-template-columns:1fr; }
   .sched-grid { grid-template-columns:1fr; }
-  nav { display:none; }
-  .hamburger { display:flex; }
+  nav { display:none !important; }
+  .hamburger { display:flex !important; }
   .sec-sub { display:none; }
   .yt-grid { grid-template-columns:repeat(2,1fr) !important; gap:.6rem; }
   .yt-thumb-title { font-size:12px; }
   .yt-thumb-views { font-size:10px; }
+
+  /* 05 時程 - 手機單欄 */
+  .about-grid { grid-template-columns:1fr !important; }
+  #schedule-billing table { font-size:13px; }
+  #schedule-billing table col { width:auto !important; }
+  #schedule-billing td { padding:.6rem 0; font-size:13px; }
+
+  /* 06 報價方案 - 手機單欄 */
+  .plan-row { grid-template-columns:1fr !important; }
+  .plan-embed { border-right:none !important; border-bottom:1px solid var(--divider); }
+  .pvids { max-height:260px; overflow-y:auto; }
+
+  /* 07 加購 */
+  .extras-tbl { font-size:13px; }
+  .extras-tbl td { padding:.7rem 0; }
 }
 
 /* ── PLAYLIST CARDS ── */
