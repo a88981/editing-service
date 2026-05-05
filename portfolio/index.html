@@ -70,6 +70,7 @@ nav a:hover { color:var(--charcoal); }
 .hero-cards { display:flex; flex-direction:column; gap:1.4rem; }
 .hcard { background:var(--cream); border:1px solid var(--divider-strong); padding:1.4rem 1.7rem; }
 .hcard-lbl { font-size:11px; letter-spacing:.18em; color:var(--light-muted); text-transform:uppercase; margin-bottom:.6rem; }
+.hcard-body { font-size:13px; line-height:1.75; word-break:keep-all; }
 .hcard-val { font-family:'Noto Serif TC',serif; font-size:15px; color:var(--charcoal); line-height:1.9; }
 .sdot { display:inline-block; width:7px; height:7px; background:var(--blush); border-radius:50%; margin-right:.5rem; vertical-align:middle; animation:pulse 2s ease-in-out infinite; }
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
@@ -257,6 +258,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
   .sched-grid { grid-template-columns:1fr 1fr; }
 }
 @media(max-width:768px){
+  #plans .fu[style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !important; }
   .hero, .about-grid, .rights-grid { grid-template-columns:1fr; gap:2rem; }
   .notice-grid { grid-template-columns:1fr; }
   .sched-grid { grid-template-columns:1fr; }
@@ -265,6 +267,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
   .sec-sub { display:none; }
   .yt-grid { grid-template-columns:repeat(2,1fr) !important; gap:.6rem; }
   .hero-title { font-size:1.8rem !important; }
+  .hcard-body { font-size:12px !important; line-height:1.65 !important; word-break:keep-all; }
   .yt-thumb-title { font-size:12px; }
   .yt-thumb-views { font-size:10px; }
 
@@ -437,6 +440,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
 <header>
   <div class="logo"><em>小玩</em> 作品集</div>
   <nav>
+    <a href="#page">首頁</a>
     <a href="#about">關於</a>
     <a href="#portfolio-plan">企劃作品</a>
     <a href="#portfolio-edit">剪輯作品</a>
@@ -448,6 +452,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
   </button>
 </header>
 <div class="mobile-menu" id="mobile-menu">
+  <a href="#page" onclick="closeMenu()">首頁</a>
   <a href="#about" onclick="closeMenu()">關於</a>
   <a href="#portfolio-plan" onclick="closeMenu()">企劃作品</a>
   <a href="#portfolio-edit" onclick="closeMenu()">剪輯作品</a>
@@ -470,7 +475,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
     </div>
     <div class="hcard">
       <div class="hcard-lbl">已合作創作者</div>
-      <div class="hcard-val" style="font-size:13px;line-height:1.9;letter-spacing:.02em">Joeman · 阿滴 · The DoDo Men · VW · 一隻阿圓 ·<br>痣作人 · 阿部瑪利亞 · 泱泱 · 愛里 · 貝莉莓 · 蘋蘋澎澎 ·<br>Netflix · 黃大謙 · 金針菇 · LUCY · 米鹿 · 丘涵<br>希露弟弟啃雞腿 · 水電爸爸 · 鵝鵝就是鵝鵝 ·<br>等多位 YouTuber…</div>
+      <div class="hcard-val" style="font-size:13px;line-height:1.9;letter-spacing:.02em">Joeman · 阿滴 · The DoDo Men · VW ·<br>一隻阿圓 · 痣作人 · 阿部瑪利亞 · 泱泱 ·<br>愛里 · 貝莉莓 · 蘋蘋澎澎 · Netflix · 黃大謙 ·<br>金針菇 · LUCY · 米鹿 · 丘涵 · 希露弟弟啃雞腿<br>水電爸爸 · 鵝鵝就是鵝鵝 等多位 YouTuber…</div>
     </div>
     <div class="hcard">
       <div class="hcard-lbl">專長技能</div>
@@ -557,7 +562,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
     <h2 class="sec-ttl">剪輯方案</h2>
     <span class="sec-sub">Editing Plans</span>
   </div>
-  <div class="fu" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
+  <div class="fu" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
 
     <div style="background:var(--warm-white);border:1px solid var(--divider-strong);display:flex;flex-direction:column">
       <div style="position:relative;width:100%;padding-bottom:56.25%">
