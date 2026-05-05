@@ -50,7 +50,7 @@ header {
   box-sizing: border-box;
 }
 .logo { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:23px; letter-spacing:0.08em; color:var(--charcoal); }
-.logo em { font-style:italic; color:var(--blush); }
+.logo em { font-style:normal; color:var(--blush); }
 nav { display:flex; gap:1.8rem; font-size:13px; letter-spacing:0.07em; color:var(--muted); }
 nav a { text-decoration:none; color:inherit; transition:color .2s; }
 nav a:hover { color:var(--charcoal); }
@@ -72,7 +72,7 @@ nav a:hover { color:var(--charcoal); }
 .hcard { background:var(--cream); border:1px solid var(--divider-strong); padding:1.4rem 1.7rem; }
 .hcard-lbl { font-size:11px; letter-spacing:.18em; color:var(--light-muted); text-transform:uppercase; margin-bottom:.6rem; }
 .hcard-val { font-family:'Noto Serif TC',serif; font-size:15px; color:var(--charcoal); line-height:1.9; }
-.sdot { display:inline-block; width:7px; height:7px; background:var(--sage); border-radius:50%; margin-right:.5rem; vertical-align:middle; animation:pulse 2s ease-in-out infinite; }
+.sdot { display:inline-block; width:7px; height:7px; background:var(--blush); border-radius:50%; margin-right:.5rem; vertical-align:middle; animation:pulse 2s ease-in-out infinite; }
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 .tags { display:flex; flex-wrap:wrap; gap:.45rem; margin-top:.5rem; }
 .tag { font-size:12px; padding:.3rem .85rem; background:rgba(196,151,138,.12); color:var(--blush); border:1px solid rgba(196,151,138,.25); letter-spacing:.06em; }
@@ -390,12 +390,12 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
   <div class="logo"><em>小玩</em> 剪輯服務</div>
   <nav>
     <a href="#about">關於</a>
-    <a href="#portfolio-plan">企劃作品</a>
-    <a href="#portfolio-edit">剪輯作品</a>
+    <a href="#portfolio-plan">作品</a>
     <a href="#notice">須知</a>
     <a href="#schedule-billing">時程</a>
     <a href="#pricing">報價</a>
     <a href="#extras">加購</a>
+    <a href="#contact">聯絡</a>
   </nav>
   </nav>
 </header>
@@ -404,9 +404,9 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
 <section class="hero">
   <div class="fu">
     <p class="hero-eyebrow">Freelance Video Editor · 2026</p>
-    <h1 class="hero-title"><em>小玩</em><br>剪輯服務</h1>
+    <h1 class="hero-title"><span style="color:var(--blush)">小玩</span><br>剪輯服務</h1>
     <p class="hero-desc">五年以上 YouTube 頻道後製經驗，<br>精通影片剪輯、企劃與視覺設計，<br>與多位百萬 YouTuber 深度合作。</p>
-    <a href="#pricing" class="hero-cta">查看報價方案 ↓</a>
+    <a href="#notice" class="hero-cta">查看報價方案 ↓</a>
   </div>
   <div class="hero-cards fu">
     <div class="hcard">
@@ -770,7 +770,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
 <!-- CONTACT -->
 <section id="contact">
   <p class="ceyebrow">Contact</p>
-  <h2 class="ctitle">準備好了嗎？<br>讓我們合作吧</h2>
+  <h2 class="ctitle">準備好了嗎？<br>讓我們<span style="color:var(--blush)">合作</span>吧</h2>
   <p class="csub">歡迎提供影片交件日期，確認檔期後安排委託</p>
   <div class="clinks">
     <a href="https://www.youtube.com/@yufang149" target="_blank" class="clink pri">YouTube 作品集 →</a>
