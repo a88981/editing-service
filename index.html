@@ -203,7 +203,7 @@ nav a:hover { color:var(--charcoal); }
 .sched-block-title { font-size:14px; letter-spacing:.08em; color:var(--charcoal); font-weight:400; margin-bottom:1.1rem; padding-bottom:.65rem; border-bottom:1px solid var(--divider); font-family:'Noto Serif TC',serif; }
 
 .stage-tbl th { font-size:11px; letter-spacing:.12em; color:var(--light-muted); text-align:left; padding:0 0 .65rem; border-bottom:1px solid var(--divider-strong); font-weight:400; text-transform:uppercase; }
-.stage-tbl td { padding:.75rem 0; border-bottom:1px solid var(--divider); font-size:14px; vertical-align:top; }
+.stage-tbl td { padding:.75rem 0; border-bottom:1px solid var(--divider); font-size:14px; vertical-align:middle; }
 .stage-tbl td:first-child { color:var(--muted); width:100px; font-size:13px; }
 .sbadge { display:inline-block; font-size:10px; padding:.18rem .5rem; background:rgba(192,57,43,.1); color:#C0392B; border:1px solid rgba(192,57,43,.25); margin-top:.25rem; white-space:nowrap; }
 .snote { background:var(--warm-white); border-left:2px solid var(--blush); padding:.95rem 1.2rem; margin-top:1.3rem; font-size:13px; color:var(--muted); line-height:2; }
@@ -560,7 +560,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
       <div class="nrow-icon">📅</div>
       <div class="nrow-body">
         <div class="nrow-title">長期合作已滿</div>
-        <div class="nrow-desc">目前長期合作名額已滿，僅接視空檔委託。請直接提供交件日期，視檔期安排承接。</div>
+        <div class="nrow-desc">目前長期合作名額已滿，僅接視空檔委託。<span style="color:#B5756A">請直接提供交件日期，視檔期安排承接。</span></div>
       </div>
     </div>
     <div class="nrow fu">
@@ -634,7 +634,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
         <tr><td>FINAL</td><td>完成可上片</td></tr>
       </tbody>
     </table>
-    <div class="snote" style="margin-top:0;margin-bottom:1.5rem">總修改次數：<strong>3 次</strong><br>超過 3 次將視幅度斟酌收費，<br>修改點過多收費 $500 起</div>
+    <div class="snote" style="margin-top:0;margin-bottom:1.5rem">總修改次數：<strong style="color:#B5756A">3 次</strong><br>超過 3 次將視幅度斟酌收費，<br>修改點過多收費 $500 起</div>
     <div class="sched-block-title" style="margin-bottom:.75rem">工作時程</div>
     <table class="stage-tbl" style="margin-bottom:1.5rem">
       <thead><tr><th>類型</th><th>工作天</th></tr></thead>
@@ -644,10 +644,10 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
         <tr><td>加急費用</td><td>$1,500 / 天</td></tr>
       </tbody>
     </table>
-    <div class="snote" style="margin-top:0;margin-bottom:1.5rem">標準為 <strong>2 週</strong>的工作天。<br>會先與您確認 final 日期，<br>確認有檔期後提供排程。</div>
+    <div class="snote" style="margin-top:0;margin-bottom:1.5rem">標準為 <strong style="color:#B5756A">2 週</strong>的工作天。<br>會先與您確認 Final 日期，<br>確認有檔期後提供排程。</div>
     <div class="sched-block-title" style="margin-bottom:.75rem">計費規則</div>
     <div class="billing-blk">
-      V1 版交付後，進入修改階段，<br>無論影片長度變短或變長，<br><strong>最終費用均以最長版本時長計費。</strong>
+      V1 版交付後，進入修改階段，<br>無論影片長度變短或變長，<br><span style="color:#B5756A">最終費用均以最長版本時長計費。</span>
       <div class="billing-ex" style="margin-top:.75rem">
         📌 V1 = 20分 → V2 = 15分<br><strong>→ 以 20 分鐘計費</strong><br><br>
         📌 V1 = 20分 → V2 = 25分<br><strong>→ 以 25 分鐘計費</strong>
@@ -677,24 +677,24 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
         </thead>
         <tbody>
           <tr>
-            <td style="font-size:14px;color:var(--muted);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:top">初剪（順剪）</td>
-            <td style="font-size:15px;color:var(--soft-black);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:top">無B-Roll或換鏡位<br>僅確認段落是否 OK</td>
+            <td style="font-size:14px;color:var(--muted);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:middle">初剪（順剪）</td>
+            <td style="font-size:15px;color:var(--soft-black);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:middle">無B-Roll或換鏡位<br>僅確認段落是否 OK</td>
             <td style="border:none"></td>
-            <td style="font-size:14px;color:var(--muted);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:top">一整支（10m）</td>
-            <td style="font-size:15px;color:var(--soft-black);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:top">10–14 天<br><span class="sbadge">少於 10 天算加急</span></td>
+            <td style="font-size:14px;color:var(--muted);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:middle">一整支（10m）</td>
+            <td style="font-size:15px;color:var(--soft-black);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:middle">10–14 天<br><span class="sbadge">少於 10 天算加急</span></td>
           </tr>
           <tr>
-            <td style="font-size:14px;color:var(--muted);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:top">V1（後製）</td>
-            <td style="font-size:15px;color:var(--soft-black);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:top">小白字、效果字、<br>ES、音效、音樂</td>
+            <td style="font-size:14px;color:var(--muted);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:middle">V1（後製）</td>
+            <td style="font-size:15px;color:var(--soft-black);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:middle">小白字、效果字、<br>ES、音效、音樂</td>
             <td style="border:none"></td>
-            <td style="font-size:14px;color:var(--muted);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:top">僅後製（10m）</td>
-            <td style="font-size:15px;color:var(--soft-black);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:top">7–12 天<br><span class="sbadge">少於 7 天算加急</span></td>
+            <td style="font-size:14px;color:var(--muted);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:middle">僅後製（10m）</td>
+            <td style="font-size:15px;color:var(--soft-black);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:middle">7–12 天<br><span class="sbadge">少於 7 天算加急</span></td>
           </tr>
           <tr>
-            <td style="font-size:14px;color:var(--muted);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:top">V2 – V3</td>
-            <td style="font-size:15px;color:var(--soft-black);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:top">修改版本（共 3 次修改）</td>
+            <td style="font-size:14px;color:var(--muted);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:middle">V2 – V3</td>
+            <td style="font-size:15px;color:var(--soft-black);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:middle">修改版本</td>
             <td style="border:none"></td>
-            <td style="font-size:14px;color:var(--muted);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:top">加急費用</td>
+            <td style="font-size:14px;color:var(--muted);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:middle">加急費用</td>
             <td style="font-size:15px;color:var(--soft-black);padding:.9rem 0;border-bottom:1px solid var(--divider)">$1,500 / 天</td>
           </tr>
           <tr>
@@ -706,8 +706,8 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
         </tbody>
       </table>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1.3rem">
-        <div class="snote" style="margin-top:0">總修改次數：<strong>3 次</strong><br>超過 3 次將視幅度斟酌收費，<br>修改點過多收費 $500 起</div>
-        <div class="snote" style="margin-top:0">標準為 <strong>2 週</strong>的工作天。<br>會先與您確認 final 日期，<br>確認有檔期後提供排程。</div>
+        <div class="snote" style="margin-top:0">總修改次數：<strong style="color:#B5756A">3 次</strong><br>超過 3 次將視幅度斟酌收費，<br>修改點過多收費 $500 起</div>
+        <div class="snote" style="margin-top:0">標準為 <strong style="color:#B5756A">2 週</strong>的工作天。<br>會先與您確認 Final 日期，<br>確認有檔期後提供排程。</div>
       </div>
     </div>
 
@@ -715,7 +715,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
     <div>
       <div class="sched-block-title">計費規則</div>
       <div class="billing-blk">
-        V1 版交付後，進入修改階段，<br>無論影片長度變短或變長，<br><strong>最終費用均以最長版本時長計費。</strong>
+        V1 版交付後，進入修改階段，<br>無論影片長度變短或變長，<br><span style="color:#B5756A">最終費用均以最長版本時長計費。</span>
         <div class="billing-ex" style="margin-top:.75rem">
           📌 V1 = 20分 → V2 = 15分<br>
           <strong>→ 以 20 分鐘計費</strong><br><br>
