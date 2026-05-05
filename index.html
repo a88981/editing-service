@@ -205,7 +205,7 @@ nav a:hover { color:var(--charcoal); }
 .stage-tbl th { font-size:11px; letter-spacing:.12em; color:var(--light-muted); text-align:left; padding:0 0 .65rem; border-bottom:1px solid var(--divider-strong); font-weight:400; text-transform:uppercase; }
 .stage-tbl td { padding:.75rem 0; border-bottom:1px solid var(--divider); font-size:14px; vertical-align:top; }
 .stage-tbl td:first-child { color:var(--muted); width:100px; font-size:13px; }
-.sbadge { display:inline-block; font-size:10px; padding:.18rem .5rem; background:rgba(192,57,43,.1); color:#C0392B; border:1px solid rgba(192,57,43,.25); margin-top:.25rem; }
+.sbadge { display:inline-block; font-size:10px; padding:.18rem .5rem; background:rgba(192,57,43,.1); color:#C0392B; border:1px solid rgba(192,57,43,.25); margin-top:.25rem; white-space:nowrap; }
 .snote { background:var(--warm-white); border-left:2px solid var(--blush); padding:.95rem 1.2rem; margin-top:1.3rem; font-size:13px; color:var(--muted); line-height:2; }
 
 .billing-blk { font-size:14px; color:var(--muted); line-height:2.1; }
@@ -269,8 +269,8 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
   .yt-thumb-views { font-size:10px; }
 
   /* 05 時程 - 隱藏合併表格，改為堆疊式 */
-  #schedule-billing .sched-merged-table { display:none; }
-  #schedule-billing .sched-mobile { display:block !important; }
+  .sched-merged-table { display:none !important; }
+  .sched-mobile { display:block !important; }
 
   /* 06 報價方案 - 手機單欄 */
   .plan-row { grid-template-columns:1fr !important; }
@@ -281,6 +281,14 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
   .extras-tbl { table-layout:fixed; font-size:14px; }
   .extras-tbl td:first-child { width:60%; }
   .extras-tbl td:last-child { width:40%; font-size:14px; }
+
+  /* 06 方案文字縮小 */
+  .pname { font-size:16px; }
+  .pdesc { font-size:13px; }
+  .price-lbl { font-size:13px; }
+  .price-val { font-size:15px; }
+  .pinfo-hd { padding:1rem 1.25rem .75rem; }
+  .pinfo-body { padding:.75rem 1.25rem 1.25rem; }
 }
 
 /* ── PLAYLIST CARDS ── */
@@ -415,6 +423,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
 .mobile-menu a { font-size:15px; color:var(--muted); text-decoration:none; letter-spacing:.07em; padding:.4rem 0; border-bottom:1px solid var(--divider); }
 .mobile-menu a:last-child { border-bottom:none; }
 .mobile-menu a:hover { color:var(--charcoal); }
+.sched-mobile { display:none; }
 </style>
 </head>
 <body>
@@ -614,7 +623,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
     <span class="sec-sub">Timeline &amp; Billing</span>
   </div>
   <!-- 手機版時程 -->
-  <div class="sched-mobile" style="display:none">
+  <div class="sched-mobile">
     <div class="sched-block-title" style="margin-bottom:.75rem">剪輯階段</div>
     <table class="stage-tbl" style="margin-bottom:1.5rem">
       <thead><tr><th>階段</th><th>說明</th></tr></thead>
@@ -630,8 +639,8 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
     <table class="stage-tbl" style="margin-bottom:1.5rem">
       <thead><tr><th>類型</th><th>工作天</th></tr></thead>
       <tbody>
-        <tr><td>一整支（10m）</td><td>10–14 天<br><span class="sbadge">少於 10 天算加急</span></td></tr>
-        <tr><td>僅後製（10m）</td><td>7–12 天<br><span class="sbadge">少於 7 天算加急</span></td></tr>
+        <tr><td>一整支（10m）</td><td>10–14 天 <span class="sbadge">少於 10 天算加急</span></td></tr>
+        <tr><td>僅後製（10m）</td><td>7–12 天 <span class="sbadge">少於 7 天算加急</span></td></tr>
         <tr><td>加急費用</td><td>$1,500 / 天</td></tr>
       </tbody>
     </table>
