@@ -559,6 +559,24 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
   </div>
 </section>
 
+
+<!-- COVERS -->
+<section id="covers" class="sec" style="background:var(--warm-white);border-bottom:1px solid var(--divider)">
+  <div class="sec-hd fu">
+    <span class="sec-num">04</span>
+    <h2 class="sec-ttl">封面圖設計</h2>
+    <span class="sec-sub">Thumbnail Design</span>
+  </div>
+  <div class="fu">
+    <div id="cover-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem"></div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:1.5rem;margin-top:1.25rem">
+      <div id="cv-prev" onclick="cvGo(-1)" style="width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;border-radius:50%;border:1px solid var(--divider-strong);background:var(--warm-white);font-size:14px;color:var(--muted);transition:background .15s">←</div>
+      <div id="cv-dots" style="display:flex;gap:.5rem;align-items:center"></div>
+      <div id="cv-next" onclick="cvGo(1)" style="width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;border-radius:50%;border:1px solid var(--divider-strong);background:var(--warm-white);font-size:14px;color:var(--muted);transition:background .15s">→</div>
+    </div>
+  </div>
+</section>
+
 <!-- NOTICE -->
 <section id="notice" class="sec" style="background:var(--warm-white);border-bottom:1px solid var(--divider)">
   <div class="sec-hd fu">
@@ -874,23 +892,6 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
 </section>
 
 <!-- CONTACT -->
-
-<!-- COVERS -->
-<section id="covers" class="sec" style="background:var(--warm-white);border-bottom:1px solid var(--divider)">
-  <div class="sec-hd fu">
-    <span class="sec-num">08</span>
-    <h2 class="sec-ttl">封面圖設計</h2>
-    <span class="sec-sub">Thumbnail Design</span>
-  </div>
-  <div class="fu">
-    <div id="cover-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem"></div>
-    <div style="display:flex;align-items:center;justify-content:center;gap:1.5rem;margin-top:1.25rem">
-      <div id="cv-prev" onclick="cvGo(-1)" style="width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;border-radius:50%;border:1px solid var(--divider-strong);background:var(--warm-white);font-size:14px;color:var(--muted);transition:background .15s">←</div>
-      <div id="cv-dots" style="display:flex;gap:.5rem;align-items:center"></div>
-      <div id="cv-next" onclick="cvGo(1)" style="width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;border-radius:50%;border:1px solid var(--divider-strong);background:var(--warm-white);font-size:14px;color:var(--muted);transition:background .15s">→</div>
-    </div>
-  </div>
-</section>
 
 <section id="contact">
   <p class="ceyebrow">Contact</p>
