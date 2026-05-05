@@ -444,6 +444,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
     <a href="#about">關於</a>
     <a href="#portfolio-plan">企劃作品</a>
     <a href="#portfolio-edit">剪輯作品</a>
+    <a href="#covers">封面圖</a>
     <a href="#plans">方案</a>
     <a href="#contact">聯絡</a>
   </nav>
@@ -456,6 +457,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
   <a href="#about" onclick="closeMenu()">關於</a>
   <a href="#portfolio-plan" onclick="closeMenu()">企劃作品</a>
   <a href="#portfolio-edit" onclick="closeMenu()">剪輯作品</a>
+  <a href="#covers" onclick="closeMenu()">封面圖</a>
   <a href="#plans" onclick="closeMenu()">方案</a>
   <a href="#contact" onclick="closeMenu()">聯絡</a>
 </div>
@@ -555,10 +557,27 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
 
 
 
+<!-- COVERS -->
+<section id="covers" class="sec" style="background:var(--warm-white);border-bottom:1px solid var(--divider)">
+  <div class="sec-hd fu">
+    <span class="sec-num">05</span>
+    <h2 class="sec-ttl">封面圖設計</h2>
+    <span class="sec-sub">Thumbnail Design</span>
+  </div>
+  <div class="fu">
+    <div id="cover-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem"></div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:1.5rem;margin-top:1.25rem">
+      <div id="cv-prev" onclick="cvGo(-1)" style="width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;border-radius:50%;border:1px solid var(--divider-strong);background:var(--warm-white);font-size:14px;color:var(--muted);transition:background .15s">←</div>
+      <div id="cv-dots" style="display:flex;gap:.5rem;align-items:center"></div>
+      <div id="cv-next" onclick="cvGo(1)" style="width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;border-radius:50%;border:1px solid var(--divider-strong);background:var(--warm-white);font-size:14px;color:var(--muted);transition:background .15s">→</div>
+    </div>
+  </div>
+</section>
+
 <!-- PLANS -->
 <section id="plans" class="sec" style="background:var(--cream);border-bottom:1px solid var(--divider)">
   <div class="sec-hd fu">
-    <span class="sec-num">04</span>
+    <span class="sec-num">06</span>
     <h2 class="sec-ttl">剪輯方案</h2>
     <span class="sec-sub">Editing Plans</span>
   </div>
@@ -825,6 +844,48 @@ function toggleMenu() {
 function closeMenu() {
   document.getElementById('mobile-menu').classList.remove('open');
 }
+
+
+// ── Cover Gallery ──
+const CV_IMGS = ['cover-01.jpg','cover-02.jpg','cover-03.jpg','cover-04.jpg','cover-05.jpg','cover-06.jpg','cover-07.jpg','cover-08.jpg','cover-09.jpg','cover-10.jpg','cover-11.jpg','cover-12.jpg','cover-13.jpg','cover-14.jpg','cover-15.jpg','cover-16.jpg','cover-17.jpg','cover-18.jpg','cover-19.jpg','cover-20.jpg','cover-21.jpg','cover-22.jpg','cover-23.jpg','cover-24.jpg'];
+const CV_PER = 6;
+const CV_PAGES = Math.ceil(CV_IMGS.length / CV_PER);
+let cvPage = 0;
+
+function cvRender() {
+  const grid = document.getElementById('cover-grid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  const start = cvPage * CV_PER;
+  CV_IMGS.slice(start, start + CV_PER).forEach(src => {
+    const a = document.createElement('a');
+    a.href = src; a.target = '_blank';
+    a.style = 'display:block;overflow:hidden;border:1px solid var(--divider)';
+    const img = document.createElement('img');
+    img.src = src; img.alt = ''; img.loading = 'lazy';
+    img.style = 'width:100%;aspect-ratio:16/9;object-fit:cover;display:block;transition:opacity .2s';
+    img.onerror = () => { img.style.display='none'; };
+    a.appendChild(img);
+    grid.appendChild(a);
+  });
+  const dots = document.getElementById('cv-dots');
+  dots.innerHTML = '';
+  for (let i = 0; i < CV_PAGES; i++) {
+    const d = document.createElement('div');
+    d.style = `height:6px;border-radius:3px;cursor:pointer;background:${i===cvPage?'var(--charcoal)':'var(--divider-strong)'};width:${i===cvPage?'16px':'6px'};transition:all .2s`;
+    d.onclick = () => { cvPage = i; cvRender(); };
+    dots.appendChild(d);
+  }
+  const prev = document.getElementById('cv-prev');
+  const next = document.getElementById('cv-next');
+  prev.style.opacity = cvPage === 0 ? '.3' : '1';
+  prev.style.pointerEvents = cvPage === 0 ? 'none' : 'auto';
+  next.style.opacity = cvPage === CV_PAGES-1 ? '.3' : '1';
+  next.style.pointerEvents = cvPage === CV_PAGES-1 ? 'none' : 'auto';
+}
+
+function cvGo(d) { cvPage = Math.max(0, Math.min(cvPage+d, CV_PAGES-1)); cvRender(); }
+cvRender();
 
 </script>
 </body>
