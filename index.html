@@ -268,20 +268,19 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
   .yt-thumb-title { font-size:12px; }
   .yt-thumb-views { font-size:10px; }
 
-  /* 05 時程 - 手機單欄 */
-  .about-grid { grid-template-columns:1fr !important; }
-  #schedule-billing table { font-size:13px; }
-  #schedule-billing table col { width:auto !important; }
-  #schedule-billing td { padding:.6rem 0; font-size:13px; }
+  /* 05 時程 - 隱藏合併表格，改為堆疊式 */
+  #schedule-billing .sched-merged-table { display:none; }
+  #schedule-billing .sched-mobile { display:block !important; }
 
   /* 06 報價方案 - 手機單欄 */
   .plan-row { grid-template-columns:1fr !important; }
   .plan-embed { border-right:none !important; border-bottom:1px solid var(--divider); }
   .pvids { max-height:260px; overflow-y:auto; }
 
-  /* 07 加購 */
-  .extras-tbl { font-size:13px; }
-  .extras-tbl td { padding:.7rem 0; }
+  /* 07 加購 - 固定欄寬 */
+  .extras-tbl { table-layout:fixed; font-size:14px; }
+  .extras-tbl td:first-child { width:60%; }
+  .extras-tbl td:last-child { width:40%; font-size:14px; }
 }
 
 /* ── PLAYLIST CARDS ── */
@@ -614,7 +613,39 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
     <h2 class="sec-ttl">剪輯階段 · 時程 · 計費說明</h2>
     <span class="sec-sub">Timeline &amp; Billing</span>
   </div>
-  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5rem;align-items:start">
+  <!-- 手機版時程 -->
+  <div class="sched-mobile" style="display:none">
+    <div class="sched-block-title" style="margin-bottom:.75rem">剪輯階段</div>
+    <table class="stage-tbl" style="margin-bottom:1.5rem">
+      <thead><tr><th>階段</th><th>說明</th></tr></thead>
+      <tbody>
+        <tr><td>初剪（順剪）</td><td>無B-Roll或換鏡位<br>僅確認段落是否 OK</td></tr>
+        <tr><td>V1（後製）</td><td>小白字、效果字、ES、音效、音樂</td></tr>
+        <tr><td>V2 – V3</td><td>修改版本<br>（共 3 次修改）</td></tr>
+        <tr><td>FINAL</td><td>完成可上片</td></tr>
+      </tbody>
+    </table>
+    <div class="snote" style="margin-top:0;margin-bottom:1.5rem">總修改次數：<strong>3 次</strong><br>超過 3 次將視幅度斟酌收費，<br>修改點過多收費 $500 起</div>
+    <div class="sched-block-title" style="margin-bottom:.75rem">工作時程</div>
+    <table class="stage-tbl" style="margin-bottom:1.5rem">
+      <thead><tr><th>類型</th><th>工作天</th></tr></thead>
+      <tbody>
+        <tr><td>一整支（10m）</td><td>10–14 天<br><span class="sbadge">少於 10 天算加急</span></td></tr>
+        <tr><td>僅後製（10m）</td><td>7–12 天<br><span class="sbadge">少於 7 天算加急</span></td></tr>
+        <tr><td>加急費用</td><td>$1,500 / 天</td></tr>
+      </tbody>
+    </table>
+    <div class="snote" style="margin-top:0;margin-bottom:1.5rem">標準為 <strong>2 週</strong>的工作天。<br>會先與您確認 final 日期，<br>確認有檔期後提供排程。</div>
+    <div class="sched-block-title" style="margin-bottom:.75rem">計費規則</div>
+    <div class="billing-blk">
+      V1 版交付後，進入修改階段，<br>無論影片長度變短或變長，<br><strong>最終費用均以最長版本時長計費。</strong>
+      <div class="billing-ex" style="margin-top:.75rem">
+        📌 V1 = 20分 → V2 = 15分<br><strong>→ 以 20 分鐘計費</strong><br><br>
+        📌 V1 = 20分 → V2 = 25分<br><strong>→ 以 25 分鐘計費</strong>
+      </div>
+    </div>
+  </div>
+  <div class="sched-merged-table" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5rem;align-items:start">
 
     <!-- 左右表格合一 -->
     <div style="grid-column:1/3">
