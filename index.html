@@ -75,7 +75,7 @@ nav a:hover { color:var(--charcoal); }
 .sdot { display:inline-block; width:7px; height:7px; background:var(--sage); border-radius:50%; margin-right:.5rem; vertical-align:middle; animation:pulse 2s ease-in-out infinite; }
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 .tags { display:flex; flex-wrap:wrap; gap:.45rem; margin-top:.5rem; }
-.tag { font-size:12px; padding:.3rem .85rem; background:rgba(138,158,139,.12); color:var(--sage); border:1px solid rgba(138,158,139,.25); letter-spacing:.06em; }
+.tag { font-size:12px; padding:.3rem .85rem; background:rgba(196,151,138,.12); color:var(--blush); border:1px solid rgba(196,151,138,.25); letter-spacing:.06em; }
 
 /* ── SECTION BASE ── */
 .sec { padding: clamp(2.8rem,7vw,5rem) clamp(1.5rem,5vw,4rem); }
@@ -86,15 +86,15 @@ nav a:hover { color:var(--charcoal); }
 
 /* ── ABOUT ── */
 #about { background:var(--warm-white); border-bottom:1px solid var(--divider); }
-.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; }
-.about-bio { font-family:'Noto Serif TC',serif; font-size:16px; line-height:2.2; color:var(--soft-black); }
+.about-grid { display:grid; grid-template-columns:120px 1fr 1fr; gap:2.5rem; align-items:start; }
+.about-bio { font-family:'Noto Serif TC',serif; font-size:14px; line-height:1.95; color:var(--soft-black); }
 .about-bio strong { font-weight:500; color:var(--charcoal); }
 .tline { display:flex; flex-direction:column; }
-.titem { display:grid; grid-template-columns:88px 1fr; gap:1rem; padding:.9rem 0; border-bottom:1px solid var(--divider); }
+.titem { display:grid; grid-template-columns:88px 1fr; gap:1rem; padding:.55rem 0; border-bottom:1px solid var(--divider); }
 .titem:last-child { border-bottom:none; }
 .tyr { font-family:'Cormorant Garamond',serif; font-size:13px; color:var(--light-muted); padding-top:2px; }
-.tdesc { font-size:14px; color:var(--soft-black); line-height:1.8; }
-.tdesc strong { font-weight:500; color:var(--charcoal); display:block; font-size:13px; letter-spacing:.07em; margin-bottom:.15rem; }
+.tdesc { font-size:14px; color:var(--soft-black); line-height:1.6; }
+.tdesc strong { font-weight:500; color:var(--charcoal); display:block; font-size:13px; letter-spacing:.07em; margin-bottom:.05rem; }
 
 /* ── PORTFOLIO TABS ── */
 .port-sec { border-bottom:1px solid var(--divider); }
@@ -147,19 +147,13 @@ nav a:hover { color:var(--charcoal); }
 /* ── PRICING ── */
 #pricing { background:var(--warm-white); border-bottom:1px solid var(--divider); }
 
-.plan-row {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  border:1px solid var(--divider-strong);
-  background:var(--warm-white);
-  margin-bottom:1.75rem;
-  transition:box-shadow .3s;
-}
+.plan-row { display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--divider-strong); background:var(--warm-white); margin-bottom:1.75rem; transition:box-shadow .3s; }
 .plan-row:last-child { margin-bottom:0; }
 .plan-row:hover { box-shadow:0 6px 28px rgba(44,40,37,.07); }
 
 /* embed left, info right */
 .plan-embed { border-right:1px solid var(--divider); background:var(--cream); display:flex; flex-direction:column; }
+.plan-info { display:flex; flex-direction:column; }
 .plan-info  { display:flex; flex-direction:column; }
 
 .pembed-hd { padding:1rem 1.4rem; border-bottom:1px solid var(--divider); }
@@ -172,7 +166,7 @@ nav a:hover { color:var(--charcoal); }
 .padd-btn { padding:.55rem .9rem; background:var(--charcoal); color:var(--cream); border:none; font-size:12px; cursor:pointer; white-space:nowrap; transition:background .2s; font-family:'Noto Sans TC',sans-serif; }
 .padd-btn:hover { background:var(--sage); }
 .pembed-hint { font-size:11px; color:var(--light-muted); }
-.pvids { flex:1; overflow-y:auto; padding:.9rem 1.4rem; display:flex; flex-direction:column; gap:.9rem; max-height:460px; }
+.pvids { padding:.9rem 1.4rem; display:flex; flex-direction:column; gap:.9rem; }
 .pvid-item { position:relative; }
 .pvid-rm { position:absolute; top:5px; right:5px; z-index:2; background:rgba(28,28,26,.72); color:#fff; border:none; width:22px; height:22px; border-radius:50%; font-size:12px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .2s; }
 .pvid-rm:hover { background:var(--blush); }
@@ -180,15 +174,15 @@ nav a:hover { color:var(--charcoal); }
 .pvid-wrap iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:none; }
 .pvid-empty { padding:2rem 1rem; color:var(--light-muted); font-size:13px; line-height:2; text-align:center; }
 
-.pinfo-hd { padding:1.6rem 1.9rem; border-bottom:1px solid var(--divider); }
+.pinfo-hd { padding:1.4rem 1.9rem 1rem; border-bottom:1px solid var(--divider); }
 .pbadge { font-size:11px; letter-spacing:.14em; padding:.28rem .7rem; display:inline-block; margin-bottom:.7rem; }
-.pbadge.a { background:var(--cream); color:var(--muted); border:1px solid var(--divider-strong); }
-.pbadge.b { background:#EDE8E0; color:var(--soft-black); }
-.pbadge.c { background:var(--charcoal); color:var(--cream); }
-.pbadge.d { background:var(--sage); color:#fff; }
+.pbadge.a { background:#B08080; color:#fff; border:none; }
+.pbadge.b { background:#8FAAB8; color:#fff; border:none; }
+.pbadge.c { background:#B8AA96; color:#fff; border:none; }
+.pbadge.d { background:#C49A6C; color:#fff; border:none; }
 .pname { font-family:'Noto Serif TC',serif; font-size:20px; font-weight:400; color:var(--charcoal); }
 .pdesc { font-size:14px; color:var(--muted); line-height:1.9; margin-top:.35rem; }
-.pinfo-body { padding:1.6rem 1.9rem; flex:1; }
+.pinfo-body { padding:.85rem 1.9rem 1.4rem; flex:1; }
 
 .price-row { display:flex; justify-content:space-between; align-items:baseline; padding:.65rem 0; border-bottom:1px solid var(--divider); font-size:15px; gap:1rem; }
 .price-row:last-of-type { border-bottom:none; }
@@ -204,14 +198,14 @@ nav a:hover { color:var(--charcoal); }
 
 /* ── SCHEDULE + BILLING (same row) ── */
 #schedule-billing { background:var(--cream); border-bottom:1px solid var(--divider); }
-.sched-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+.sched-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; align-items:start; }
 
 .sched-block-title { font-size:14px; letter-spacing:.08em; color:var(--charcoal); font-weight:400; margin-bottom:1.1rem; padding-bottom:.65rem; border-bottom:1px solid var(--divider); font-family:'Noto Serif TC',serif; }
-.stage-tbl { width:100%; border-collapse:collapse; }
+
 .stage-tbl th { font-size:11px; letter-spacing:.12em; color:var(--light-muted); text-align:left; padding:0 0 .65rem; border-bottom:1px solid var(--divider-strong); font-weight:400; text-transform:uppercase; }
 .stage-tbl td { padding:.75rem 0; border-bottom:1px solid var(--divider); font-size:14px; vertical-align:top; }
 .stage-tbl td:first-child { color:var(--muted); width:100px; font-size:13px; }
-.sbadge { display:inline-block; font-size:10px; padding:.18rem .5rem; background:rgba(196,151,138,.14); color:var(--blush); border:1px solid rgba(196,151,138,.28); margin-top:.25rem; }
+.sbadge { display:inline-block; font-size:10px; padding:.18rem .5rem; background:rgba(192,57,43,.1); color:#C0392B; border:1px solid rgba(192,57,43,.25); margin-top:.25rem; }
 .snote { background:var(--warm-white); border-left:2px solid var(--sage); padding:.95rem 1.2rem; margin-top:1.3rem; font-size:13px; color:var(--muted); line-height:2; }
 
 .billing-blk { font-size:14px; color:var(--muted); line-height:2.1; }
@@ -235,7 +229,7 @@ nav a:hover { color:var(--charcoal); }
 .rcard-desc { font-size:15px; color:var(--muted); line-height:2.05; }
 
 /* ── CONTACT ── */
-#contact { background:var(--charcoal); padding:clamp(4rem,9vw,7rem) clamp(1.5rem,5vw,4rem); text-align:center; }
+#contact { background:var(--charcoal); padding:clamp(2rem,5vw,3.5rem) clamp(1.5rem,5vw,4rem); text-align:center; }
 .ceyebrow { font-size:12px; letter-spacing:.2em; color:var(--light-muted); text-transform:uppercase; margin-bottom:1.4rem; }
 .ctitle { font-family:'DM Serif Display',serif; font-size:clamp(2.6rem,4.5vw,4rem); color:var(--cream); line-height:1.1; margin-bottom:.5rem; }
 .ctitle em { font-style:italic; color:var(--blush); }
@@ -258,9 +252,9 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
 
 /* ── RESPONSIVE ── */
 @media(max-width:960px){
-  .plan-row { grid-template-columns:1fr; }
+  .plan-row { display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--divider-strong); background:var(--warm-white); margin-bottom:1.75rem; transition:box-shadow .3s; }
   .plan-embed { border-right:none; border-bottom:1px solid var(--divider); }
-  .pvids { max-height:280px; }
+  .pvids { padding:.9rem 1.4rem; display:flex; flex-direction:column; gap:.9rem; }
   .sched-grid { grid-template-columns:1fr 1fr; }
 }
 @media(max-width:768px){
@@ -402,9 +396,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
     <a href="#schedule-billing">時程</a>
     <a href="#pricing">報價</a>
     <a href="#extras">加購</a>
-    <a href="#contact">聯絡</a>
   </nav>
-    <a href="#contact">聯絡</a>
   </nav>
 </header>
 
@@ -422,14 +414,18 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
       <div class="hcard-val"><span class="sdot"></span>2026年 6月 可詢問<br><span style="font-size:13px;color:var(--muted)">5月可詢問急案</span></div>
     </div>
     <div class="hcard">
-      <div class="hcard-lbl">合作創作者</div>
-      <div class="hcard-val" style="font-size:13px;line-height:1.9;letter-spacing:.02em">Joeman · 阿滴 · The DoDo Men · VW · 一隻阿圓 · 痣作人 · 阿部瑪利亞 · 泱泱 · 愛里 · 貝莉莓 · 蘋蘋澎澎 · LUCY · 米鹿 · 希露弟弟啃雞腿 等多位 YouTuber…</div>
+      <div class="hcard-lbl">已合作創作者</div>
+      <div class="hcard-val" style="font-size:13px;line-height:1.9;letter-spacing:.02em">Joeman · 阿滴 · The DoDo Men · VW · 一隻阿圓 ·<br>痣作人 · 阿部瑪利亞 · 泱泱 · 愛里 · 貝莉莓 · 蘋蘋澎澎 ·<br>Netflix · 黃大謙 · 金針菇 · LUCY · 米鹿 · 丘涵<br>希露弟弟啃雞腿 · 水電爸爸 · 鵝鵝就是鵝鵝 ·<br>等多位 YouTuber…</div>
     </div>
     <div class="hcard">
       <div class="hcard-lbl">專長技能</div>
       <div class="tags">
-        <span class="tag">影片企劃</span><span class="tag">後製剪輯</span><span class="tag">平面設計</span>
-        <span class="tag">視覺設計</span><span class="tag">Premiere</span><span class="tag">Photoshop</span><span class="tag">Illustrator</span>
+        <div style="display:flex;flex-wrap:nowrap;gap:.45rem;margin-bottom:.45rem">
+          <span class="tag">影片企劃</span><span class="tag">後製剪輯</span><span class="tag">平面 / 視覺設計</span>
+        </div>
+        <div style="display:flex;flex-wrap:nowrap;gap:.45rem">
+          <span class="tag">Premiere</span><span class="tag">Photoshop</span><span class="tag">Illustrator</span>
+        </div>
       </div>
     </div>
   </div>
@@ -443,9 +439,15 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
     <span class="sec-sub">About</span>
   </div>
   <div class="about-grid">
+    <!-- 照片 -->
     <div class="fu">
-      <p class="about-bio">我是<strong>小玩</strong>，一名 Freelancer，專注於 YouTube 頻道的後製剪輯與視覺呈現。<br><br>曾任 YouTube 頻道阿部瑪利亞製作人，有豐富的 YouTube 企劃／剪輯經驗。</p>
+      <img src="avatar.png" alt="小玩" style="width:110px;height:110px;border-radius:50%;object-fit:cover;border:3px solid var(--divider-strong)" />
     </div>
+    <!-- 文字 -->
+    <div class="fu">
+      <p class="about-bio">我是<strong>小玩</strong>，一名 Freelancer，<br>專注於 YouTube 頻道的後製剪輯與視覺呈現。<br>曾任 YouTube 頻道阿部瑪利亞製作人，<br>有豐富的 YouTube 企劃／剪輯經驗。</p>
+    </div>
+    <!-- 時間軸 -->
     <div class="tline fu">
       <div class="titem">
         <div class="tyr">2021–2025</div>
@@ -453,7 +455,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
       </div>
       <div class="titem">
         <div class="tyr">2020–2021</div>
-        <div class="tdesc"><strong>麥卡貝</strong>阿部瑪利亞頻道製作人 &amp; 剪輯師 ／ 泱泱頻道初期剪輯師</div>
+        <div class="tdesc"><strong>麥卡貝</strong>阿部瑪利亞頻道製作人 &amp; 剪輯師<br>泱泱頻道初期剪輯師</div>
       </div>
       <div class="titem">
         <div class="tyr">2016–2020</div>
@@ -532,8 +534,8 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
       <div class="nrow-num">05</div>
       <div class="nrow-icon">📱</div>
       <div class="nrow-body">
-        <div class="nrow-title">短影片限商案</div>
-        <div class="nrow-desc">短影片目前僅接受商案類型或特別企劃。目前不承接藏鏡人類型的短影片。</div>
+        <div class="nrow-title">Reels 直式短影片</div>
+        <div class="nrow-desc">短影片目前僅接受商案類型或特別企劃（目前不承接藏鏡人類型的短影片）</div>
       </div>
     </div>
     <div class="nrow fu">
@@ -541,7 +543,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
       <div class="nrow-icon">🎵</div>
       <div class="nrow-body">
         <div class="nrow-title">音樂版權</div>
-        <div class="nrow-desc">以創作者頻道購買授權的音樂庫使用為主（Epidemic Sound / Artlist）。無授權音樂庫將使用 YT 無版權音樂庫。若有特殊音樂要求，使用商用素材庫（Envato）需額外 +$500–$3,000。</div>
+        <div class="nrow-desc">以創作者頻道購買授權的音樂庫使用為主（Epidemic Sound / Artlist）。<br>無授權音樂庫將使用 YT 無版權音樂庫。<br>若有特殊音樂要求，使用商用素材庫（Envato）需額外 +$500–$3,000。</div>
       </div>
     </div>
     <div class="nrow fu">
@@ -549,215 +551,82 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
       <div class="nrow-icon">🔤</div>
       <div class="nrow-body">
         <div class="nrow-title">字體版權</div>
-        <div class="nrow-desc">以免費商用字體及我有購買的商用字體使用為主。若您有購買商用字體版權，請告知字體名稱或提供字體（例如金萱體）。若不介意使用商用字體也可告知，畫面較豐富，但無版權請斟酌。</div>
+        <div class="nrow-desc">以免費商用字體及我有購買的商用字體使用為主。<br>若您有購買商用字體版權，請告知字體名稱或提供字體（例如金萱體）。<br>若不介意使用商用字體也可告知，畫面較豐富，但無版權請斟酌。</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- PRICING -->
-<section id="pricing" class="sec" style="background:var(--cream);border-bottom:1px solid var(--divider)">
-  <div class="sec-hd fu">
-    <span class="sec-num">06</span>
-    <h2 class="sec-ttl">剪輯方案報價</h2>
-    <span class="sec-sub">Pricing Plans</span>
-  </div>
-
-  <!-- A: embed LEFT, info RIGHT -->
-  <!-- C -->
-  <div class="plan-row fu">
-    <div class="plan-embed">
-      <div class="pembed-hd"><div class="pembed-hd-ttl">A 方案 · 作品範例</div></div>
-      <div class="pembed-input-area">
-        <div class="pembed-row">
-          <input class="pinput" type="text" id="in-a" placeholder="貼上 YouTube 網址…" />
-          <button class="padd-btn" onclick="addPV('a')">加入</button>
-        </div>
-
-      </div>
-      <div class="pvids" id="pv-a">
-        <div class="pvid-item">
-          <div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/ldDRs8G6DUA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-        </div>
-        <div class="pvid-item">
-          <div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/6UyF4TSv8tI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-        </div>
-        <div class="pvid-item">
-          <div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/XajfPW1lhyA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-        </div>
-      </div>
-    </div>
-    <div class="plan-info">
-      <div class="pinfo-hd">
-        <span class="pbadge a">A 方案</span>
-        <div class="pname">字卡 ES 豐富</div>
-        <div class="pdesc">每分鐘 5–9 個 ES 效果（10分鐘影片約 50–90 個）<br>節目類型或複雜企劃需額外報價</div>
-      </div>
-      <div class="pinfo-body">
-        <div class="price-row"><span class="price-lbl">一整支（毛片 1hr 內，成片 10m 內）</span><div><div class="price-val">$9,500 起</div><div class="price-sub">超時 $850/1m</div></div></div>
-        <div class="price-row"><span class="price-lbl">已初剪（僅後製，成片 10m 內）</span><div><div class="price-val">$8,000 起</div><div class="price-sub">超時 $850/1m</div></div></div>
-        <div class="price-row"><span class="price-lbl">工商加收</span><div class="price-val">+ $2,000</div></div>
-        <div class="price-row"><span class="price-lbl">獨立中插工商（1m）</span><div class="price-val">+ $3,500</div></div>
-        <div class="calc-blk">
-          <div class="calc-ttl">計費範例</div>
-          <div class="calc-row"><span>成片 10m</span><span>$9,500</span></div>
-          <div class="calc-row"><span>含工商</span><span>+ $2,000</span></div>
-          <div class="calc-tot"><span>合計</span><strong>$11,500</strong></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- B -->
-  <!-- B -->
-  <div class="plan-row fu">
-    <div class="plan-embed">
-      <div class="pembed-hd"><div class="pembed-hd-ttl">B 方案 · 作品範例</div></div>
-      <div class="pembed-input-area">
-        <div class="pembed-row">
-          <input class="pinput" type="text" id="in-b" placeholder="貼上 YouTube 網址…" />
-          <button class="padd-btn" onclick="addPV('b')">加入</button>
-        </div>
-
-      </div>
-      <div class="pvids" id="pv-b">
-        <div class="pvid-item">
-          <div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/j1NPTOn9kNE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-        </div>
-      </div>
-    </div>
-    <div class="plan-info">
-      <div class="pinfo-hd">
-        <span class="pbadge b">B 方案</span>
-        <div class="pname">字卡 ES 中等</div>
-        <div class="pdesc">每分鐘 3–6 個 ES 效果（10分鐘影片約 30–60 個）</div>
-      </div>
-      <div class="pinfo-body">
-        <div class="price-row"><span class="price-lbl">一整支（毛片 1hr 內，成片 10m 內）</span><div><div class="price-val">$7,500 起</div><div class="price-sub">超時 $850/1m</div></div></div>
-        <div class="price-row"><span class="price-lbl">已初剪（僅後製，成片 10m 內）</span><div><div class="price-val">$6,000 起</div><div class="price-sub">超時 $850/1m</div></div></div>
-        <div class="price-row"><span class="price-lbl">工商加收</span><div class="price-val">+ $2,000</div></div>
-        <div class="price-row"><span class="price-lbl">獨立中插工商（1m）</span><div class="price-val">+ $3,500</div></div>
-        <div class="calc-blk">
-          <div class="calc-ttl">計費範例</div>
-          <div class="calc-row"><span>成片 10m</span><span>$7,500</span></div>
-          <div class="calc-row"><span>含工商</span><span>+ $2,000</span></div>
-          <div class="calc-tot"><span>合計</span><strong>$9,500</strong></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- C -->
-  <!-- A: embed LEFT, info RIGHT -->
-  <div class="plan-row fu">
-    <div class="plan-embed">
-      <div class="pembed-hd"><div class="pembed-hd-ttl">C 方案 · 作品範例</div></div>
-      <div class="pembed-input-area">
-        <div class="pembed-row">
-          <input class="pinput" type="text" id="in-c" placeholder="貼上 YouTube 網址…" />
-          <button class="padd-btn" onclick="addPV('c')">加入</button>
-        </div>
-
-      </div>
-      <div class="pvids" id="pv-c">
-        <div class="pvid-item">
-          <div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/fUNjyt1Hzzg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-        </div>
-        <div class="pvid-item">
-          <div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/zInb09efez8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-        </div>
-      </div>
-    </div>
-    <div class="plan-info">
-      <div class="pinfo-hd">
-        <span class="pbadge c">C 方案</span>
-        <div class="pname">字卡 ES 較少</div>
-        <div class="pdesc">白字幕為主，每分鐘 1–3 個 ES 效果（10分鐘影片約 10–30 個）<br>適合乾淨 vlog 風格</div>
-      </div>
-      <div class="pinfo-body">
-        <div class="price-row"><span class="price-lbl">一整支（毛片 1hr 內，成片 10m 內）</span><div><div class="price-val">$6,000 起</div><div class="price-sub">超時 $850/1m</div></div></div>
-        <div class="price-row"><span class="price-lbl">已初剪（僅後製，成片 10m 內）</span><div><div class="price-val">$5,000 起</div><div class="price-sub">超時 $850/1m</div></div></div>
-        <div class="price-row"><span class="price-lbl">工商加收</span><div class="price-val">+ $2,000</div></div>
-        <div class="price-row"><span class="price-lbl">獨立中插工商（1m）</span><div class="price-val">+ $3,500</div></div>
-        <div class="calc-blk">
-          <div class="calc-ttl">計費範例</div>
-          <div class="calc-row"><span>成片 10m</span><span>$6,000</span></div>
-          <div class="calc-row"><span>含工商</span><span>+ $2,000</span></div>
-          <div class="calc-tot"><span>合計</span><strong>$8,000</strong></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- D -->
-  <!-- D -->
-  <div class="plan-row fu">
-    <div class="plan-embed">
-      <div class="pembed-hd"><div class="pembed-hd-ttl">D 方案 · 作品範例</div></div>
-      <div class="pembed-input-area">
-        <div class="pembed-row">
-          <input class="pinput" type="text" id="in-d" placeholder="貼上 YouTube 網址…" />
-          <button class="padd-btn" onclick="addPV('d')">加入</button>
-        </div>
-
-      </div>
-      <div class="pvids" id="pv-d"><div class="pvid-empty" id="pe-d">尚未加入範例<br><span style="font-size:12px">貼上網址後點「加入」</span></div></div>
-    </div>
-    <div class="plan-info">
-      <div class="pinfo-hd">
-        <span class="pbadge d">D 方案</span>
-        <div class="pname">工商短影片 ／ 直式短影片</div>
-        <div class="pdesc">Reels 目前僅接商案類型</div>
-      </div>
-      <div class="pinfo-body">
-        <div class="price-row"><span class="price-lbl">橫式中插（1m – 3m）</span><div><div class="price-val">$3,500 – $5,000</div><div class="price-sub">需額外確認報價</div></div></div>
-        <div class="price-row"><span class="price-lbl">直式 Reels 商業（1m）</span><div><div class="price-val">$2,500 – $3,500</div><div class="price-sub">0.5m 以 1m 計算</div></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SCHEDULE + BILLING SIDE BY SIDE -->
 <section id="schedule-billing" class="sec" style="background:var(--warm-white);border-bottom:1px solid var(--divider)">
   <div class="sec-hd fu">
     <span class="sec-num">05</span>
     <h2 class="sec-ttl">剪輯階段 · 時程 · 計費說明</h2>
     <span class="sec-sub">Timeline &amp; Billing</span>
   </div>
-  <div class="sched-grid">
-    <!-- col 1: stages -->
-    <div class="fu">
-      <div class="sched-block-title">剪輯階段</div>
-      <table class="stage-tbl">
-        <thead><tr><th>階段</th><th>說明</th></tr></thead>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5rem;align-items:start">
+
+    <!-- 左右表格合一 -->
+    <div style="grid-column:1/3">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:.5rem">
+        <!-- 標題列 -->
+        <div class="sched-block-title" style="padding-right:2rem">剪輯階段</div>
+        <div class="sched-block-title">工作時程</div>
+      </div>
+      <!-- 合併成一張表 -->
+      <table style="width:100%;border-collapse:collapse">
+        <colgroup><col style="width:22%"><col style="width:28%"><col style="width:3%"><col style="width:22%"><col style="width:25%"></colgroup>
+        <thead>
+          <tr>
+            <th style="font-size:11px;letter-spacing:.1em;color:var(--light-muted);font-weight:400;text-transform:uppercase;padding:.5rem 0;border-bottom:1px solid var(--divider-strong)">階段</th>
+            <th style="font-size:11px;letter-spacing:.1em;color:var(--light-muted);font-weight:400;text-transform:uppercase;padding:.5rem 0;border-bottom:1px solid var(--divider-strong)">說明</th>
+            <th style="border:none"></th>
+            <th style="font-size:11px;letter-spacing:.1em;color:var(--light-muted);font-weight:400;text-transform:uppercase;padding:.5rem 0;border-bottom:1px solid var(--divider-strong)">類型</th>
+            <th style="font-size:11px;letter-spacing:.1em;color:var(--light-muted);font-weight:400;text-transform:uppercase;padding:.5rem 0;border-bottom:1px solid var(--divider-strong)">工作天</th>
+          </tr>
+        </thead>
         <tbody>
-          <tr><td>初剪 / 順剪</td><td>確認段落是否 OK</td></tr>
-          <tr><td>V1（後製）</td><td>小白字、效果字、ES、音效、音樂</td></tr>
-          <tr><td>V2 – V3</td><td>修改版本（共 3 次修改）</td></tr>
-          <tr><td>FINAL</td><td>完成可上片</td></tr>
+          <tr>
+            <td style="font-size:14px;color:var(--muted);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:top">初剪（順剪）</td>
+            <td style="font-size:15px;color:var(--soft-black);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:top">無B-Roll或換鏡位<br>僅確認段落是否 OK</td>
+            <td style="border:none"></td>
+            <td style="font-size:14px;color:var(--muted);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:top">一整支（10m）</td>
+            <td style="font-size:15px;color:var(--soft-black);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:top">10–14 天<br><span class="sbadge">少於 10 天算加急</span></td>
+          </tr>
+          <tr>
+            <td style="font-size:14px;color:var(--muted);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:top">V1（後製）</td>
+            <td style="font-size:15px;color:var(--soft-black);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:top">小白字、效果字、<br>ES、音效、音樂</td>
+            <td style="border:none"></td>
+            <td style="font-size:14px;color:var(--muted);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:top">僅後製（10m）</td>
+            <td style="font-size:15px;color:var(--soft-black);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:top">7–12 天<br><span class="sbadge">少於 7 天算加急</span></td>
+          </tr>
+          <tr>
+            <td style="font-size:14px;color:var(--muted);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:top">V2 – V3</td>
+            <td style="font-size:15px;color:var(--soft-black);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:top">修改版本（共 3 次修改）</td>
+            <td style="border:none"></td>
+            <td style="font-size:14px;color:var(--muted);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:top">加急費用</td>
+            <td style="font-size:15px;color:var(--soft-black);padding:.9rem 0;border-bottom:1px solid var(--divider)">$1,500 / 天</td>
+          </tr>
+          <tr>
+            <td style="font-size:14px;color:var(--muted);padding:.9rem 0;border-bottom:1px solid var(--divider)">FINAL</td>
+            <td style="font-size:15px;color:var(--soft-black);padding:.9rem 0;border-bottom:1px solid var(--divider)">完成可上片</td>
+            <td style="border:none"></td>
+            <td></td><td></td>
+          </tr>
         </tbody>
       </table>
-      <div class="snote">總修改次數：<strong>3 次</strong><br>超過 3 次將視幅度斟酌收費，修改點過多收費 $500 起</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1.3rem">
+        <div class="snote" style="margin-top:0">總修改次數：<strong>3 次</strong><br>超過 3 次將視幅度斟酌收費，<br>修改點過多收費 $500 起</div>
+        <div class="snote" style="margin-top:0">標準為 <strong>2 週</strong>的工作天。<br>會先與您確認 final 日期，<br>確認有檔期後提供排程。</div>
+      </div>
     </div>
-    <!-- col 2: timeline -->
-    <div class="fu">
-      <div class="sched-block-title">工作時程</div>
-      <table class="stage-tbl">
-        <thead><tr><th>類型</th><th>工作天</th></tr></thead>
-        <tbody>
-          <tr><td>一整支（10m）</td><td>10–14 天<br><span class="sbadge">少於 10 天算加急</span></td></tr>
-          <tr><td>已初剪（10m）</td><td>7–12 天<br><span class="sbadge">少於 7 天算加急</span></td></tr>
-          <tr><td>加急費用</td><td style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--blush)">$1,500 / 天</td></tr>
-        </tbody>
-      </table>
-      <div class="snote">標準為 <strong>2 週</strong>的工作天。<br>會先與您確認 final 日期，確認有檔期後提供排程。</div>
-    </div>
-    <!-- col 3: billing rule -->
-    <div class="fu">
+
+    <!-- 計費規則 -->
+    <div>
       <div class="sched-block-title">計費規則</div>
       <div class="billing-blk">
-        V1 版交付後，進入修改階段，<strong>無論影片長度變短或變長，最終費用均以最長版本時長計費。</strong>
-        <div class="billing-ex">
+        V1 版交付後，進入修改階段，<br>無論影片長度變短或變長，<br><strong>最終費用均以最長版本時長計費。</strong>
+        <div class="billing-ex" style="margin-top:.75rem">
           📌 V1 = 20分 → V2 = 15分<br>
           <strong>→ 以 20 分鐘計費</strong><br><br>
           📌 V1 = 20分 → V2 = 25分<br>
@@ -765,11 +634,119 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
         </div>
       </div>
     </div>
-  </div>
 
+  </div>
 </section>
 
 <!-- EXTRAS -->
+
+<section id="pricing" class="sec" style="background:var(--cream);border-bottom:1px solid var(--divider)">
+  <div class="sec-hd fu">
+    <span class="sec-num">06</span>
+    <h2 class="sec-ttl">剪輯方案報價</h2>
+    <span class="sec-sub">Pricing Plans</span>
+  </div>
+
+  <!-- A 方案：字卡ES豐富 -->
+  <div class="plan-row fu">
+    <div class="plan-embed">
+      <div class="pembed-hd"><div class="pembed-hd-ttl">A 方案 · 作品範例</div></div>
+      <div class="pvids" id="pv-a">
+        <div class="pvid-item"><div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/ldDRs8G6DUA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>
+        <div class="pvid-item"><div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/6UyF4TSv8tI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>
+        <div class="pvid-item"><div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/XajfPW1lhyA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>
+      </div>
+    </div>
+    <div class="plan-info">
+      <div class="pinfo-hd">
+        <span class="pbadge a">A 方案</span>
+        <div class="pname">字卡 ES 豐富</div>
+        <div class="pdesc">一整支（單機、毛片 1hr 內）<br>每分鐘約 5–9 個 ES 效果（10分鐘影片約 50–90 個）<br>節目類型或特殊企劃專案</div>
+      </div>
+      <div class="pinfo-body">
+        <div style="font-size:12px;letter-spacing:.08em;color:var(--light-muted);margin-bottom:.75rem">影片成片 10m ／ 10m 後每 1m + $850</div>
+        <div class="price-row"><span class="price-lbl">工商</span><div class="price-val">$13,000 起</div></div>
+        <div class="price-row"><span class="price-lbl">非工商</span><div class="price-val">$10,000 起</div></div>
+        <div class="price-row"><span class="price-lbl">僅後製</span><div class="price-val">$8,500 起</div></div>
+        <div style="margin-top:.85rem;padding-top:.75rem;font-size:12px;color:var(--light-muted);line-height:1.9">※ 多機 &amp; 毛片超時 &amp; 額外需求，請看 <a href="#extras" style="color:var(--light-muted);text-decoration:underline;text-underline-offset:2px">07 特殊需求加價</a><br>※ 最終費用以專案正式定案之需求為準。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B 方案：字卡ES中等 -->
+  <div class="plan-row fu">
+    <div class="plan-embed">
+      <div class="pembed-hd"><div class="pembed-hd-ttl">B 方案 · 作品範例</div></div>
+      <div class="pvids" id="pv-b">
+        <div class="pvid-item"><div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/J6dRpZdgxrg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>
+      </div>
+    </div>
+    <div class="plan-info">
+      <div class="pinfo-hd">
+        <span class="pbadge b">B 方案</span>
+        <div class="pname">字卡 ES 中等</div>
+        <div class="pdesc">一整支（單機、毛片 1hr 內）<br>每分鐘約 3–6 個 ES 效果（10分鐘影片約 30–60 個）</div>
+      </div>
+      <div class="pinfo-body">
+        <div style="font-size:12px;letter-spacing:.08em;color:var(--light-muted);margin-bottom:.75rem">影片成片 10m ／ 10m 後每 1m + $850</div>
+        <div class="price-row"><span class="price-lbl">工商</span><div class="price-val">$11,000 起</div></div>
+        <div class="price-row"><span class="price-lbl">非工商</span><div class="price-val">$8,000 起</div></div>
+        <div class="price-row"><span class="price-lbl">僅後製</span><div class="price-val">$6,500 起</div></div>
+        <div style="margin-top:.85rem;padding-top:.75rem;font-size:12px;color:var(--light-muted);line-height:1.9">※ 多機 &amp; 毛片超時 &amp; 額外需求，請看 <a href="#extras" style="color:var(--light-muted);text-decoration:underline;text-underline-offset:2px">07 特殊需求加價</a><br>※ 最終費用以專案正式定案之需求為準。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C 方案：字卡ES較少 -->
+  <div class="plan-row fu">
+    <div class="plan-embed">
+      <div class="pembed-hd"><div class="pembed-hd-ttl">C 方案 · 作品範例</div></div>
+      <div class="pvids" id="pv-c">
+        <div class="pvid-item"><div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/fUNjyt1Hzzg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>
+        <div class="pvid-item"><div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/zInb09efez8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>
+      </div>
+    </div>
+    <div class="plan-info">
+      <div class="pinfo-hd">
+        <span class="pbadge c">C 方案</span>
+        <div class="pname">字卡 ES 較少</div>
+        <div class="pdesc">一整支（單機、毛片 1hr 內）<br>每分鐘約 1–3 個 ES 效果（10分鐘影片約 10–30 個）<br>白字幕為主，適合乾淨 vlog 風格</div>
+      </div>
+      <div class="pinfo-body">
+        <div style="font-size:12px;letter-spacing:.08em;color:var(--light-muted);margin-bottom:.75rem">影片成片 10m ／ 10m 後每 1m + $850</div>
+        <div class="price-row"><span class="price-lbl">工商</span><div class="price-val">$8,000 起</div></div>
+        <div class="price-row"><span class="price-lbl">非工商</span><div class="price-val">$6,000 起</div></div>
+        <div class="price-row"><span class="price-lbl">僅後製</span><div class="price-val">$5,000 起</div></div>
+        <div style="margin-top:.85rem;padding-top:.75rem;font-size:12px;color:var(--light-muted);line-height:1.9">※ 多機 &amp; 毛片超時 &amp; 額外需求，請看 <a href="#extras" style="color:var(--light-muted);text-decoration:underline;text-underline-offset:2px">07 特殊需求加價</a><br>※ 最終費用以專案正式定案之需求為準。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- D 方案：工商短影片 -->
+  <div class="plan-row fu">
+    <div class="plan-embed">
+      <div class="pembed-hd"><div class="pembed-hd-ttl">D 方案 · 作品範例</div></div>
+      <div class="pvids" id="pv-d">
+        <div class="pvid-item"><div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/L2hAW-Lm3Vo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>
+        <div class="pvid-item"><div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/Zf8WnZ71F30" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>
+        <div class="pvid-item"><div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/IVQ6LbB9wNg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>
+      </div>
+    </div>
+    <div class="plan-info">
+      <div class="pinfo-hd">
+        <span class="pbadge d">D 方案</span>
+        <div class="pname">工商短影片 ／ 直式短影片</div>
+        <div class="pdesc">Reels 直式短影片<br>目前僅接受商案類型或特別企劃<br><span style="font-size:13px;color:var(--light-muted)">（目前不承接藏鏡人類型）</span></div>
+      </div>
+      <div class="pinfo-body">
+        <div class="price-row"><span class="price-lbl">橫式中插（1m – 3m）</span><div><div class="price-val">$3,500 – $5,000</div><div class="price-sub">需額外確認報價</div></div></div>
+        <div class="price-row"><span class="price-lbl">直式 Reels 商業（1m）</span><div><div class="price-val">$2,500 – $3,500</div><div class="price-sub">0.5m 以 1m 計算</div></div></div>
+      </div>
+    </div>
+  </div>
+
+</section>
+<!-- SCHEDULE + BILLING SIDE BY SIDE -->
 <section id="extras" class="sec" style="background:var(--cream);border-bottom:1px solid var(--divider)">
   <div class="sec-hd fu">
     <span class="sec-num">07</span>
@@ -784,7 +761,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
       <tr><td>美術視覺（ES / 特殊包框 / 底圖 / 視覺圖）</td><td>$1,500 – $3,000</td></tr>
       <tr><td>聲音降噪處理</td><td>$1,000</td></tr>
       <tr><td>商用影片、音樂素材（Envato 含商用授權）</td><td>$1,000 – $3,000</td></tr>
-      <tr><td>封面圖製作（不含文案，可修改 3 次）</td><td>$500 – $800 / 張</td></tr>
+      <tr><td>封面圖製作（不含文案，可修改 3 次）</td><td>$500 – $1,000 / 張</td></tr>
     </tbody>
   </table>
 </section>
@@ -792,16 +769,19 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
 <!-- CONTACT -->
 <section id="contact">
   <p class="ceyebrow">Contact</p>
-  <h2 class="ctitle">準備好了嗎？<br>讓我們<em>合作</em>吧</h2>
+  <h2 class="ctitle">準備好了嗎？<br>讓我們合作吧</h2>
   <p class="csub">歡迎提供影片交件日期，確認檔期後安排委託</p>
   <div class="clinks">
     <a href="https://www.youtube.com/@yufang149" target="_blank" class="clink pri">YouTube 作品集 →</a>
     <a href="https://a88981.wixsite.com/website-1/as-seen-on" target="_blank" class="clink sec">設計作品集 →</a>
   </div>
-  <div class="lineid">LINE : <span>zhongxiaowan</span></div>
-  <div style="margin-top:1.2rem;display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;">
-    <a href="https://www.instagram.com/yufangzhong/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.5rem;font-size:14px;color:var(--light-muted);text-decoration:none;letter-spacing:.08em;transition:color .2s;" onmouseover="this.style.color='var(--blush)'" onmouseout="this.style.color='var(--light-muted)'">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
+  <div style="margin-top:1.5rem;display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap;">
+    <a href="https://line.me/ti/p/~zhongxiaowan" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.6rem;font-size:15px;color:var(--light-muted);text-decoration:none;letter-spacing:.06em;transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--light-muted)'">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      zhongxiaowan
+    </a>
+    <a href="https://www.instagram.com/yufangzhong/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.6rem;font-size:15px;color:var(--light-muted);text-decoration:none;letter-spacing:.06em;transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--light-muted)'">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
       yufangzhong
     </a>
   </div>
@@ -809,7 +789,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
 
 <footer>
   <span>© 2026 小玩剪輯服務 · All rights reserved</span>
-  <span style="font-style:italic">禁止剽竊此報價資訊與格式</span>
+  <span style="font-style:italic;color:#C4978A;font-size:11px">禁止剽竊此報價資訊與格式，剽竊者上廁所沒衛生紙、看電影被爆雷，追不到喜歡的人</span>
 </footer>
 </div><!--/page-->
 
@@ -842,26 +822,7 @@ function parseYT(url) {
   return null;
 }
 
-// Per-plan video add
-['a','b','c','d'].forEach(p => {
-  document.getElementById('in-'+p).addEventListener('keydown', e => { if(e.key==='Enter') addPV(p); });
-});
-function addPV(p) {
-  const inp = document.getElementById('in-'+p);
-  const r = parseYT(inp.value);
-  if (!r) { inp.style.borderColor='var(--blush)'; setTimeout(()=>inp.style.borderColor='',1200); return; }
-  inp.value=''; inp.style.borderColor='';
-  const emp = document.getElementById('pe-'+p); if(emp) emp.remove();
-  const id='pv'+p+Date.now();
-  const el=document.createElement('div'); el.className='pvid-item'; el.id=id;
-  el.innerHTML=`<button class="pvid-rm" onclick="rmPV('${p}','${id}')">✕</button><div class="pvid-wrap"><iframe src="${r.src}" allowfullscreen allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture"></iframe></div>`;
-  document.getElementById('pv-'+p).appendChild(el);
-}
-function rmPV(p,id) {
-  const el=document.getElementById(id); if(el) el.remove();
-  const list=document.getElementById('pv-'+p);
-  if(list && !list.children.length) list.innerHTML=`<div class="pvid-empty" id="pe-${p}">尚未加入範例<br><span style="font-size:12px">貼上網址後點「加入」</span></div>`;
-}
+
 
 // ── YouTube Gallery ──
 const YT_API_KEY = 'AIzaSyA8pDGs-m-w7WZh7HpQFVOqm30dsq4JEtg';
