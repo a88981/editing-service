@@ -13,22 +13,26 @@ export default async function handler(req, res) {
     const data = await response.json();
     const blocks = data.results || [];
 
-    // 找「目前檔期狀態」區塊後面的內容
     let schedule = { main: '', urgent: '', vacation: '' };
     let inSchedule = false;
+    let count = 0;
 
     for (const block of blocks) {
-      const text = block[block.type]?.rich_text?.map(t => t.plain_text).join('') || '';
+      const richText = block[block.type]?.rich_text || [];
+      const text = richText.map(t => t.plain_text).join('');
+      const isBold = richText.length > 0 && richText[0]?.annotations?.bold;
 
-      if (text.includes('目前檔期狀態')) { inSchedule = true; continue; }
+      if (text.includes('目前檔期狀態')) { inSchedule = true; count = 0; continue; }
       if (text.includes('修改範例')) { inSchedule = false; break; }
-      if (!inSchedule) continue;
+      if (!inSchedule || !text) continue;
 
-      if (block.type === 'paragraph' && text) {
-        if (!schedule.main) schedule.main = text;
-        else if (!schedule.urgent) schedule.urgent = text;
-        else if (!schedule.vacation) schedule.vacation = text;
-      }
+      // 跳過粗體標題（主要檔期、急案、休假）
+      if (isBold) continue;
+
+      if (count === 0) schedule.main = text;
+      else if (count === 1) schedule.urgent = text;
+      else if (count === 2) schedule.vacation = text;
+      count++;
     }
 
     res.status(200).json(schedule);
