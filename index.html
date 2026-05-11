@@ -1179,6 +1179,23 @@ function lbNav(dir) {
   event.stopPropagation();
 }
 
+
+// 修正 nav anchor 跳轉位置
+document.querySelectorAll('nav a, .mobile-menu a').forEach(a => {
+  a.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 50);
+      }
+    }
+  });
+});
+
 </script>
 
 <!-- Lightbox -->
