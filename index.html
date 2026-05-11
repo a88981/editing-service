@@ -1180,18 +1180,36 @@ function lbNav(dir) {
 }
 
 
-// 修正 nav anchor 跳轉位置
+        }, 800);
+      }
+    }
+  });
+});
+
+
+// 錨點跳轉：等頁面載入完成後執行
+function scrollToHash(hash) {
+  const target = document.querySelector(hash);
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+// 頁面載入完成後跳轉到 hash
+window.addEventListener('load', function() {
+  if (window.location.hash) {
+    setTimeout(() => scrollToHash(window.location.hash), 500);
+  }
+});
+
+// nav 點擊攔截
 document.querySelectorAll('nav a, .mobile-menu a').forEach(a => {
   a.addEventListener('click', function(e) {
     const href = this.getAttribute('href');
     if (href && href.startsWith('#')) {
       e.preventDefault();
-      const target = document.querySelector(href);
-      if (target) {
-        setTimeout(() => {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 800);
-      }
+      history.pushState(null, '', href);
+      setTimeout(() => scrollToHash(href), 800);
     }
   });
 });
