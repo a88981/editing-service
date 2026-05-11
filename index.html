@@ -2,12 +2,11 @@
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>小玩剪輯服務 · 2026</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>小玩 剪輯服務 · 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&family=Noto+Sans+TC:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <style>
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
   --cream: #F7F4EF;
@@ -435,12 +434,12 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
 .lb-prev:hover, .lb-next:hover { opacity:1; }
 .lb-prev { left:1rem; }
 .lb-next { right:1rem; }
+
 </style>
 </head>
 <body>
 <div id="page">
 
-<!-- HEADER -->
 <header>
   <div class="logo"><em>小玩</em> 剪輯服務</div>
   <nav>
@@ -448,10 +447,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
     <a href="#about">關於</a>
     <a href="#portfolio-plan">作品</a>
     <a href="#covers">封面圖</a>
-    <a href="#notice">須知</a>
-    <a href="#schedule-billing">時程</a>
-    <a href="#pricing">報價</a>
-    <a href="#extras">加購</a>
+    <a href="service.html">詳細方案</a>
     <a href="#contact">聯絡</a>
   </nav>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="選單">
@@ -462,10 +458,8 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
   <a href="#page" onclick="closeMenu()">首頁</a>
   <a href="#about" onclick="closeMenu()">關於</a>
   <a href="#portfolio-plan" onclick="closeMenu()">作品</a>
-  <a href="#notice" onclick="closeMenu()">須知</a>
-  <a href="#schedule-billing" onclick="closeMenu()">時程</a>
-  <a href="#pricing" onclick="closeMenu()">報價</a>
-  <a href="#extras" onclick="closeMenu()">加購</a>
+  <a href="#covers" onclick="closeMenu()">封面圖</a>
+  <a href="service.html" onclick="closeMenu()">詳細方案</a>
   <a href="#contact" onclick="closeMenu()">聯絡</a>
 </div>
 
@@ -499,6 +493,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
     </div>
   </div>
 </section>
+
 
 <!-- ABOUT -->
 <section id="about" class="sec" style="background:var(--warm-white);border-bottom:1px solid var(--divider)">
@@ -558,7 +553,6 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
   </div>
 </section>
 
-
 <!-- COVERS -->
 <section id="covers" class="sec" style="background:var(--warm-white);border-bottom:1px solid var(--divider)">
   <div class="sec-hd fu">
@@ -576,349 +570,36 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
   </div>
 </section>
 
-<!-- NOTICE -->
-<section id="notice" class="sec" style="background:var(--warm-white);border-bottom:1px solid var(--divider)">
-  <div class="sec-hd fu">
-    <span class="sec-num">04</span>
-    <h2 class="sec-ttl">詢價前須知</h2>
-    <span class="sec-sub">Notice</span>
-  </div>
-  <div class="notice-list">
-    <div class="nrow fu">
-      <div class="nrow-num">01</div>
-      <div class="nrow-icon">📅</div>
-      <div class="nrow-body">
-        <div class="nrow-title">長期合作已滿</div>
-        <div class="nrow-desc">目前長期合作名額已滿，僅接視空檔委託。<span style="color:#B5756A">請直接提供交件日期，視檔期安排承接。</span></div>
-      </div>
-    </div>
-    <div class="nrow fu">
-      <div class="nrow-num">02</div>
-      <div class="nrow-icon">💡</div>
-      <div class="nrow-body">
-        <div class="nrow-title">報價依複雜度而異</div>
-        <div class="nrow-desc">請提供您的需求影片&amp;頻道範例，以便為您評估合適的 A～D 方案。<br>最終報價將依毛片數量、ES 效果與專案複雜度彈性調整。</div>
-      </div>
-    </div>
-    <div class="nrow fu">
-      <div class="nrow-num">03</div>
-      <div class="nrow-icon">🚫</div>
-      <div class="nrow-body">
-        <div class="nrow-title">不提供專案檔</div>
-        <div class="nrow-desc">影片完成後不提供專案檔（加價亦不提供）。結案上片後毛片及影片一律刪除。</div>
-        <div class="nrow-warn">加價也不提供，非常抱歉！</div>
-      </div>
-    </div>
-    <div class="nrow fu">
-      <div class="nrow-num">04</div>
-      <div class="nrow-icon">⏱</div>
-      <div class="nrow-body">
-        <div class="nrow-title">不提供試剪、純順剪</div>
-        <div class="nrow-desc">因檔期忙碌，目前不接受試剪與純順剪委託。</div>
-      </div>
-    </div>
-    <div class="nrow fu">
-      <div class="nrow-num">05</div>
-      <div class="nrow-icon">📱</div>
-      <div class="nrow-body">
-        <div class="nrow-title">Reels 直式短影片</div>
-        <div class="nrow-desc">短影片目前僅接受商案類型或特別企劃（目前不承接藏鏡人類型的短影片）</div>
-      </div>
-    </div>
-    <div class="nrow fu">
-      <div class="nrow-num">06</div>
-      <div class="nrow-icon">🎵</div>
-      <div class="nrow-body">
-        <div class="nrow-title">音樂版權</div>
-        <div class="nrow-desc">以創作者頻道購買授權的音樂庫使用為主（Epidemic Sound / Artlist）。<br>無授權音樂庫將使用 YT 無版權音樂庫。<br>若有特殊音樂要求，使用商用素材庫（Envato）需額外 +$500–$3,000。</div>
-      </div>
-    </div>
-    <div class="nrow fu">
-      <div class="nrow-num">07</div>
-      <div class="nrow-icon">🔤</div>
-      <div class="nrow-body">
-        <div class="nrow-title">字體版權</div>
-        <div class="nrow-desc">以免費商用字體及我有購買的商用字體使用為主。<br>若您有購買商用字體版權，請告知字體名稱或提供字體（例如金萱體）。<br>若不介意使用商用字體也可告知，畫面較豐富，但無版權請斟酌。</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section id="schedule-billing" class="sec" style="background:var(--warm-white);border-bottom:1px solid var(--divider)">
-  <div class="sec-hd fu">
-    <span class="sec-num">05</span>
-    <h2 class="sec-ttl">剪輯階段 · 時程 · 計費說明</h2>
-    <span class="sec-sub">Timeline &amp; Billing</span>
-  </div>
-  <!-- 手機版時程 -->
-  <div class="sched-mobile">
-    <div class="sched-block-title" style="margin-bottom:.75rem">剪輯階段</div>
-    <table class="stage-tbl" style="margin-bottom:1.5rem">
-      <thead><tr><th>階段</th><th>說明</th></tr></thead>
-      <tbody>
-        <tr><td>初剪（順剪）</td><td>無B-Roll或換鏡位<br>僅確認段落是否 OK</td></tr>
-        <tr><td>V1（後製）</td><td>小白字、效果字、ES、音效、音樂</td></tr>
-        <tr><td>V2 – V3</td><td>修改版本<br>（共 3 次修改）</td></tr>
-        <tr><td>FINAL</td><td>完成可上片</td></tr>
-      </tbody>
-    </table>
-    <div class="snote" style="margin-top:0;margin-bottom:1.5rem">總修改次數：<strong style="color:#B5756A">3 次</strong><br>超過 3 次將視幅度斟酌收費，<br>修改點過多收費 $500 起</div>
-    <div class="sched-block-title" style="margin-bottom:.75rem">工作時程</div>
-    <table class="stage-tbl" style="margin-bottom:1.5rem">
-      <thead><tr><th>類型</th><th>工作天</th></tr></thead>
-      <tbody>
-        <tr><td>一整支（10m）</td><td>10–14 天 <span class="sbadge">少於 10 天算加急</span></td></tr>
-        <tr><td>僅後製（10m）</td><td>7–12 天 <span class="sbadge">少於 7 天算加急</span></td></tr>
-        <tr><td>加急費用</td><td>$1,500 / 天</td></tr>
-      </tbody>
-    </table>
-    <div class="snote" style="margin-top:0;margin-bottom:1.5rem">標準為 <strong style="color:#B5756A">2 週</strong>的工作天。<br>會先與您確認 Final 日期，<br>確認有檔期後提供排程。</div>
-    <div class="sched-block-title" style="margin-bottom:.75rem">計費規則</div>
-    <div class="billing-blk">
-      V1 版交付後，進入修改階段，<br>無論影片長度變短或變長，<br><span style="color:#B5756A">最終費用均以最長版本時長計費。</span>
-      <div class="billing-ex" style="margin-top:.75rem">
-        📌 V1 = 20分 → V2 = 15分<br><strong>→ 以 20 分鐘計費</strong><br><br>
-        📌 V1 = 20分 → V2 = 25分<br><strong>→ 以 25 分鐘計費</strong>
-      </div>
-    </div>
-  </div>
-  <div class="sched-merged-table" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5rem;align-items:start">
-
-    <!-- 左右表格合一 -->
-    <div style="grid-column:1/3">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:.5rem">
-        <!-- 標題列 -->
-        <div class="sched-block-title" style="padding-right:2rem">剪輯階段</div>
-        <div class="sched-block-title">工作時程</div>
-      </div>
-      <!-- 合併成一張表 -->
-      <table style="width:100%;border-collapse:collapse">
-        <colgroup><col style="width:22%"><col style="width:28%"><col style="width:3%"><col style="width:22%"><col style="width:25%"></colgroup>
-        <thead>
-          <tr>
-            <th style="font-size:11px;letter-spacing:.1em;color:var(--light-muted);font-weight:400;text-transform:uppercase;padding:.5rem 0;border-bottom:1px solid var(--divider-strong)">階段</th>
-            <th style="font-size:11px;letter-spacing:.1em;color:var(--light-muted);font-weight:400;text-transform:uppercase;padding:.5rem 0;border-bottom:1px solid var(--divider-strong)">說明</th>
-            <th style="border:none"></th>
-            <th style="font-size:11px;letter-spacing:.1em;color:var(--light-muted);font-weight:400;text-transform:uppercase;padding:.5rem 0;border-bottom:1px solid var(--divider-strong)">類型</th>
-            <th style="font-size:11px;letter-spacing:.1em;color:var(--light-muted);font-weight:400;text-transform:uppercase;padding:.5rem 0;border-bottom:1px solid var(--divider-strong)">工作天</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style="font-size:14px;color:var(--muted);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:middle">初剪（順剪）</td>
-            <td style="font-size:15px;color:var(--soft-black);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:middle">無B-Roll或換鏡位<br>僅確認段落是否 OK</td>
-            <td style="border:none"></td>
-            <td style="font-size:14px;color:var(--muted);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:middle">一整支（10m）</td>
-            <td style="font-size:15px;color:var(--soft-black);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:middle">10–14 天<br><span class="sbadge">少於 10 天算加急</span></td>
-          </tr>
-          <tr>
-            <td style="font-size:14px;color:var(--muted);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:middle">V1（後製）</td>
-            <td style="font-size:15px;color:var(--soft-black);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:middle">小白字、效果字、<br>ES、音效、音樂</td>
-            <td style="border:none"></td>
-            <td style="font-size:14px;color:var(--muted);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:middle">僅後製（10m）</td>
-            <td style="font-size:15px;color:var(--soft-black);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:middle">7–12 天<br><span class="sbadge">少於 7 天算加急</span></td>
-          </tr>
-          <tr>
-            <td style="font-size:14px;color:var(--muted);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:middle">V2 – V3</td>
-            <td style="font-size:15px;color:var(--soft-black);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:middle">修改版本</td>
-            <td style="border:none"></td>
-            <td style="font-size:14px;color:var(--muted);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:middle">加急費用</td>
-            <td style="font-size:15px;color:var(--soft-black);padding:.9rem 0;border-bottom:1px solid var(--divider)">$1,500 / 天</td>
-          </tr>
-          <tr>
-            <td style="font-size:14px;color:var(--muted);padding:.9rem 0;border-bottom:1px solid var(--divider)">FINAL</td>
-            <td style="font-size:15px;color:var(--soft-black);padding:.9rem 0;border-bottom:1px solid var(--divider)">完成可上片</td>
-            <td style="border:none"></td>
-            <td></td><td></td>
-          </tr>
-        </tbody>
-      </table>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1.3rem">
-        <div class="snote" style="margin-top:0">總修改次數：<strong style="color:#B5756A">3 次</strong><br>超過 3 次將視幅度斟酌收費，<br>修改點過多收費 $500 起</div>
-        <div class="snote" style="margin-top:0">標準為 <strong style="color:#B5756A">2 週</strong>的工作天。<br>會先與您確認 Final 日期，<br>確認有檔期後提供排程。</div>
-      </div>
-    </div>
-
-    <!-- 計費規則 -->
-    <div>
-      <div class="sched-block-title">計費規則</div>
-      <div class="billing-blk">
-        V1 版交付後，進入修改階段，<br>無論影片長度變短或變長，<br><span style="color:#B5756A">最終費用均以最長版本時長計費。</span>
-        <div class="billing-ex" style="margin-top:.75rem">
-          📌 V1 = 20分 → V2 = 15分<br>
-          <strong>→ 以 20 分鐘計費</strong><br><br>
-          📌 V1 = 20分 → V2 = 25分<br>
-          <strong>→ 以 25 分鐘計費</strong>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- EXTRAS -->
-
-<section id="pricing" class="sec" style="background:var(--cream);border-bottom:1px solid var(--divider)">
-  <div class="sec-hd fu">
-    <span class="sec-num">06</span>
-    <h2 class="sec-ttl">剪輯方案報價</h2>
-    <span class="sec-sub">Pricing Plans</span>
-  </div>
-
-  <!-- A 方案：字卡ES豐富 -->
-  <div class="plan-row fu">
-    <div class="plan-embed">
-      <div class="pembed-hd"><div class="pembed-hd-ttl">A 方案 · 作品範例</div></div>
-      <div class="pvids" id="pv-a">
-        <div class="pvid-item"><div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/ldDRs8G6DUA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>
-        <div class="pvid-item"><div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/6UyF4TSv8tI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>
-        <div class="pvid-item"><div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/XajfPW1lhyA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>
-      </div>
-    </div>
-    <div class="plan-info">
-      <div class="pinfo-hd">
-        <span class="pbadge a">A 方案</span>
-        <div class="pname">字卡 ES 豐富</div>
-        <div class="pdesc">一整支（單機、毛片 1hr 內）<br>每分鐘約 5–9 個 ES 效果（10分鐘影片約 50–90 個）<br>節目類型或特殊企劃專案</div>
-      </div>
-      <div class="pinfo-body">
-        <div style="font-size:12px;letter-spacing:.08em;color:var(--light-muted);margin-bottom:.75rem">影片成片 10m ／ 10m 後每 1m + $850</div>
-        <div class="price-row"><span class="price-lbl" style="color:#B5756A">工商</span><div class="price-val" style="color:#B5756A">$13,000 <span style="font-family:\'Noto Serif TC\',serif;font-size:12px;color:#B5756A;margin-left:1px">起</span></div></div>
-        <div class="price-row"><span class="price-lbl" style="color:#B5756A">工商（僅後製）</span><div class="price-val" style="color:#B5756A">$11,500 <span style="font-family:\'Noto Serif TC\',serif;font-size:12px;color:#B5756A;margin-left:1px">起</span></div></div>
-        <div class="price-row"><span class="price-lbl">非工商</span><div class="price-val">$10,000 <span style="font-family:'Noto Serif TC',serif;font-size:12px;color:var(--muted);margin-left:1px">起</span></div></div>
-        <div class="price-row"><span class="price-lbl">非工商（僅後製）</span><div class="price-val">$8,500 <span style="font-family:'Noto Serif TC',serif;font-size:12px;color:var(--muted);margin-left:1px">起</span></div></div>
-        <div style="margin-top:.85rem;padding-top:.75rem;font-size:12px;color:var(--light-muted);line-height:1.9">※ 多機 &amp; 毛片超時 &amp; 額外需求，請看 <a href="#extras" style="color:var(--light-muted);text-decoration:underline;text-underline-offset:2px">07 特殊需求加價</a><br>※ 最終費用以專案正式定案之需求為準。<br>※ 詢價請務必閱讀 <a href="#notice" style="color:var(--light-muted);text-decoration:underline;text-underline-offset:2px">04 詢價前須知</a></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- B 方案：字卡ES中等 -->
-  <div class="plan-row fu">
-    <div class="plan-embed">
-      <div class="pembed-hd"><div class="pembed-hd-ttl">B 方案 · 作品範例</div></div>
-      <div class="pvids" id="pv-b">
-        <div class="pvid-item"><div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/J6dRpZdgxrg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>
-        <div class="pvid-item"><div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/j1NPTOn9kNE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>
-      </div>
-    </div>
-    <div class="plan-info">
-      <div class="pinfo-hd">
-        <span class="pbadge b">B 方案</span>
-        <div class="pname">字卡 ES 中等</div>
-        <div class="pdesc">一整支（單機、毛片 1hr 內）<br>每分鐘約 3–6 個 ES 效果（10分鐘影片約 30–60 個）</div>
-      </div>
-      <div class="pinfo-body">
-        <div style="font-size:12px;letter-spacing:.08em;color:var(--light-muted);margin-bottom:.75rem">影片成片 10m ／ 10m 後每 1m + $850</div>
-        <div class="price-row"><span class="price-lbl" style="color:#B5756A">工商</span><div class="price-val" style="color:#B5756A">$11,000 <span style="font-family:\'Noto Serif TC\',serif;font-size:12px;color:#B5756A;margin-left:1px">起</span></div></div>
-        <div class="price-row"><span class="price-lbl" style="color:#B5756A">工商（僅後製）</span><div class="price-val" style="color:#B5756A">$9,500 <span style="font-family:\'Noto Serif TC\',serif;font-size:12px;color:#B5756A;margin-left:1px">起</span></div></div>
-        <div class="price-row"><span class="price-lbl">非工商</span><div class="price-val">$8,000 <span style="font-family:'Noto Serif TC',serif;font-size:12px;color:var(--muted);margin-left:1px">起</span></div></div>
-        <div class="price-row"><span class="price-lbl">非工商（僅後製）</span><div class="price-val">$6,500 <span style="font-family:'Noto Serif TC',serif;font-size:12px;color:var(--muted);margin-left:1px">起</span></div></div>
-        <div style="margin-top:.85rem;padding-top:.75rem;font-size:12px;color:var(--light-muted);line-height:1.9">※ 多機 &amp; 毛片超時 &amp; 額外需求，請看 <a href="#extras" style="color:var(--light-muted);text-decoration:underline;text-underline-offset:2px">07 特殊需求加價</a><br>※ 最終費用以專案正式定案之需求為準。<br>※ 詢價請務必閱讀 <a href="#notice" style="color:var(--light-muted);text-decoration:underline;text-underline-offset:2px">04 詢價前須知</a></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- C 方案：字卡ES較少 -->
-  <div class="plan-row fu">
-    <div class="plan-embed">
-      <div class="pembed-hd"><div class="pembed-hd-ttl">C 方案 · 作品範例</div></div>
-      <div class="pvids" id="pv-c">
-        <div class="pvid-item"><div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/fUNjyt1Hzzg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>
-        <div class="pvid-item"><div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/zInb09efez8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>
-      </div>
-    </div>
-    <div class="plan-info">
-      <div class="pinfo-hd">
-        <span class="pbadge c">C 方案</span>
-        <div class="pname">字卡 ES 較少</div>
-        <div class="pdesc">一整支（單機、毛片 1hr 內）<br>每分鐘約 1–3 個 ES 效果（10分鐘影片約 10–30 個）<br>白字幕為主，適合乾淨 vlog 風格</div>
-      </div>
-      <div class="pinfo-body">
-        <div style="font-size:12px;letter-spacing:.08em;color:var(--light-muted);margin-bottom:.75rem">影片成片 10m ／ 10m 後每 1m + $850</div>
-        <div class="price-row"><span class="price-lbl" style="color:#B5756A">工商</span><div class="price-val" style="color:#B5756A">$8,000 <span style="font-family:\'Noto Serif TC\',serif;font-size:12px;color:#B5756A;margin-left:1px">起</span></div></div>
-        <div class="price-row"><span class="price-lbl" style="color:#B5756A">工商（僅後製）</span><div class="price-val" style="color:#B5756A">$7,000 <span style="font-family:\'Noto Serif TC\',serif;font-size:12px;color:#B5756A;margin-left:1px">起</span></div></div>
-        <div class="price-row"><span class="price-lbl">非工商</span><div class="price-val">$6,000 <span style="font-family:'Noto Serif TC',serif;font-size:12px;color:var(--muted);margin-left:1px">起</span></div></div>
-        <div class="price-row"><span class="price-lbl">非工商（僅後製）</span><div class="price-val">$5,000 <span style="font-family:'Noto Serif TC',serif;font-size:12px;color:var(--muted);margin-left:1px">起</span></div></div>
-        <div style="margin-top:.85rem;padding-top:.75rem;font-size:12px;color:var(--light-muted);line-height:1.9">※ 多機 &amp; 毛片超時 &amp; 額外需求，請看 <a href="#extras" style="color:var(--light-muted);text-decoration:underline;text-underline-offset:2px">07 特殊需求加價</a><br>※ 最終費用以專案正式定案之需求為準。<br>※ 詢價請務必閱讀 <a href="#notice" style="color:var(--light-muted);text-decoration:underline;text-underline-offset:2px">04 詢價前須知</a></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- D 方案：工商短影片 -->
-  <div class="plan-row fu">
-    <div class="plan-embed">
-      <div class="pembed-hd"><div class="pembed-hd-ttl">D 方案 · 作品範例</div></div>
-      <div class="pvids" id="pv-d">
-        <div class="pvid-item"><div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/L2hAW-Lm3Vo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>
-        <div class="pvid-item"><div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/Zf8WnZ71F30" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>
-        <div class="pvid-item"><div class="pvid-wrap"><iframe src="https://www.youtube.com/embed/IVQ6LbB9wNg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>
-      </div>
-    </div>
-    <div class="plan-info">
-      <div class="pinfo-hd">
-        <span class="pbadge d">D 方案</span>
-        <div class="pname">工商短影片 ／ 直式短影片</div>
-        <div class="pdesc">直式短影片目前僅接受商案類型或特別企劃<br>（不承接藏鏡人類型）</div>
-      </div>
-      <div class="pinfo-body">
-        <div class="price-row"><span class="price-lbl">橫式中插（1m – 3m）</span><div><div class="price-val">$3,500 – $5,000</div><div class="price-sub">需額外確認報價</div></div></div>
-        <div class="price-row"><span class="price-lbl">直式 Reels 商業（1m）</span><div><div class="price-val">$2,500 – $3,500</div><div class="price-sub">0.5m 以 1m 計算</div></div></div>
-      </div>
-    </div>
-  </div>
-
-</section>
-<!-- SCHEDULE + BILLING SIDE BY SIDE -->
-<section id="extras" class="sec" style="background:var(--cream);border-bottom:1px solid var(--divider)">
-  <div class="sec-hd fu">
-    <span class="sec-num">07</span>
-    <h2 class="sec-ttl">特殊需求 ／ 其他服務</h2>
-    <span class="sec-sub">Add-ons</span>
-  </div>
-  <table class="extras-tbl fu">
-    <thead><tr><th>項目</th><th>價格</th></tr></thead>
-    <tbody>
-      <tr><td>毛片超過 0.5hr</td><td>$500 / 0.5hr</td></tr>
-      <tr><td>多機位</td><td>$500 / 機</td></tr>
-      <tr><td>美術視覺（ES / 特殊包框 / 底圖 / 視覺圖）</td><td>$1,500 – $3,000</td></tr>
-      <tr><td>聲音降噪處理</td><td>$1,000</td></tr>
-      <tr><td>商用影片、音樂素材（Envato 含商用授權）</td><td>$1,000 – $3,000</td></tr>
-      <tr><td>封面圖製作（不含文案，可修改 3 次）</td><td>$500 – $1,000 / 張</td></tr>
-      <tr><td>特殊需求（如中英字幕 / 360 相機 等等…）</td><td>額外報價</td></tr>
-    </tbody>
-  </table>
-</section>
-
-<!-- CONTACT -->
-
-<section id="contact">
-  <p class="ceyebrow">Contact</p>
-  <h2 class="ctitle">準備好了嗎？<br>讓我們<span style="color:var(--blush)">合作</span>吧</h2>
-  <p class="csub">歡迎提供影片交件日期，確認檔期後安排委託</p>
-  <div class="clinks">
-    <a href="https://www.youtube.com/@yufang149" target="_blank" class="clink pri">YouTube 作品集 →</a>
-    <a href="https://a88981.wixsite.com/website-1/as-seen-on" target="_blank" class="clink sec">設計作品集 →</a>
-  </div>
-  <div style="margin-top:1.5rem;display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap;">
-    <a href="https://line.me/ti/p/~zhongxiaowan" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.6rem;font-size:15px;color:var(--light-muted);text-decoration:none;letter-spacing:.06em;transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--light-muted)'">
+<section id="contact" style="background:var(--charcoal);padding:clamp(2rem,5vw,3.5rem) clamp(1.5rem,5vw,4rem);text-align:center">
+  <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.8rem);color:var(--cream);line-height:1.1;margin-bottom:1rem">
+    想了解詳細方案？
+  </h2>
+  <p style="font-size:14px;color:var(--light-muted);margin-bottom:2rem;letter-spacing:.06em">須知 · 時程 · 報價 · 加購</p>
+  <a href="service.html" style="display:inline-block;background:var(--blush);color:#fff;padding:.85rem 2.5rem;font-size:14px;letter-spacing:.1em;text-decoration:none;margin-bottom:1.5rem">查看詳細方案 →</a>
+  <div style="margin-top:1.5rem;display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap">
+    <a href="https://line.me/ti/p/~zhongxiaowan" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.6rem;font-size:15px;color:var(--light-muted);text-decoration:none">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
       zhongxiaowan
     </a>
-    <a href="https://www.instagram.com/yufangzhong/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.6rem;font-size:15px;color:var(--light-muted);text-decoration:none;letter-spacing:.06em;transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--light-muted)'">
+    <a href="https://www.instagram.com/yufangzhong/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.6rem;font-size:15px;color:var(--light-muted);text-decoration:none">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
       yufangzhong
     </a>
   </div>
 </section>
 
-<footer>
-  <span>© 2026 小玩剪輯服務 · All rights reserved</span>
-  <span style="font-style:italic;color:#C4978A;font-size:11px">禁止剽竊此報價資訊與格式，剽竊者上廁所沒衛生紙、看電影被爆雷，追不到喜歡的人</span>
-</footer>
-</div><!--/page-->
+</div>
+
+<!-- Lightbox -->
+<div class="lb-overlay" id="lb" onclick="lbClose(event)">
+  <span class="lb-close" onclick="lbClose()">✕</span>
+  <span class="lb-prev" onclick="lbNav(-1);event.stopPropagation()">←</span>
+  <img class="lb-img" id="lb-img" src="" alt="" />
+  <span class="lb-next" onclick="lbNav(1);event.stopPropagation()">→</span>
+</div>
 
 <script>
+
 // Scroll animation
 const obs = new IntersectionObserver((entries) => {
   entries.forEach((e,i) => {
@@ -1191,14 +872,7 @@ window.addEventListener('load', function() {
     if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 });
-</script>
 
-<!-- Lightbox -->
-<div class="lb-overlay" id="lb" onclick="lbClose(event)">
-  <span class="lb-close" onclick="lbClose()">✕</span>
-  <span class="lb-prev" onclick="lbNav(-1);event.stopPropagation()">←</span>
-  <img class="lb-img" id="lb-img" src="" alt="" />
-  <span class="lb-next" onclick="lbNav(1);event.stopPropagation()">→</span>
-</div>
+</script>
 </body>
 </html>
