@@ -1003,7 +1003,7 @@ async function fetchVideoDetails(videoIds) {
   return map;
 }
 
-async function buildGallery() { // returns Promise
+async function buildGallery() {
   const gallery = document.getElementById('yt-gallery');
   gallery.innerHTML = '';
 
@@ -1046,11 +1046,6 @@ async function buildGallery() { // returns Promise
   }
 }
 
-buildGallery().then(() => {
-  if (window.location.hash) {
-    setTimeout(() => {
-      const t = document.querySelector(window.location.hash);
-      if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 200);
   }
 });
@@ -1110,7 +1105,6 @@ async function buildPlanGallery() {
     gallery.innerHTML = '<div class="yt-loading">載入失敗，請確認 API Key 是否正確。</div>';
   }
 }
-buildPlanGallery();
 
 
 
@@ -1194,11 +1188,6 @@ function lbNav(dir) {
 });
 
 
-// 錨點跳轉：等頁面載入完成後執行
-function scrollToHash(hash) {
-  const target = document.querySelector(hash);
-  if (target) {
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
 
@@ -1209,18 +1198,16 @@ window.addEventListener('load', function() {
   }
 });
 
-// nav 點擊攔截
-document.querySelectorAll('nav a, .mobile-menu a').forEach(a => {
-  a.addEventListener('click', function(e) {
-    const href = this.getAttribute('href');
-    if (href && href.startsWith('#')) {
-      e.preventDefault();
-      history.pushState(null, '', href);
-      setTimeout(() => scrollToHash(href), 800);
-    }
-  });
-});
+buildGallery();
 
+buildPlanGallery();
+
+window.addEventListener('load', function() {
+  if (window.location.hash) {
+    var t = document.querySelector(window.location.hash);
+    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+});
 </script>
 
 <!-- Lightbox -->
