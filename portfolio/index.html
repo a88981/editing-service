@@ -55,7 +55,7 @@ nav a { text-decoration:none; color:inherit; transition:color .2s; }
 nav a:hover { color:var(--charcoal); }
 
 /* ── HERO ── */
-.hero {
+.hero { scroll-margin-top:66px;
   background: var(--warm-white);
   padding: clamp(4rem,9vw,7rem) clamp(1.5rem,5vw,4rem);
   display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
@@ -486,7 +486,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
   <div class="hero-cards fu">
     <div class="hcard">
       <div class="hcard-lbl">目前檔期</div>
-      <div class="hcard-val"><span class="sdot"></span>2026/6/24後檔期可詢問<br><span style="font-size:13px;color:var(--muted)">5月至6月中前 可詢問急案</span></div>
+      <div class="hcard-val"><span class="sdot" style="background:#B5756A"></span>2026/6/24 後 檔期可詢問<br><span class="sdot"></span>5月至6月中前 可詢問急案<br><span class="sdot"></span><span style="color:#B5756A">6/15–6/25 休假</span></div>
     </div>
     <div class="hcard">
       <div class="hcard-lbl">已合作創作者</div>
@@ -573,7 +573,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
 <!-- COVERS -->
 <section id="covers" class="sec" style="background:var(--warm-white);border-bottom:1px solid var(--divider)">
   <div class="sec-hd fu">
-    <span class="sec-num">05</span>
+    <span class="sec-num">04</span>
     <h2 class="sec-ttl">封面圖設計</h2>
     <span class="sec-sub">Thumbnail Design</span>
   </div>
@@ -980,6 +980,23 @@ function lbNav(dir) {
   document.getElementById('lb-img').src = lbList[lbCurrent].href;
   event.stopPropagation();
 }
+
+
+// 修正 nav anchor 跳轉位置
+document.querySelectorAll('nav a, .mobile-menu a').forEach(a => {
+  a.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 800);
+      }
+    }
+  });
+});
 
 </script>
 
