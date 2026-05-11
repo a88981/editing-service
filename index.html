@@ -474,7 +474,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
   <div class="hero-cards fu">
     <div class="hcard">
       <div class="hcard-lbl">目前檔期</div>
-      <div class="hcard-val"><span class="sdot" style="background:#B5756A"></span>2026/6/24 後 檔期可詢問<br><span class="sdot"></span>5月至6月中前 可詢問急案<br><span class="sdot"></span><span style="color:#B5756A">6/15–6/25 休假</span></div>
+      <div class="hcard-val" id="schedule-display"><span class="sdot" style="background:#B5756A"></span>2026/6/24 後 檔期可詢問<br><span class="sdot"></span>5月至6月中前 可詢問急案<br><span class="sdot"></span><span style="color:#B5756A">06/13–06/23 休假</span></div>
     </div>
     <div class="hcard">
       <div class="hcard-lbl">已合作創作者</div>
@@ -872,6 +872,21 @@ window.addEventListener('load', function() {
     if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 });
+
+
+// 動態讀取檔期
+fetch('/api/schedule')
+  .then(r => r.json())
+  .then(data => {
+    const el = document.getElementById('schedule-display');
+    if (!el || !data.main) return;
+    let html = '';
+    if (data.main) html += `<span class="sdot" style="background:#B5756A"></span>${data.main}`;
+    if (data.urgent) html += `<br><span class="sdot"></span>${data.urgent}`;
+    if (data.vacation) html += `<br><span class="sdot"></span><span style="color:#B5756A">${data.vacation}</span>`;
+    el.innerHTML = html;
+  })
+  .catch(() => {});
 
 </script>
 </body>
