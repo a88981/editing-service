@@ -1046,9 +1046,6 @@ async function buildGallery() {
   }
 }
 
-    }, 200);
-  }
-});
 
 // ── YouTube Plan Gallery ──
 async function buildPlanGallery() {
@@ -1181,25 +1178,11 @@ function lbNav(dir) {
 }
 
 
-        }, 800);
-      }
-    }
-  });
-});
-
-
-  }
-}
-
-// 頁面載入完成後跳轉到 hash
-window.addEventListener('load', function() {
-  if (window.location.hash) {
-    setTimeout(() => scrollToHash(window.location.hash), 500);
-  }
-});
-
 buildGallery();
 
+buildPlanGallery();
+
+buildGallery();
 buildPlanGallery();
 
 window.addEventListener('load', function() {
