@@ -541,7 +541,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
     <h2 class="sec-ttl">YouTube 企劃作品集</h2>
     <span class="sec-sub">Planning Portfolio</span>
   </div>
-  <div id="yt-plan-gallery" class="fu" style="min-height:400px">
+  <div id="yt-plan-gallery" class="fu">
     <div class="yt-loading">載入中…</div>
   </div>
 </section>
@@ -553,7 +553,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
     <h2 class="sec-ttl">YouTube 剪輯作品集</h2>
     <span class="sec-sub">Editing Portfolio</span>
   </div>
-  <div id="yt-gallery" class="fu" style="min-height:2400px">
+  <div id="yt-gallery" class="fu">
     <div class="yt-loading">載入中…</div>
   </div>
 </section>
@@ -1003,7 +1003,7 @@ async function fetchVideoDetails(videoIds) {
   return map;
 }
 
-async function buildGallery() {
+async function buildGallery() { // returns Promise
   const gallery = document.getElementById('yt-gallery');
   gallery.innerHTML = '';
 
@@ -1046,7 +1046,14 @@ async function buildGallery() {
   }
 }
 
-buildGallery();
+buildGallery().then(() => {
+  if (window.location.hash) {
+    setTimeout(() => {
+      const t = document.querySelector(window.location.hash);
+      if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 200);
+  }
+});
 
 // ── YouTube Plan Gallery ──
 async function buildPlanGallery() {
