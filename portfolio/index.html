@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>小玩 · 影像作品集|YouTube 剪輯與企劃</title>
+<title>小玩 作品集</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <style>
 
@@ -48,7 +48,7 @@ header {
   max-width: 960px;
   box-sizing: border-box;
 }
-.logo { font-family:'Cormorant Garamond','Noto Serif TC',serif; font-weight:300; font-size:16px; letter-spacing:0.06em; color:var(--charcoal); }
+.logo { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:23px; letter-spacing:0.08em; color:var(--charcoal); }
 .logo em { font-style:normal; color:var(--blush); }
 nav { display:flex; gap:1.8rem; font-size:13px; letter-spacing:0.07em; color:var(--muted); }
 nav a { text-decoration:none; color:inherit; transition:color .2s; }
@@ -57,11 +57,11 @@ nav a:hover { color:var(--charcoal); }
 /* ── HERO ── */
 .hero { scroll-margin-top:66px;
   background: var(--warm-white);
-  padding: clamp(2.5rem,6vw,4.5rem) clamp(1.5rem,5vw,4rem);
-  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
+  padding: clamp(4rem,9vw,7rem) clamp(1.5rem,5vw,4rem);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
   border-bottom: 1px solid var(--divider);
 }
-.hero-eyebrow { font-size:12px; letter-spacing:.2em; color:var(--sage); text-transform:uppercase; margin-bottom:1rem; white-space:nowrap; }
+.hero-eyebrow { font-size:12px; letter-spacing:.2em; color:var(--sage); text-transform:uppercase; margin-bottom:1rem; }
 .hero-title { font-family:'DM Serif Display',serif; font-size:clamp(2.5rem,4vw,4rem); line-height:1.1; color:var(--charcoal); margin-bottom:1.4rem; }
 .hero-title em { font-style:italic; color:var(--blush); }
 .hero-desc { font-size:16px; color:var(--muted); line-height:2; max-width:400px; margin-bottom:2rem; }
@@ -69,7 +69,7 @@ nav a:hover { color:var(--charcoal); }
 .hero-cta:hover { background:var(--soft-black); }
 .hero-cards { display:flex; flex-direction:column; gap:1.4rem; }
 .hcard { background:var(--cream); border:1px solid var(--divider-strong); padding:1.4rem 1.7rem; }
-.hcard-lbl { font-size:11px; letter-spacing:.18em; color:var(--muted); text-transform:uppercase; margin-bottom:.6rem; }
+.hcard-lbl { font-size:11px; letter-spacing:.18em; color:var(--light-muted); text-transform:uppercase; margin-bottom:.6rem; }
 .hcard-body { font-size:13px; line-height:1.75; word-break:keep-all; }
 .hcard-val { font-family:'Noto Serif TC',serif; font-size:15px; color:var(--charcoal); line-height:1.9; }
 .sdot { display:inline-block; width:7px; height:7px; background:var(--blush); border-radius:50%; margin-right:.5rem; vertical-align:middle; animation:pulse 2s ease-in-out infinite; }
@@ -238,8 +238,8 @@ nav a:hover { color:var(--charcoal); }
 .clink { display:inline-flex; align-items:center; gap:.5rem; padding:.85rem 2rem; font-size:13px; letter-spacing:.11em; text-decoration:none; transition:all .22s; }
 .clink.pri { background:var(--blush); color:var(--cream); }
 .clink.pri:hover { background:#B8897C; }
-.clink.sec { border:1px solid rgba(247,244,239,.5); color:var(--cream); }
-.clink.sec:hover { background:rgba(247,244,239,.1); border-color:rgba(247,244,239,.8); }
+.clink.sec { border:1px solid rgba(247,244,239,.2); color:var(--light-muted); }
+.clink.sec:hover { border-color:rgba(247,244,239,.5); color:var(--cream); }
 .lineid { display:inline-block; margin-top:1.9rem; font-family:'Cormorant Garamond',serif; font-size:24px; font-weight:300; font-style:italic; color:var(--light-muted); }
 .lineid span { color:var(--cream); }
 
@@ -449,7 +449,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
 <body>
 <div id="page">
 <header>
-  <div class="logo"><em>小玩</em> · YouTube 影像剪輯・企劃</div>
+  <div class="logo"><em>小玩</em> 作品集</div>
   <nav>
     <a href="#page">首頁</a>
     <a href="#about">關於</a>
@@ -477,26 +477,29 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
 
 <!-- HERO -->
 <section class="hero">
-  <div class="fu" style="align-self:center">
-    <p class="hero-eyebrow">Freelance Video Editor & Producer · 2026</p>
-    <h1 class="hero-title"><span style="color:var(--blush)">小玩</span><br>影像作品集</h1>
-    <p class="hero-desc">五年以上 YouTube 頻道後製經驗<br>與創作者一起，把素材變成故事。<br>從企劃到後製，一支影片的所有細節，<br>與多位 YouTuber 長期合作。</p>
+  <div class="fu">
+    <p class="hero-eyebrow">Freelance Video Editor · 2026</p>
+    <h1 class="hero-title"><span style="color:var(--blush)">小玩</span> 作品集</h1>
+    <p class="hero-desc">五年以上 YouTube 頻道後製經驗，<br>精通影片剪輯、企劃與視覺設計，<br>與多位 YouTuber 創作者合作。</p>
     <a href="#plans" class="hero-cta">查看方案 ↓</a>
   </div>
   <div class="hero-cards fu">
     <div class="hcard">
       <div class="hcard-lbl">目前檔期</div>
-      <div class="hcard-val" id="schedule-display"><span class="sdot" style="background:#B5756A"></span>2026/6/24 後 檔期可詢問<br><span class="sdot"></span>5月至6月中前 可詢問急案<br><span class="sdot"></span><span style="color:#B5756A">06/13–06/23 休假</span></div>
+      <div class="hcard-val" id="schedule-display"><span class="sdot" style="background:#B5756A"></span>2026/6/24 後 檔期可詢問<br><span class="sdot"></span>5月至6月中前 可詢問急案<br><span class="sdot"></span><span style="color:#B5756A">06/20–06/23 休假</span></div>
     </div>
     <div class="hcard">
       <div class="hcard-lbl">已合作創作者</div>
       <div class="hcard-val" style="font-size:13px;line-height:1.9;letter-spacing:.02em">Joeman · 阿滴 · The DoDo Men · VW ·<br>一隻阿圓 · 痣作人 · 阿部瑪利亞 · 泱泱 ·<br>愛里 · 貝莉莓 · 蘋蘋澎澎 · Netflix · 黃大謙 ·<br>金針菇 · LUCY · 米鹿 · 丘涵 · 希露弟弟啃雞腿<br>水電爸爸 · 鵝鵝就是鵝鵝 等多位 YouTuber…</div>
     </div>
     <div class="hcard">
-      <div class="hcard-lbl">服務項目</div>
+      <div class="hcard-lbl">專長技能</div>
       <div class="tags">
+        <div style="display:flex;flex-wrap:nowrap;gap:.45rem;margin-bottom:.45rem">
+          <span class="tag">影片企劃</span><span class="tag">後製剪輯</span><span class="tag">平面 / 視覺設計</span>
+        </div>
         <div style="display:flex;flex-wrap:nowrap;gap:.45rem">
-          <span class="tag" style="color:#A86A5C;background:rgba(168,106,92,.12);border-color:rgba(168,106,92,.28)">後製剪輯</span><span class="tag" style="color:#A86A5C;background:rgba(168,106,92,.12);border-color:rgba(168,106,92,.28)">平面 / 視覺設計</span><span class="tag" style="color:#A86A5C;background:rgba(168,106,92,.12);border-color:rgba(168,106,92,.28)">影片企劃</span>
+          <span class="tag">Premiere</span><span class="tag">Photoshop</span><span class="tag">Illustrator</span>
         </div>
       </div>
     </div>
@@ -518,21 +521,17 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
     </div>
     <!-- 文字 -->
     <div class="fu">
-      <p class="about-bio">我是<strong>小玩（鍾郁芳）</strong>，<br>一名 Freelance Video Editor & Producer。<br>從新媒體公司主管、頻道製作人，<br>到 YouTuber 長期合作的剪輯夥伴——<br>兼具視覺設計底子，熟悉影像企劃、<br>後製剪輯、視覺整合的完整流程。<br>曾以一條龍模式擔任頻道製作人，<br>現專注於與創作者共同打造頻道內容。</p>
+      <p class="about-bio">我是<strong>小玩</strong>，一名 Freelancer，<br>專注於 YouTube 頻道的後製剪輯與視覺呈現。<br>曾任 YouTube 頻道阿部瑪利亞製作人，<br>有豐富的 YouTube 企劃／剪輯經驗。</p>
     </div>
     <!-- 時間軸 -->
     <div class="tline fu">
-      <div class="titem">
-        <div class="tyr">2025–</div>
-        <div class="tdesc"><strong style="white-space:nowrap">Freelance Video Editor & Producer</strong>YouTube 內容後製・企劃</div>
-      </div>
       <div class="titem">
         <div class="tyr">2021–2025</div>
         <div class="tdesc"><strong>Joeman 頻道</strong>Joe是要對決外包剪輯師</div>
       </div>
       <div class="titem">
         <div class="tyr">2020–2021</div>
-        <div class="tdesc"><strong>麥卡貝</strong>阿部瑪利亞頻道 製作人 &amp; 剪輯師<br>（一條龍：企劃・剪輯・設計）<br>泱泱頻道初期剪輯師</div>
+        <div class="tdesc"><strong>麥卡貝</strong>阿部瑪利亞頻道製作人 &amp; 剪輯師<br>泱泱頻道初期剪輯師</div>
       </div>
       <div class="titem">
         <div class="tyr">2016–2020</div>
@@ -662,7 +661,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
       <div style="padding:1.4rem 1.6rem;flex:1">
         <span class="pbadge a">A 方案</span>
         <div class="pname" style="margin-top:.6rem">字卡 ES 豐富</div>
-        <div class="pdesc" style="margin-top:.5rem">一整支（單機、毛片 1hr 內）<br>適合節奏緊湊、視覺豐富的內容<br>節目類型或特殊企劃專案</div>
+        <div class="pdesc" style="margin-top:.5rem">一整支（單機、毛片 1hr 內）<br>每分鐘約 5–9 個 ES 效果（10分鐘影片約 50–90 個）<br>節目類型或特殊企劃專案</div>
       </div>
     </div>
     <div style="background:var(--warm-white);border:1px solid var(--divider-strong);display:flex;flex-direction:column">
@@ -672,7 +671,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
       <div style="padding:1.4rem 1.6rem;flex:1">
         <span class="pbadge b">B 方案</span>
         <div class="pname" style="margin-top:.6rem">字卡 ES 中等</div>
-        <div class="pdesc" style="margin-top:.5rem">一整支（單機、毛片 1hr 內）<br>多數頻道適用<br>在資訊密度與節奏感之間取得平衡</div>
+        <div class="pdesc" style="margin-top:.5rem">一整支（單機、毛片 1hr 內）<br>每分鐘約 3–6 個 ES 效果（10分鐘影片約 30–60 個）</div>
       </div>
     </div>
     <div style="background:var(--warm-white);border:1px solid var(--divider-strong);display:flex;flex-direction:column">
@@ -682,7 +681,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
       <div style="padding:1.4rem 1.6rem;flex:1">
         <span class="pbadge c">C 方案</span>
         <div class="pname" style="margin-top:.6rem">字卡 ES 較少</div>
-        <div class="pdesc" style="margin-top:.5rem">一整支（單機、毛片 1hr 內）<br>白字幕為主<br>適合乾淨的 vlog 風格</div>
+        <div class="pdesc" style="margin-top:.5rem">一整支（單機、毛片 1hr 內）<br>每分鐘約 1–3 個 ES 效果（10分鐘影片約 10–30 個）<br>白字幕為主，適合乾淨 vlog 風格</div>
       </div>
     </div>
     <div style="background:var(--warm-white);border:1px solid var(--divider-strong);display:flex;flex-direction:column">
@@ -692,17 +691,16 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
       <div style="padding:1.4rem 1.6rem;flex:1">
         <span class="pbadge d">D 方案</span>
         <div class="pname" style="margin-top:.6rem">直式短影片</div>
-        <div class="pdesc" style="margin-top:.5rem">直式短影片目前僅接受商案類型或特別企劃<br>適合品牌合作、活動宣傳、特別企劃<br>（不承接藏鏡人類型）</div>
+        <div class="pdesc" style="margin-top:.5rem">直式短影片目前僅接受商案類型或特別企劃<br>（不承接藏鏡人類型）</div>
       </div>
     </div>
   </div>
-  <p style="text-align:center;margin-top:2.5rem;font-size:13px;color:var(--muted);letter-spacing:.08em">詳細規格與報價請洽詢</p>
 </section>
 
 <section id="contact">
   <p class="ceyebrow">Contact</p>
-  <h2 class="ctitle">合作<span style="color:var(--blush)">聯絡</span></h2>
-  <p class="csub">請透過 LINE 或 IG 私訊</p>
+  <h2 class="ctitle">與我聯絡，<br>了解<span style="color:var(--blush)">合作報價</span>！</h2>
+  <p class="csub">歡迎提供影片交件日期，確認檔期後安排委託</p>
   <div class="clinks">
     <a href="https://www.youtube.com/@yufang149" target="_blank" class="clink pri">YouTube 作品集 →</a>
     <a href="https://a88981.wixsite.com/website-1/as-seen-on" target="_blank" class="clink sec">設計作品集 →</a>
@@ -1002,7 +1000,7 @@ document.querySelectorAll('nav a, .mobile-menu a').forEach(a => {
 
 
 // 動態讀取檔期
-fetch('/api/schedule')
+fetch('https://finn-editing-service.vercel.app/api/schedule')
   .then(r => r.json())
   .then(data => {
     const el = document.getElementById('schedule-display');
