@@ -86,7 +86,8 @@ nav a:hover { color:var(--charcoal); }
 
 /* ── ABOUT ── */
 #about { background:var(--warm-white); border-bottom:1px solid var(--divider); }
-.about-grid { display:grid; grid-template-columns:120px 1fr 1.35fr; gap:2.5rem; align-items:start; }
+.about-grid { display:grid; grid-template-columns:1fr 1.3fr; gap:3.5rem; align-items:start; }
+.about-avatar { width:170px; height:170px; border-radius:50%; object-fit:cover; display:block; margin-bottom:1.9rem; }
 .about-bio { font-family:'Noto Serif TC',serif; font-size:14px; line-height:1.95; color:var(--soft-black); }
 .about-bio strong { font-weight:500; color:var(--charcoal); }
 .tline { display:flex; flex-direction:column; }
@@ -254,14 +255,14 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
 
 /* ── RESPONSIVE ── */
 @media(max-width:960px){
-  .about-grid { grid-template-columns:96px 1fr; }
-  .about-grid > .tline { grid-column:1 / -1; }
+  .about-grid { grid-template-columns:1fr; gap:2.75rem; }
   .plan-row { display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--divider-strong); background:var(--warm-white); margin-bottom:1.75rem; transition:box-shadow .3s; }
   .plan-embed { border-right:none; border-bottom:1px solid var(--divider); }
   .pvids { padding:.9rem 1.4rem; display:flex; flex-direction:column; gap:.9rem; }
   .sched-grid { grid-template-columns:1fr 1fr; }
 }
 @media(max-width:768px){
+  .about-avatar { width:130px; height:130px; margin-bottom:1.5rem; }
   #plans .fu[style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !important; }
   .hero, .about-grid, .rights-grid { grid-template-columns:1fr; gap:2rem; }
   .notice-grid { grid-template-columns:1fr; }
@@ -517,12 +518,9 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
     <span class="sec-sub">About</span>
   </div>
   <div class="about-grid">
-    <!-- 照片 -->
+    <!-- 照片 + 文字 -->
     <div class="fu">
-      <img src="avatar.png" alt="小玩" style="width:110px;height:110px;border-radius:50%;object-fit:cover;" />
-    </div>
-    <!-- 文字 -->
-    <div class="fu">
+      <img class="about-avatar" src="avatar.png" alt="小玩" />
       <p class="about-bio">我是<strong>小玩（鍾郁芳）</strong>，<br>一名 Freelance Video Editor & Producer。<br>從新媒體公司主管、頻道製作人，<br>到 YouTuber 長期合作的剪輯夥伴——<br>兼具視覺設計底子，熟悉影像企劃、<br>後製剪輯、視覺整合的完整流程。<br>曾以一條龍模式擔任頻道製作人，<br>現專注於與創作者共同打造頻道內容。</p>
     </div>
     <!-- 時間軸 -->
@@ -537,7 +535,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
       </div>
       <div class="titem">
         <div class="tyr">2020–2021</div>
-        <div class="tdesc"><strong>麥卡貝</strong>阿部瑪利亞頻道 製作人 &amp; 剪輯師<span class="tsub">（工作範疇：企劃・執行・剪輯・設計）<br>泱泱頻道初期剪輯師</span></div>
+        <div class="tdesc"><strong>麥卡貝</strong>阿部瑪利亞頻道 製作人 &amp; 剪輯師<span class="tsub">（企劃・執行・剪輯・設計）<br>泱泱頻道初期剪輯師</span></div>
       </div>
       <div class="titem">
         <div class="tyr">2016–2020</div>
@@ -696,7 +694,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
       </div>
       <div style="padding:1.4rem 1.6rem;flex:1">
         <span class="pbadge d">D 方案</span>
-        <div class="pname" style="margin-top:.6rem">直式短影片</div>
+        <div class="pname" style="margin-top:.6rem">工商短影片 ／ Reels</div>
         <div class="pdesc" style="margin-top:.5rem">目前僅接受商案類型或特別企劃<br>（不承接藏鏡人類型）</div>
       </div>
     </div>
