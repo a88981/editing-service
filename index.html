@@ -400,8 +400,9 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
 .yt-creator-block { margin-bottom:2.5rem; }
 .yt-creator-header { display:flex; align-items:center; gap:1rem; margin-bottom:1rem; padding-bottom:.75rem; border-bottom:1px solid var(--divider); }
 .yt-creator-name { font-family:'Noto Serif TC',serif; font-size:17px; font-weight:400; color:var(--charcoal); }
-.yt-creator-link { font-size:12px; color:var(--sage); text-decoration:none; letter-spacing:.08em; margin-left:auto; }
-.yt-creator-link:hover { color:var(--charcoal); }
+.yt-creator-link { font-size:12px; color:var(--muted); text-decoration:none; letter-spacing:.08em; margin-left:auto; transition:color .2s; }
+.yt-creator-link:hover { color:var(--blush); }
+.yt-play { font-size:9px; margin-right:.4rem; vertical-align:1px; opacity:.7; }
 .yt-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:1rem; }
 .yt-thumb-card { cursor:pointer; text-decoration:none; color:inherit; display:block; }
 .yt-thumb-card:hover .yt-thumb-img { opacity:.85; }
@@ -704,7 +705,7 @@ async function buildGallery() {
       block.innerHTML = `
         <div class="yt-creator-header">
           <span class="yt-creator-name">【${pl.name}】小玩剪輯作品</span>
-          <a class="yt-creator-link" href="https://www.youtube.com/playlist?list=${pl.id}" target="_blank" rel="noopener">▶ 全部播放</a>
+          <a class="yt-creator-link" href="https://www.youtube.com/playlist?list=${pl.id}" target="_blank" rel="noopener"><span class="yt-play">▶</span>全部播放</a>
         </div>
         <div class="yt-grid">
           ${videos.map(v => {
@@ -765,7 +766,7 @@ async function buildPlanGallery() {
     block.innerHTML = `
       <div class="yt-creator-header">
         <span class="yt-creator-name">小玩企劃作品集</span>
-        <a class="yt-creator-link" href="https://www.youtube.com/playlist?list=${PLAN_LIST_ID}" target="_blank" rel="noopener">▶ 全部播放</a>
+        <a class="yt-creator-link" href="https://www.youtube.com/playlist?list=${PLAN_LIST_ID}" target="_blank" rel="noopener"><span class="yt-play">▶</span>全部播放</a>
       </div>
       <div class="yt-grid">
         ${videos.map(v => {
