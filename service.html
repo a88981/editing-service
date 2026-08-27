@@ -188,6 +188,7 @@ nav a:hover { color:var(--charcoal); }
 .price-lbl { color:var(--muted); flex:1; }
 .price-val { font-family:'Cormorant Garamond',serif; font-size:19px; color:var(--charcoal); white-space:nowrap; }
 .price-sub { font-size:12px; color:var(--light-muted); text-align:right; margin-top:.15rem; }
+.tax-tag { font-family:'Noto Sans TC',sans-serif; font-size:11px; letter-spacing:.04em; color:var(--light-muted); margin-left:.4rem; white-space:nowrap; }
 
 .calc-blk { background:var(--cream); border:1px solid var(--divider); padding:1.1rem 1.6rem; margin-top:1.2rem; }
 .calc-ttl { font-size:11px; letter-spacing:.13em; color:var(--light-muted); text-transform:uppercase; margin-bottom:.65rem; }
@@ -286,6 +287,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
   .pdesc { font-size:13px; }
   .price-lbl { font-size:13px; }
   .price-val { font-size:15px; }
+  .tax-tag { font-size:10px; margin-left:.3rem; }
   .pinfo-hd { padding:1rem 1.25rem .75rem; }
   .pinfo-body { padding:.75rem 1.25rem 1.25rem; }
 }
@@ -483,7 +485,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
       <div class="nrow-icon">💡</div>
       <div class="nrow-body">
         <div class="nrow-title">報價依複雜度而異</div>
-        <div class="nrow-desc">請提供您的需求影片&amp;頻道範例，以便為您評估合適的 A～D 方案。<br>最終報價將依毛片數量、ES 效果與專案複雜度彈性調整。</div>
+        <div class="nrow-desc">請提供您的需求影片&amp;頻道範例，以便為您評估合適的 A～D 方案。<br>最終報價將依毛片數量、ES 效果與專案複雜度彈性調整。<br><span style="color:#B5756A">所有報價均為未稅價，如需開立發票將另加 5% 營業稅。</span></div>
       </div>
     </div>
     <div class="nrow fu">
@@ -516,7 +518,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
       <div class="nrow-icon">🎵</div>
       <div class="nrow-body">
         <div class="nrow-title">音樂版權</div>
-        <div class="nrow-desc">以創作者頻道購買授權的音樂庫使用為主（Epidemic Sound / Artlist）。<br>無授權音樂庫將使用 YT 無版權音樂庫。<br>若有特殊音樂要求，使用商用素材庫（Envato）需額外 +$500–$3,000。</div>
+        <div class="nrow-desc">以創作者頻道購買授權的音樂庫使用為主（Epidemic Sound / Artlist）。<br>無授權音樂庫將使用 YT 無版權音樂庫。<br>若有特殊音樂要求，使用商用素材庫（Envato）需額外 +$500–$3,000<span class="tax-tag">未稅</span>。</div>
       </div>
     </div>
     <div class="nrow fu">
@@ -548,14 +550,14 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
         <tr><td>FINAL</td><td>完成可上片</td></tr>
       </tbody>
     </table>
-    <div class="snote" style="margin-top:0;margin-bottom:1.5rem">總修改次數：<strong style="color:#B5756A">3 次</strong><br>超過 3 次將視幅度斟酌收費，<br>修改點過多收費 $500 起</div>
+    <div class="snote" style="margin-top:0;margin-bottom:1.5rem">總修改次數：<strong style="color:#B5756A">3 次</strong><br>超過 3 次將視幅度斟酌收費，<br>修改點過多收費 $500 起<span class="tax-tag">未稅</span></div>
     <div class="sched-block-title" style="margin-bottom:.75rem">工作時程</div>
     <table class="stage-tbl" style="margin-bottom:1.5rem">
       <thead><tr><th>類型</th><th>工作天</th></tr></thead>
       <tbody>
         <tr><td>一整支（10m）</td><td>10–14 天 <span class="sbadge">少於 10 天算加急</span></td></tr>
         <tr><td>僅後製（10m）</td><td>7–12 天 <span class="sbadge">少於 7 天算加急</span></td></tr>
-        <tr><td>加急費用</td><td>$1,500 / 天</td></tr>
+        <tr><td>加急費用</td><td>$1,500 / 天<span class="tax-tag">未稅</span></td></tr>
       </tbody>
     </table>
     <div class="snote" style="margin-top:0;margin-bottom:1.5rem">標準為 <strong style="color:#B5756A">2 週</strong>的工作天。<br>會先與您確認 Final 日期，<br>確認有檔期後提供排程。</div>
@@ -609,7 +611,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
             <td style="font-size:15px;color:var(--soft-black);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:middle">修改版本</td>
             <td style="border:none"></td>
             <td style="font-size:14px;color:var(--muted);padding:.9rem 0;border-bottom:1px solid var(--divider);vertical-align:middle">加急費用</td>
-            <td style="font-size:15px;color:var(--soft-black);padding:.9rem 0;border-bottom:1px solid var(--divider)">$1,500 / 天</td>
+            <td style="font-size:15px;color:var(--soft-black);padding:.9rem 0;border-bottom:1px solid var(--divider)">$1,500 / 天<span class="tax-tag">未稅</span></td>
           </tr>
           <tr>
             <td style="font-size:14px;color:var(--muted);padding:.9rem 0;border-bottom:1px solid var(--divider)">FINAL</td>
@@ -620,7 +622,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
         </tbody>
       </table>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1.3rem">
-        <div class="snote" style="margin-top:0">總修改次數：<strong style="color:#B5756A">3 次</strong><br>超過 3 次將視幅度斟酌收費，<br>修改點過多收費 $500 起</div>
+        <div class="snote" style="margin-top:0">總修改次數：<strong style="color:#B5756A">3 次</strong><br>超過 3 次將視幅度斟酌收費，<br>修改點過多收費 $500 起<span class="tax-tag">未稅</span></div>
         <div class="snote" style="margin-top:0">標準為 <strong style="color:#B5756A">2 週</strong>的工作天。<br>會先與您確認 Final 日期，<br>確認有檔期後提供排程。</div>
       </div>
     </div>
@@ -649,6 +651,12 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
     <span class="sec-sub">Pricing Plans</span>
   </div>
 
+  <div class="snote fu" style="margin-top:0;margin-bottom:1.75rem">
+    本頁所有金額（含方案報價、加急費、修改費、素材加購）均為<strong style="color:#B5756A">未稅價</strong>。<br>
+    如需開立發票，將另加 5% 營業稅（未稅金額 × 1.05）。<br>
+    <span style="color:#B5756A">例：未稅 $10,000 → 含稅 $10,500。</span>
+  </div>
+
   <!-- A 方案：字卡ES豐富 -->
   <div class="plan-row fu">
     <div class="plan-embed">
@@ -663,15 +671,14 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
       <div class="pinfo-hd">
         <span class="pbadge a">A 方案</span>
         <div class="pname">字卡 ES 豐富</div>
-        <div class="pdesc" style="font-style:italic;color:var(--blush);margin-top:.2rem;margin-bottom:.6rem">適合節奏緊湊、視覺豐富的內容<br>節目類型或特殊企劃專案</div>
-        <div class="pdesc">一整支（單機、毛片 1hr 內）<br>每分鐘約 5–9 個 ES 效果（10分鐘影片約 50–90 個）</div>
+        <div class="pdesc">一整支（單機、毛片 1hr 內）<br>每分鐘約 5–9 個 ES 效果（10分鐘影片約 50–90 個）<br>節目類型或特殊企劃專案</div>
       </div>
       <div class="pinfo-body">
-        <div style="font-size:12px;letter-spacing:.08em;color:var(--light-muted);margin-bottom:.75rem">影片成片 10m ／ 10m 後每 1m + $850</div>
-        <div class="price-row"><span class="price-lbl" style="color:#B5756A">工商</span><div class="price-val" style="color:#B5756A">$13,000 <span style="font-family:\'Noto Serif TC\',serif;font-size:12px;color:#B5756A;margin-left:1px">起</span></div></div>
-        <div class="price-row"><span class="price-lbl" style="color:#B5756A">工商（僅後製）</span><div class="price-val" style="color:#B5756A">$11,500 <span style="font-family:\'Noto Serif TC\',serif;font-size:12px;color:#B5756A;margin-left:1px">起</span></div></div>
-        <div class="price-row"><span class="price-lbl">非工商</span><div class="price-val">$10,000 <span style="font-family:'Noto Serif TC',serif;font-size:12px;color:var(--muted);margin-left:1px">起</span></div></div>
-        <div class="price-row"><span class="price-lbl">非工商（僅後製）</span><div class="price-val">$8,500 <span style="font-family:'Noto Serif TC',serif;font-size:12px;color:var(--muted);margin-left:1px">起</span></div></div>
+        <div style="font-size:12px;letter-spacing:.08em;color:var(--light-muted);margin-bottom:.75rem">影片成片 10m ／ 10m 後每 1m + $850（未稅）</div>
+        <div class="price-row"><span class="price-lbl" style="color:#B5756A">工商</span><div class="price-val" style="color:#B5756A">$13,000 <span style="font-family:'Noto Serif TC',serif;font-size:12px;color:#B5756A;margin-left:1px">起</span><span class="tax-tag">未稅</span></div></div>
+        <div class="price-row"><span class="price-lbl" style="color:#B5756A">工商（僅後製）</span><div class="price-val" style="color:#B5756A">$11,500 <span style="font-family:'Noto Serif TC',serif;font-size:12px;color:#B5756A;margin-left:1px">起</span><span class="tax-tag">未稅</span></div></div>
+        <div class="price-row"><span class="price-lbl">非工商</span><div class="price-val">$10,000 <span style="font-family:'Noto Serif TC',serif;font-size:12px;color:var(--muted);margin-left:1px">起</span><span class="tax-tag">未稅</span></div></div>
+        <div class="price-row"><span class="price-lbl">非工商（僅後製）</span><div class="price-val">$8,500 <span style="font-family:'Noto Serif TC',serif;font-size:12px;color:var(--muted);margin-left:1px">起</span><span class="tax-tag">未稅</span></div></div>
         <div style="margin-top:.85rem;padding-top:.75rem;font-size:12px;color:var(--light-muted);line-height:1.9">※ 多機 &amp; 毛片超時 &amp; 額外需求，請看 <a href="#extras" style="color:var(--light-muted);text-decoration:underline;text-underline-offset:2px">07 特殊需求加價</a><br>※ 最終費用以專案正式定案之需求為準。<br>※ 詢價請務必閱讀 <a href="#notice" style="color:var(--light-muted);text-decoration:underline;text-underline-offset:2px">04 詢價前須知</a></div>
       </div>
     </div>
@@ -690,15 +697,14 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
       <div class="pinfo-hd">
         <span class="pbadge b">B 方案</span>
         <div class="pname">字卡 ES 中等</div>
-        <div class="pdesc" style="font-style:italic;color:var(--blush);margin-top:.2rem;margin-bottom:.6rem">多數頻道適用<br>在資訊密度與節奏感之間取得平衡</div>
         <div class="pdesc">一整支（單機、毛片 1hr 內）<br>每分鐘約 3–6 個 ES 效果（10分鐘影片約 30–60 個）</div>
       </div>
       <div class="pinfo-body">
-        <div style="font-size:12px;letter-spacing:.08em;color:var(--light-muted);margin-bottom:.75rem">影片成片 10m ／ 10m 後每 1m + $850</div>
-        <div class="price-row"><span class="price-lbl" style="color:#B5756A">工商</span><div class="price-val" style="color:#B5756A">$11,000 <span style="font-family:\'Noto Serif TC\',serif;font-size:12px;color:#B5756A;margin-left:1px">起</span></div></div>
-        <div class="price-row"><span class="price-lbl" style="color:#B5756A">工商（僅後製）</span><div class="price-val" style="color:#B5756A">$9,500 <span style="font-family:\'Noto Serif TC\',serif;font-size:12px;color:#B5756A;margin-left:1px">起</span></div></div>
-        <div class="price-row"><span class="price-lbl">非工商</span><div class="price-val">$8,000 <span style="font-family:'Noto Serif TC',serif;font-size:12px;color:var(--muted);margin-left:1px">起</span></div></div>
-        <div class="price-row"><span class="price-lbl">非工商（僅後製）</span><div class="price-val">$6,500 <span style="font-family:'Noto Serif TC',serif;font-size:12px;color:var(--muted);margin-left:1px">起</span></div></div>
+        <div style="font-size:12px;letter-spacing:.08em;color:var(--light-muted);margin-bottom:.75rem">影片成片 10m ／ 10m 後每 1m + $850（未稅）</div>
+        <div class="price-row"><span class="price-lbl" style="color:#B5756A">工商</span><div class="price-val" style="color:#B5756A">$11,000 <span style="font-family:'Noto Serif TC',serif;font-size:12px;color:#B5756A;margin-left:1px">起</span><span class="tax-tag">未稅</span></div></div>
+        <div class="price-row"><span class="price-lbl" style="color:#B5756A">工商（僅後製）</span><div class="price-val" style="color:#B5756A">$9,500 <span style="font-family:'Noto Serif TC',serif;font-size:12px;color:#B5756A;margin-left:1px">起</span><span class="tax-tag">未稅</span></div></div>
+        <div class="price-row"><span class="price-lbl">非工商</span><div class="price-val">$8,000 <span style="font-family:'Noto Serif TC',serif;font-size:12px;color:var(--muted);margin-left:1px">起</span><span class="tax-tag">未稅</span></div></div>
+        <div class="price-row"><span class="price-lbl">非工商（僅後製）</span><div class="price-val">$6,500 <span style="font-family:'Noto Serif TC',serif;font-size:12px;color:var(--muted);margin-left:1px">起</span><span class="tax-tag">未稅</span></div></div>
         <div style="margin-top:.85rem;padding-top:.75rem;font-size:12px;color:var(--light-muted);line-height:1.9">※ 多機 &amp; 毛片超時 &amp; 額外需求，請看 <a href="#extras" style="color:var(--light-muted);text-decoration:underline;text-underline-offset:2px">07 特殊需求加價</a><br>※ 最終費用以專案正式定案之需求為準。<br>※ 詢價請務必閱讀 <a href="#notice" style="color:var(--light-muted);text-decoration:underline;text-underline-offset:2px">04 詢價前須知</a></div>
       </div>
     </div>
@@ -717,15 +723,14 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
       <div class="pinfo-hd">
         <span class="pbadge c">C 方案</span>
         <div class="pname">字卡 ES 較少</div>
-        <div class="pdesc" style="font-style:italic;color:var(--blush);margin-top:.2rem;margin-bottom:.6rem">白字幕為主<br>適合乾淨的 vlog 風格</div>
-        <div class="pdesc">一整支（單機、毛片 1hr 內）<br>每分鐘約 1–3 個 ES 效果（10分鐘影片約 10–30 個）</div>
+        <div class="pdesc">一整支（單機、毛片 1hr 內）<br>每分鐘約 1–3 個 ES 效果（10分鐘影片約 10–30 個）<br>白字幕為主，適合乾淨 vlog 風格</div>
       </div>
       <div class="pinfo-body">
-        <div style="font-size:12px;letter-spacing:.08em;color:var(--light-muted);margin-bottom:.75rem">影片成片 10m ／ 10m 後每 1m + $850</div>
-        <div class="price-row"><span class="price-lbl" style="color:#B5756A">工商</span><div class="price-val" style="color:#B5756A">$8,000 <span style="font-family:\'Noto Serif TC\',serif;font-size:12px;color:#B5756A;margin-left:1px">起</span></div></div>
-        <div class="price-row"><span class="price-lbl" style="color:#B5756A">工商（僅後製）</span><div class="price-val" style="color:#B5756A">$7,000 <span style="font-family:\'Noto Serif TC\',serif;font-size:12px;color:#B5756A;margin-left:1px">起</span></div></div>
-        <div class="price-row"><span class="price-lbl">非工商</span><div class="price-val">$6,000 <span style="font-family:'Noto Serif TC',serif;font-size:12px;color:var(--muted);margin-left:1px">起</span></div></div>
-        <div class="price-row"><span class="price-lbl">非工商（僅後製）</span><div class="price-val">$5,000 <span style="font-family:'Noto Serif TC',serif;font-size:12px;color:var(--muted);margin-left:1px">起</span></div></div>
+        <div style="font-size:12px;letter-spacing:.08em;color:var(--light-muted);margin-bottom:.75rem">影片成片 10m ／ 10m 後每 1m + $850（未稅）</div>
+        <div class="price-row"><span class="price-lbl" style="color:#B5756A">工商</span><div class="price-val" style="color:#B5756A">$8,000 <span style="font-family:'Noto Serif TC',serif;font-size:12px;color:#B5756A;margin-left:1px">起</span><span class="tax-tag">未稅</span></div></div>
+        <div class="price-row"><span class="price-lbl" style="color:#B5756A">工商（僅後製）</span><div class="price-val" style="color:#B5756A">$7,000 <span style="font-family:'Noto Serif TC',serif;font-size:12px;color:#B5756A;margin-left:1px">起</span><span class="tax-tag">未稅</span></div></div>
+        <div class="price-row"><span class="price-lbl">非工商</span><div class="price-val">$6,000 <span style="font-family:'Noto Serif TC',serif;font-size:12px;color:var(--muted);margin-left:1px">起</span><span class="tax-tag">未稅</span></div></div>
+        <div class="price-row"><span class="price-lbl">非工商（僅後製）</span><div class="price-val">$5,000 <span style="font-family:'Noto Serif TC',serif;font-size:12px;color:var(--muted);margin-left:1px">起</span><span class="tax-tag">未稅</span></div></div>
         <div style="margin-top:.85rem;padding-top:.75rem;font-size:12px;color:var(--light-muted);line-height:1.9">※ 多機 &amp; 毛片超時 &amp; 額外需求，請看 <a href="#extras" style="color:var(--light-muted);text-decoration:underline;text-underline-offset:2px">07 特殊需求加價</a><br>※ 最終費用以專案正式定案之需求為準。<br>※ 詢價請務必閱讀 <a href="#notice" style="color:var(--light-muted);text-decoration:underline;text-underline-offset:2px">04 詢價前須知</a></div>
       </div>
     </div>
@@ -745,12 +750,13 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
       <div class="pinfo-hd">
         <span class="pbadge d">D 方案</span>
         <div class="pname">工商短影片 ／ 直式短影片</div>
-        <div class="pdesc" style="font-style:italic;color:var(--blush);margin-top:.2rem;margin-bottom:.6rem">適合品牌合作、活動宣傳、特別企劃</div>
         <div class="pdesc">直式短影片目前僅接受商案類型或特別企劃<br>（不承接藏鏡人類型）</div>
       </div>
       <div class="pinfo-body">
-        <div class="price-row"><span class="price-lbl">橫式中插（1m – 3m）</span><div><div class="price-val">$3,500 – $5,000</div><div class="price-sub">需額外確認報價</div></div></div>
-        <div class="price-row"><span class="price-lbl">直式 Reels 商業（1m）</span><div><div class="price-val">$2,500 – $3,500</div><div class="price-sub">0.5m 以 1m 計算</div></div></div>
+        <div style="font-size:12px;letter-spacing:.08em;color:var(--light-muted);margin-bottom:.75rem">以下金額均為未稅價</div>
+        <div class="price-row"><span class="price-lbl">橫式中插（1m – 3m）</span><div><div class="price-val">$3,500 – $5,000<span class="tax-tag">未稅</span></div><div class="price-sub">需額外確認報價</div></div></div>
+        <div class="price-row"><span class="price-lbl">直式 Reels 商業（1m）</span><div><div class="price-val">$2,500 – $3,500<span class="tax-tag">未稅</span></div><div class="price-sub">0.5m 以 1m 計算</div></div></div>
+        <div style="margin-top:.85rem;padding-top:.75rem;font-size:12px;color:var(--light-muted);line-height:1.9">※ 上列為未稅價，開立發票另加 5% 營業稅。<br>※ 最終費用以專案正式定案之需求為準。</div>
       </div>
     </div>
   </div>
@@ -764,22 +770,23 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
     <span class="sec-sub">Add-ons</span>
   </div>
   <table class="extras-tbl fu">
-    <thead><tr><th>項目</th><th>價格</th></tr></thead>
+    <thead><tr><th>項目</th><th>價格（未稅）</th></tr></thead>
     <tbody>
-      <tr><td>毛片超過 0.5hr</td><td>$500 / 0.5hr</td></tr>
-      <tr><td>多機位</td><td>$500 / 機</td></tr>
-      <tr><td>美術視覺（ES / 特殊包框 / 底圖 / 視覺圖）</td><td>$1,500 – $3,000</td></tr>
-      <tr><td>聲音降噪處理</td><td>$1,000</td></tr>
-      <tr><td>商用影片、音樂素材（Envato 含商用授權）</td><td>$1,000 – $3,000</td></tr>
-      <tr><td>封面圖製作（不含文案，可修改 3 次）</td><td>$500 – $1,000 / 張</td></tr>
+      <tr><td>毛片超過 0.5hr</td><td>$500 / 0.5hr<span class="tax-tag">未稅</span></td></tr>
+      <tr><td>多機位</td><td>$500 / 機<span class="tax-tag">未稅</span></td></tr>
+      <tr><td>美術視覺（ES / 特殊包框 / 底圖 / 視覺圖）</td><td>$1,500 – $3,000<span class="tax-tag">未稅</span></td></tr>
+      <tr><td>聲音降噪處理</td><td>$1,000<span class="tax-tag">未稅</span></td></tr>
+      <tr><td>商用影片、音樂素材（Envato 含商用授權）</td><td>$1,000 – $3,000<span class="tax-tag">未稅</span></td></tr>
+      <tr><td>封面圖製作（不含文案，可修改 3 次）</td><td>$2,000 – $2,500 / 張<span class="tax-tag">未稅</span></td></tr>
       <tr><td>特殊需求（如中英字幕 / 360 相機 等等…）</td><td>額外報價</td></tr>
     </tbody>
   </table>
+  <div class="snote fu">表列價格皆為<strong style="color:#B5756A">未稅價</strong>。如需開立發票，將另加 5% 營業稅（未稅金額 × 1.05）。</div>
 </section>
 
 <section id="contact">
   <p class="ceyebrow">Contact</p>
-  <h2 class="ctitle">合作<span style="color:var(--blush)">聯絡</span></h2>
+  <h2 class="ctitle">準備好了嗎？<br>讓我們<span style="color:var(--blush)">合作</span>吧</h2>
   <p class="csub">歡迎提供影片交件日期，確認檔期後安排委託</p>
   <div class="clinks">
     <a href="https://www.youtube.com/@yufang149" target="_blank" class="clink pri">YouTube 作品集 →</a>
