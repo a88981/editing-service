@@ -71,6 +71,9 @@ nav a:hover { color:var(--charcoal); }
 .hcard { background:var(--cream); border:1px solid var(--divider-strong); padding:1.4rem 1.7rem; }
 .hcard-lbl { font-size:11px; letter-spacing:.18em; color:var(--muted); text-transform:uppercase; margin-bottom:.6rem; }
 .hcard-val { font-family:'Noto Serif TC',serif; font-size:15px; color:var(--charcoal); line-height:1.9; }
+/* 檔期區塊：預留高度 + 淡入，避免 API 回來時內容跳動 */
+#schedule-display { min-height:86px; transition:opacity .35s ease; }
+#schedule-display.is-loading { opacity:0; }
 .sdot { display:inline-block; width:7px; height:7px; background:var(--blush); border-radius:50%; margin-right:.5rem; vertical-align:middle; animation:pulse 2s ease-in-out infinite; }
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 .tags { display:flex; flex-wrap:wrap; gap:.45rem; margin-top:.5rem; }
@@ -480,7 +483,7 @@ footer { background:#111110; padding:1.4rem clamp(1.5rem,5vw,4rem); display:flex
   <div class="hero-cards fu">
     <div class="hcard">
       <div class="hcard-lbl">目前檔期</div>
-      <div class="hcard-val" id="schedule-display"><span class="sdot" style="background:#B5756A"></span>2026/6/24 後 檔期可詢問<br><span class="sdot"></span>5月至6月中前 可詢問急案<br><span class="sdot"></span><span style="color:#B5756A">06/20–06/23 休假</span></div>
+      <div class="hcard-val is-loading" id="schedule-display"></div>
     </div>
     <div class="hcard">
       <div class="hcard-lbl">已合作創作者</div>
@@ -877,18 +880,22 @@ window.addEventListener('load', function() {
 
 
 // 動態讀取檔期
-fetch('/api/schedule')
-  .then(r => r.json())
-  .then(data => {
-    const el = document.getElementById('schedule-display');
-    if (!el || !data.main) return;
-    let html = '';
-    if (data.main) html += `<span class="sdot" style="background:#B5756A"></span>${data.main}`;
-    if (data.urgent) html += `<br><span class="sdot"></span>${data.urgent}`;
-    if (data.vacation) html += `<br><span class="sdot"></span><span style="color:#B5756A">${data.vacation}</span>`;
-    el.innerHTML = html;
-  })
-  .catch(() => {});
+const schedEl = document.getElementById('schedule-display');
+if (schedEl) {
+  fetch('/api/schedule')
+    .then(r => r.json())
+    .then(data => {
+      if (!data.main) throw new Error('no schedule');
+      let html = `<span class="sdot" style="background:#B5756A"></span>${data.main}`;
+      if (data.urgent)   html += `<br><span class="sdot"></span>${data.urgent}`;
+      if (data.vacation) html += `<br><span class="sdot"></span><span style="color:#B5756A">${data.vacation}</span>`;
+      schedEl.innerHTML = html;
+    })
+    .catch(() => {
+      schedEl.innerHTML = '<span class="sdot"></span>檔期請來信詢問';
+    })
+    .finally(() => schedEl.classList.remove('is-loading'));
+}
 
 </script>
 </body>
